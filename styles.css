@@ -62,6 +62,89 @@
             50% { opacity: 0.6; }
         }
 
+        .zx-notification-floating {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            animation: zx-slide-entrance 0.3s ease-out;
+            min-width: 280px;
+        }
+
+        @keyframes zx-slide-entrance {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .zx-repo-emblem {
+            width: 24px;
+            height: 24px;
+            fill: #000;
+            flex-shrink: 0;
+        }
+
+        .zx-message-wrapper {
+            flex: 1;
+        }
+
+        .zx-primary-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            margin: 0 0 2px 0;
+        }
+
+        .zx-secondary-text {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+        }
+
+        .zx-dismiss-trigger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: #666;
+            font-size: 16px;
+            line-height: 1;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .zx-dismiss-trigger:hover {
+            background: #f0f0f0;
+            color: #000;
+        }
+
+        .zx-external-navigator {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .zx-external-navigator:hover {
+            color: #0366d6;
+        }
+
+        .zx-external-navigator:hover .zx-repo-emblem {
+            fill: #0366d6;
+        }
+
 #discord-div img {
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kotokk - deweloper stron internetowych z Polski, programujący w HTML, CSS, JavaScript, PHP i Pythonie." />
+  <title>Kotokk - O mnie</title>
+  <link rel="icon" type="image/png" href="photos/website-icon.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-K7IawUhwVw9l0zrmxYP/TsX4htL/5Fux9DsE7W31T6XQW0B5+cr9ch9gY0YpBDs8ey+BcDCDn7S2M9JGR8/w8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js" integrity="sha512-HC9NIBQydzVbm53vIEgIpf1Q8pne3Ax1I37S5aLSGhHyukWNSnlZSLI8geIec3zx4Z4kA/3Z+OEEhY9BWeJj0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <script>window.loaderStartTime = Date.now();</script>
+
+  <div class="terminal-loader" id="loader">
+    <div class="terminal-header">
+      <div class="terminal-title">Status</div>
+      <div class="terminal-controls">
+        <div class="control close"></div>
+        <div class="control minimize"></div>
+        <div class="control maximize"></div>
+      </div>
+    </div>
+    <div class="text">Wczytywanie...</div>
+  </div>
+  <div id="content" style="display: none; opacity: 0;">
+    <div id="particles-js"></div>
+    <div id="scrollProgress"></div>
+      <button onclick="window.location.href='/index.php'" class="back-button">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 19-7-7 7-7"/>
+    <path d="M19 12H5"/>
+  </svg>
+  Wróć do strony głównej
+</button>
+    <a href="index.html" class="icon-link">
+      <img src="photos/united-states.png" alt="Przetłumacz na Angielski" title="Przetłumacz na Angielski" loading="lazy" />
+    </a>
+
+    <label class="ui-switch">
+      <input type="checkbox" id="themeToggle" />
+      <div class="slider">
+        <div class="circle"></div>
+      </div>
+    </label>
+
+    <header>
+      <div id="profile-icon">
+        <img src="photos/profile-placeholder.jpg" alt="Zdjęcie profilowe" loading="lazy" />
+      </div>
+      <h1 id="title"></h1>
+      <p>Moją pasją jest tworzenie pięknych i funkcjonalnych stron internetowych.</p>
+      <div id="scroll-down">
+        Przewiń w dół 
+        <img class="icon-img" src="photos/arrow.png" alt="ikona strzałki" loading="lazy" />
+      </div>
+    </header>
+
+    <main class="container">
+
+      <section class="block fade-in" id="about">
+        <h2>Czym się zajmuję? <img class="icon-img" src="photos/search.png" alt="ikona wyszukiwania" loading="lazy" /></h2>
+        <p>Jestem programistą specjalizującym się w tworzeniu stron internetowych. Programuję w HTML, CSS, JavaScript, PHP i Pythonie.</p>
+      </section>
+
+<section class="block fade-in" id="experience">
+  <h2>Moje zainteresowania <img class="icon-img" src="photos/interest.png" alt="ikona mózgu" loading="lazy"></h2>
+  <p>Lubię zwiedzać las w pobliżu mojego miasta, jeździć na rowerze (a dokładniej MTB), programować oraz słuchać dużo muzyki. Czasami gram też w gry, na przykład CS2, BeamNG.drive i The Forest.</p>
+</section>
+
+      <section class="block fade-in" id="experience">
+        <h2>Kiedy i jak zacząłem programować? <img class="icon-img" src="photos/browser.png" alt="ikona przeglądarki" loading="lazy" /></h2>
+        <p>Zacząłem programować 9 listopada 2024 roku, zainspirowany kolegą tworzącym swoją stronę. W trzy tygodnie opanowałem HTML, potem CSS i stworzyłem swoją pierwszą stronę. Miesiąc później poznałem podstawy JavaScriptu, a ostatnio także PHP i Pythona.</p>
+        <div>
+          <img class="icon-img" src="photos/html.png" alt="ikona HTML" loading="lazy" />
+          <img class="icon-img" src="photos/css-3.png" alt="ikona CSS" loading="lazy" />
+          <img class="icon-img" src="photos/js.png" alt="ikona JavaScript" loading="lazy" />
+          <img class="icon-img" src="photos/php.png" alt="ikona PHP" loading="lazy" />
+          <img class="icon-img" src="photos/python.png" alt="ikona Pythona" loading="lazy" />
+          <img class="icon-img" src="photos/react.webp" alt="React icon" loading="lazy">
+        </div>
+      </section>
+
+<section class="block fade-in" id="passion">
+  <h2>Pasjonuję się programowaniem <img class="icon-img" src="photos/heart.png" alt="ikona serca" loading="lazy"></h2>
+  <p>Programowanie to moja pasja — koduję głównie dla zabawy, tworząc webowe projekty, które są dla mnie zarówno wyzwaniem, jak i okazją do rozwoju. Narazie skupiam się tylko na web developmencie.</p>
+</section>
+      <section class="block fade-in" id="projects">
+        <h2>Moje projekty <img class="icon-img" src="photos/code.png" alt="ikona kodu" /></h2><br>
+        <hr style="border: none; height: 2px; border-radius: 10px; background-color: rgb(0, 0, 0);">
+        <p style="text-align: center;">Utrzymywane:</p>
+        <p class="hover-effect"  style="text-align: center;"><a href="https://kotokk.dev" target="none" rel="noopener noreferrer">kotokk.dev</a></p><br>
+        <hr style="border: none; height: 2px; border-radius: 10px; background-color: rgb(0, 0, 0);">
+        <p style="text-align: center;">Porzucone:</p>
+        <p class="hover-effect" style="text-align: center;"><strong>KotoWeb</strong><br><span class="hover-text"><small>Pierwsza strona jaką zrobiłem, Ale zamknąłem ją, ponieważ kod był... nie rozmawiajmy o tym.</small></span></p>
+        <p class="hover-effect" style="text-align: center;"><strong>PiesoWeb</strong><br><span class="hover-text"><small>Moja druga strona internetowa. Była taka sama jak KotoWeb, ale z psami zamiast kotów.</small></span></p>
+      </section>
+
+      <section class="block fade-in" id="contact">
+        <h2>Kontakt/Social media <img class="icon-img" src="photos/chat.png" alt="ikona czatu" loading="lazy" /></h2>
+        <p><img class="icon-img" src="photos/github.png" alt="ikona GitHub" /> Sprawdź mój <a href="https://github.com/Kotok7" target="none">GitHub</a></p>
+        <p><img class="icon-img" src="photos/discord.png" alt="ikona Discord" /> Discord: @kotokk_dev</p>
+        <p><img class="icon-img" src="photos/group.png" alt="ikona grupy" /> Dołącz do serwera: <a href="https://discord.gg/xPaqvs5NHk" target="none">HackSphere</a></p>
+        <p><img class="icon-img" src="photos/tik-tok.png" alt="ikona TikTok" /> Obserwuj mnie na <a href="https://www.tiktok.com/@kotokk_dev" target="none">TikToku!</a></p>
+      </section>
+
+      <section class="block fade-in" id="tools">
+        <h2>Moje narzędzia <img class="icon-img" src="photos/favorites.png" alt="ikona ulubionych" /></h2>
+        <p><img class="icon-img" src="photos/css.png" alt="ikona CSS" /> Edytor kodu: Visual Studio Code</p>
+        <p><img class="icon-img" src="photos/laptop.png" alt="ikona laptopa" /> Urządzenie: ThinkPad T495</p>
+        <p><img class="icon-img" src="photos/windows.png" alt="ikona Windows" /> OS: Windows 11</p>
+        <p><img class="icon-img" src="photos/linux.png" alt="Linux icon" /> Dystrybucje linuxa, które używałem:<br>
+        Mint, Arch, Debian, Peppermint, Kali (nadal wole Windowsa)</p>
+      </section>
+
+      <section class="block fade-in" id="info">
+        <h2>Informacje <img class="icon-img" src="photos/info.png" alt="ikona info" /></h2>
+        <p>Tryb ciemny aktywuje się automatycznie między 22:00 a 09:00, aby zapewnić wygodniejsze oglądanie w nocy.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 kotokk.dev<br>Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <div id="popup">
+      <div class="popup-content">
+        <h1>Witam na mojej stronie!</h1>
+        <p style="text-align: center;">Pen tester</p>
+        <p style="text-align: center;">Fullstack deweloper stron internetowych</p>
+        <br />
+        <button id="closePopup">Wejdź</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

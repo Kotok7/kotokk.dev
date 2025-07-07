@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kotokk - Polish web developer skilled in HTML, CSS, JavaScript, PHP, and Python." />
+    <title>Kotokk - About me</title>
+    <link rel="icon" type="image/png" href="photos/website-icon.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" 
+          integrity="sha512-K7IawUhwVw9l0zrmxYP/TsX4htL/5Fux9DsE7W31T6XQW0B5+cr9ch9gY0YpBDs8ey+BcDCDn7S2M9JGR8/w8g==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js" 
+            integrity="sha512-HC9NIBQydzVbm53vIEgIpf1Q8pne3Ax1I37S5aLSGhHyukWNSnlZSLI8geIec3zx4Z4kA/3Z+OEEhY9BWeJj0A==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <script>
+      window.loaderStartTime = Date.now();
+    </script>    
+    <div class="terminal-loader" id="loader">
+      <div class="terminal-header">
+        <div class="terminal-title">Status</div>
+        <div class="terminal-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+        </div>
+      </div>
+      <div class="text">Loading...</div>
+    </div>
+    <div id="content" style="display:none; opacity:0;">
+      <div id="particles-js"></div>
+      <div id="scrollProgress"></div>
+            <button onclick="window.location.href='/index.php'" class="back-button">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 19-7-7 7-7"/>
+    <path d="M19 12H5"/>
+  </svg>
+  Back to Main Page
+</button>
+      <a href="index-pl.html" class="icon-link">
+        <img src="photos/poland.png" alt="Przetłumacz na Polski" title="Przetłumacz na Polski" loading="lazy">
+      </a>
+      <label class="ui-switch">
+        <input type="checkbox" id="themeToggle">
+        <div class="slider">
+          <div class="circle"></div>
+        </div>
+      </label>
+      <header>
+        <div id="profile-icon">
+          <img src="photos/profile-placeholder.jpg" alt="Profile Picture" loading="lazy">
+        </div>
+        <h1 id="title"></h1>
+        <p>I'm a passionate web developer who loves creating beautiful and functional websites.</p>
+        <div id="scroll-down">
+          Scroll Down <img class="icon-img" src="photos/arrow.png" alt="arrow icon" loading="lazy">
+        </div>
+      </header>
+      <main class="container">
+        <section class="block fade-in" id="about">
+          <h2>What do I do? <img class="icon-img" src="photos/search.png" alt="search icon" loading="lazy"></h2>
+          <p>I'm a programmer from Poland (Kraśnik), specializing in web development. I work with HTML, CSS, JavaScript, PHP, and Python.</p>
+        </section>
+          <section class="block fade-in" id="experience">
+          <h2>My interests <img class="icon-img" src="photos/interest.png" alt="brain icon" loading="lazy"></h2>
+          <p>I enjoy exploring the forest near my town, mountain biking, coding, and listening to a lot of music. I also sometimes play games for example CS2, BeamNG.drive and The Forest.</p>
+        </section>
+          <section class="block fade-in" id="experience">
+          <h2>When and why did I start programming? <img class="icon-img" src="photos/browser.png" alt="browser icon" loading="lazy"></h2>
+          <p>I started programming on November 9, 2024, inspired by a friend who was creating his own website. I learned HTML in about three weeks, then quickly picked up CSS and built my first site. A month later, I learned the basics of JavaScript, and recently also explored PHP and Python.</p>
+          <img class="icon-img" src="photos/html.png" alt="HTML icon" loading="lazy">
+          <img class="icon-img" src="photos/css-3.png" alt="CSS icon" loading="lazy">
+          <img class="icon-img" src="photos/js.png" alt="JavaScript icon" loading="lazy">
+          <img class="icon-img" src="photos/php.png" alt="PHP icon" loading="lazy">
+          <img class="icon-img" src="photos/python.png" alt="Python icon" loading="lazy">
+          <img class="icon-img" src="photos/react.webp" alt="React icon" loading="lazy">
+        </section>
+        <section class="block fade-in" id="passion">
+          <h2>Passion for programming <img class="icon-img" src="photos/heart.png" alt="heart icon" loading="lazy"></h2>
+          <p>Programming is my passion — I mostly code for fun, building web projects that challenge me and help me grow as a developer. I'm focused only on web development.</p>
+        </section>
+        <section class="block fade-in" id="projects">
+          <h2>My Projects <img class="icon-img" src="photos/code.png" alt="code icon" loading="lazy"></h2><br>
+          <hr style="border: none; height: 2px; border-radius: 10px; background-color: rgb(0, 0, 0);">
+          <p style="text-align: center;">Maintained:</p>
+
+          <p class="hover-effect"  style="text-align: center;"><a href="https://kotokk.dev" target="none" rel="noopener noreferrer">kotokk.dev</a></p><br>
+          <hr style="border: none; height: 2px; border-radius: 10px; background-color: rgb(0, 0, 0);">
+          <p style="text-align: center;">Abandoned:</p>
+          <p class="hover-effect"  style="text-align: center;"><strong>KotoWeb</strong><br><span class="hover-text"><small>It was my first website, but i closed it because the code was... let's not talk about that</small></span></p>
+          <p class="hover-effect"  style="text-align: center;"><strong>PiesoWeb</strong><br><span class="hover-text"><small>My second website. It was the same as KotoWeb but with dogs instead of cats.</small></span></p>
+        </section>
+        <section class="block fade-in" id="contact">
+          <h2>Contact <img class="icon-img" src="photos/chat.png" alt="chat icon" loading="lazy"></h2>
+          <p><img class="icon-img" src="photos/github.png" alt="GitHub icon" loading="lazy"> Check out my <a href="https://github.com/Kotok7" target="none" rel="noopener noreferrer">GitHub</a></p>
+          <p><img class="icon-img" src="photos/discord.png" alt="Discord icon" loading="lazy"> Discord: @kotokk_dev</p>
+          <p><img class="icon-img" src="photos/group.png" alt="group icon" loading="lazy"> Join my Discord server: <a href="https://discord.gg/xPaqvs5NHk" target="none" rel="noopener noreferrer">HackSphere</a></p>
+          <p><img class="icon-img" src="photos/tik-tok.png" alt="TikTok icon" loading="lazy"> Follow me on <a href="https://www.tiktok.com/@kotokk_dev" target="none" rel="noopener noreferrer">TikTok</a></p>
+        </section>
+        <section class="block fade-in" id="tools">
+          <h2>My tools <img class="icon-img" src="photos/favorites.png" alt="favorites icon" loading="lazy"></h2>
+          <p><img class="icon-img" src="photos/css.png" alt="CSS icon" loading="lazy"> Code editor: Visual Studio Code</p>
+          <p><img class="icon-img" src="photos/laptop.png" alt="laptop icon" loading="lazy"> Device: ThinkPad T495</p>
+          <p><img class="icon-img" src="photos/windows.png" alt="Linux icon" loading="lazy"> OS: Windows 11</p>
+          <p><img class="icon-img" src="photos/linux.png" alt="Linux icon" loading="lazy"> Linux distros i've used:<br>
+            Mint, Arch, Debian, Peppermint, Kali (i still prefer to use Windows)</p>
+        </section>
+        
+        <section class="block fade-in" id="info">
+          <h2>Info <img class="icon-img" src="photos/info.png" alt="info icon" loading="lazy"/></h2>
+          <p>Dark mode automatically enables between 22:00 PM and 09:00 AM for a more comfortable viewing experience at night.</p>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2025 kotokk.dev<br>All rights reserved.</p>
+      </footer>
+      <div id="popup">
+        <div class="popup-content">
+          <h1>Welcome to my about me page!</h1>
+          <p style="text-align: center;">I'm a fullstack web developer</p>
+          <br>
+          <button id="closePopup">Enter</button>
+        </div>
+      </div>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>

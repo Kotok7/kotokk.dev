@@ -1,2 +1,1 @@
-# kotokk.dev
-My portfolio page
+modify the jsons (examples)

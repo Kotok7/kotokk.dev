@@ -66,37 +66,6 @@ To create a comprehensive digital presence that demonstrates technical expertise
 - **100% Custom Built** - Every line of code written from scratch
 - **Performance Optimized** - Fast loading times and smooth interactions
 - **Mobile Responsive** - Seamless experience across all devices
-- **SEO Optimized** - Built with search engine visibility in mind
-- **Accessibility First** - Designed for users of all abilities
-
----
-
-## 🏗️ Project Structure
-
-```
-kotokk.dev/
-├── 📁 frontend/
-│   ├── 📁 assets/
-│   │   ├── 📁 css/
-│   │   ├── 📁 js/
-│   │   ├── 📁 images/
-│   │   └── 📁 fonts/
-│   ├── 📁 components/
-│   ├── 📁 pages/
-│   └── 📄 index.html
-├── 📁 backend/
-│   ├── 📁 api/
-│   ├── 📁 config/
-│   ├── 📁 includes/
-│   └── 📁 data/
-├── 📁 data/
-│   ├── 📄 projects.json (example)
-│   ├── 📄 skills.json (example)
-│   └── 📄 experience.json (example)
-├── 📄 README.md
-├── 📄 CHANGELOG.md
-└── 📄 LICENSE
-```
 
 ---
 
@@ -115,6 +84,7 @@ kotokk.dev/
 |------------|---------|---------|
 | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white) | 8.1+ | Server-side Logic |
 | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white) | 8.0+ | Database Management |
+| ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white) | 3.35+ | Lightweight Database |
 | ![JSON](https://img.shields.io/badge/JSON-000000?style=flat&logo=json&logoColor=white) | - | Data Storage & APIs |
 
 ### Infrastructure & Tools
@@ -122,7 +92,6 @@ kotokk.dev/
 |---------|---------|
 | **Titanaxe** | Web Hosting & Deployment |
 | **Cloudflare** | CDN & Security |
-| **Git** | Version Control |
 | **GitHub** | Code Repository |
 
 ---
@@ -138,13 +107,11 @@ kotokk.dev/
       "title": "Advanced Portfolio Website",
       "description": "A modern, responsive portfolio website showcasing full-stack development skills with interactive animations and optimized performance.",
       "category": "web-development",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "PHP", "SQLite"],
       "features": [
         "Responsive Design",
         "Interactive Animations",
         "Performance Optimization",
-        "SEO Optimization",
-        "Contact Form Integration"
       ],
       "status": "completed",
       "startDate": "2024-01-15",
@@ -160,24 +127,9 @@ kotokk.dev/
         ]
       },
       "metrics": {
-        "performanceScore": 98,
-        "accessibilityScore": 100,
-        "seoScore": 95,
-        "loadTime": "1.2s"
+        "loadTime": "2.0s"
       }
     },
-    {
-      "id": "project-002",
-      "title": "E-Commerce Dashboard",
-      "description": "A comprehensive admin dashboard for e-commerce management with real-time analytics, inventory tracking, and customer management features.",
-      "category": "web-application",
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "Chart.js"],
-      "features": [
-        "Real-time Analytics",
-        "Inventory Management",
-        "Customer Dashboard",
-        "Order Tracking",
-        "Payment Integration"
       ],
       "status": "in-progress",
       "startDate": "2024-04-01",

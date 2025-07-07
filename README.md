@@ -19,12 +19,9 @@
 
 - [🔒 License & Permissions](#-license--permissions)
 - [🌐 About kotokk.dev](#-about-kotokkdev)
-- [🏗️ Project Structure](#️-project-structure)
 - [🔧 Technologies & Stack](#-technologies--stack)
-- [📊 Data Structure Examples](#-data-structure-examples)
 - [🚀 Features](#-features)
 - [📱 Screenshots](#-screenshots)
-- [🛠️ Development Setup](#️-development-setup)
 - [🐛 Known Issues](#-known-issues)
 - [📈 Roadmap](#-roadmap)
 - [📬 Contact & Support](#-contact--support)

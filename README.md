@@ -118,10 +118,11 @@ To create a comprehensive digital presence that demonstrates technical expertise
 ## 📱 Screenshots
 
 ### 🖥️ Desktop View
-![Desktop Homepage](https://raw.githubusercontent.com/Kotok7/kotokk.dev/readme_files/desktop.png)
 
+![Desktop Homepage](https://raw.githubusercontent.com/Kotok7/kotokk.dev/main/readme_files/desktop.png)
 ### 📱 Mobile View
-![Mobile Homepage](https://raw.githubusercontent.com/Kotok7/kotokk.dev/readme_files/mobile.png)
+
+![Mobile Homepage](https://raw.githubusercontent.com/Kotok7/kotokk.dev/main/readme_files/mobile.png)
 
 ---
 

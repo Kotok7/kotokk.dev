@@ -118,10 +118,10 @@ To create a comprehensive digital presence that demonstrates technical expertise
 ## 📱 Screenshots
 
 ### 🖥️ Desktop View
-![Desktop Homepage](https://img.shields.io/badge/Screenshot-Coming%20Soon-lightgrey)
+![Desktop Homepage](https://raw.githubusercontent.com/Kotok7/kotokk.dev/readme_files/desktop.png)
 
 ### 📱 Mobile View
-![Mobile Homepage](https://img.shields.io/badge/Screenshot-Coming%20Soon-lightgrey)
+![Mobile Homepage](https://raw.githubusercontent.com/Kotok7/kotokk.dev/readme_files/mobile.png)
 
 ---
 
@@ -138,8 +138,8 @@ To create a comprehensive digital presence that demonstrates technical expertise
 
 ## 📈 Roadmap
 
-### 🎯 Version x.x (date)
-- [ ] **Coming soon** - ???
+### 🎯 Version 2.0 (07.07)
+- [ ] **2.0** - Added site to GitHub
 
 ---
 
@@ -148,7 +148,7 @@ To create a comprehensive digital presence that demonstrates technical expertise
 - **Lines of Code**: ???
 - **Commits**: ???
 - **Contributors**: 0
-- **Issues Resolved**: 0
+- **Issues Resolved**: 1
 
 ---
 

@@ -137,10 +137,10 @@ To create a comprehensive digital presence that demonstrates technical expertise
 
 ### 📊 Repository Stats
 - ![Release](https://img.shields.io/github/v/release/Kotok7/kotokk.dev)
-- ![Repo Size](https://img.shields.io/github/repo-size/Kotokk7/kotokk.dev)
-- ![Last Commit](https://img.shields.io/github/last-commit/Kotokk7/kotokk.dev)
+- ![Repo Size](https://img.shields.io/github/repo-size/Kotok7/kotokk.dev)
+- ![Last Commit](https://img.shields.io/github/last-commit/Kotok7/kotokk.dev)
 - ![Contributors](https://img.shields.io/github/contributors/Kotok7/kotokk.dev)
-- ![Commits per Month](https://img.shields.io/github/commit-activity/m/Kotokk7/kotokk.dev)
+- ![Commits per Month](https://img.shields.io/github/commit-activity/m/Kotok7/kotokk.dev)
 - ![Open Issues](https://img.shields.io/github/issues/Kotok7/kotokk.dev)
 - ![Closed Issues](https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev)
 - ![Pull Requests](https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev)

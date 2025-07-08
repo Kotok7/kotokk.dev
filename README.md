@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
-  <img src="https://img.shields.io/badge/Version-2.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/Version-2.0.2-blue" alt="Version">
   <img src="https://img.shields.io/badge/Maintained-Yes-green" alt="Maintained">
 </div>
 
@@ -78,6 +78,7 @@ To create a comprehensive digital presence that demonstrates technical expertise
 ### Backend Technologies
 | Technology | Version | Purpose |
 |------------|---------|---------|
+| ![.htaccess](https://img.shields.io/badge/.htaccess-critical?style=flat&logo=apache&logoColor=white) | Redirecting to 404 not found page |
 | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white) | 8.1+ | Server-side Logic |
 | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white) | 8.0+ | Database Management |
 | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white) | 3.35+ | Lightweight Database |
@@ -143,11 +144,11 @@ To create a comprehensive digital presence that demonstrates technical expertise
 ---
 
 ### 📊 Repository Stats
-- **Total Files**: ???
-- **Lines of Code**: ???
-- **Commits**: ???
-- **Contributors**: 0
-- **Issues Resolved**: 1
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Repo Size](https://img.shields.io/github/repo-size/username/repo-name)
+![Lines of Code](https://img.shields.io/tokei/lines/github/username/repo-name)
+![Last Commit](https://img.shields.io/github/last-commit/username/repo-name)
+![Contributors](https://img.shields.io/github/contributors/username/repo-name)
 
 ---
 

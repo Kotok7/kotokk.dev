@@ -84,9 +84,12 @@ $translations = [
         'update_section'   => 'Changelog',
         'github1'          => 'Now on GitHub',
         'github2'          => 'View source and contribute',
-        'changelog'        => '<ul><li>Added "donate me" option with crypto adresses</li><li>Added 404 not found site</li><li>Added new iOS screen time emulator to the main page</li><li>Added a small badge on the top</li><li>Added Binance crypto adress</li><li>Added a popup informing that the site is on GitHub</li></ul>',
+        'changelog'        => '<ul><li>Added "donate me" option with crypto adresses</li><li>Added 404 not found site</li><li>Added new iOS screen time emulator to the main page</li><li>Added a small badge on the top</li><li>Added Binance crypto adress</li><li>Added a popup informing that the site is on GitHub</li><li>Added GitHub widget</li></ul>',
         'rewriting'        => 'Rewriting site to React...',
-        'last_update'      => 'Updated: 7 July',
+        'star_github'      => 'Star on GitHub!',
+        'checking_commit'  => 'Checking last commit...',
+        'commit_loading'   => 'Loading...',
+        'last_update'      => 'Updated: 8 July',
         'sleeping'         => [
             'question' => 'Am I sleeping right now?',
             'yes'      => 'Yes💤',
@@ -171,11 +174,14 @@ $translations = [
         'discord_note'     => 'Notatka: ',
         'discord_status'   => 'Status: ',
         'update_section'   => 'Dziennik zmian',
-        'changelog'        => '<ul><li>Dodano opcje "wesprzyj mnie" z adresami crypto</li><li>Dodano stronę 404</li><li>Dodano nowy emulator czasu przed ekranem do strony głównej</li><li>Dodano małą plakietkę na górze strony</li><li>Dodano adres Binance do adresów krypto</li><li>Dodano popup informujący o tym że strona jest na GitHubie</li></ul>',
+        'changelog'        => '<ul><li>Dodano opcje "wesprzyj mnie" z adresami crypto</li><li>Dodano stronę 404</li><li>Dodano nowy emulator czasu przed ekranem do strony głównej</li><li>Dodano małą plakietkę na górze strony</li><li>Dodano adres Binance do adresów krypto</li><li>Dodano popup informujący o tym że strona jest na GitHubie</li><li>Dodano widget GitHuba</li></ul>',
         'github1'          => 'Od teraz na GitHubie',
         'github2'          => 'Zobacz kod i kontrybuuj',
+        'star_github'      => 'Dodaj gwiazdkę na GitHubie!',
+        'checking_commit'  => 'Sprawdzanie ostatniego commita...',
+        'commit_loading'   => 'Ładowanie...',
         'rewriting'        => 'Przepisywanie strony do React...',
-        'last_update'      => 'Uaktualnione: 7 Lipca',
+        'last_update'      => 'Uaktualnione: 8 Lipca',
         'sleeping'         => [
             'question' => 'Czy teraz śpię?',
             'yes'      => 'Tak💤',
@@ -284,10 +290,6 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div><br>
     <h1><?= htmlspecialchars($t['main_title'], ENT_QUOTES) ?><span class="cursor"></span></h1>
     <div class="last-update"><?= htmlspecialchars($t['last_update'], ENT_QUOTES) ?></div>
-            <div class="rewriting-status">
-                <span class="icon">⚛</span>
-                <?= htmlspecialchars($t['rewriting'], ENT_QUOTES) ?>
-            </div>
         </div>
     <p><?= htmlspecialchars($t['subtitle'], ENT_QUOTES) ?></p>
     <br>
@@ -326,27 +328,66 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 <script>
   let currentLanguage = <?= json_encode($lang_code, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) ?>;
 </script>
-<script src="discord.js"></script>
-<div id="game-div">
-  <div class="image-status">
-    <img src="photos/discord-profile.jpg" style="border-radius: 50px;">
-    <div id="status-mini-icon"><div id="status-mini-icon-2"></div></div>
-  </div>
-  <div class="status-div">
-    <strong>@kotokk_dev</strong>
+    <div class="widgets-container">
+        <div>
+            
+            <div id="game-div">
+                <div class="image-status">
+                    <img src="photos/discord-profile.jpg" style="border-radius: 50px;">
+                    <div id="status-mini-icon">
+                        <div id="status-mini-icon-2"></div>
+                    </div>
+                </div>
+                <div class="status-div">
+                    <strong>@kotokk_dev</strong>
 <p>
   <strong><?= htmlspecialchars($t['discord_status'], ENT_QUOTES) ?></strong>
   <span id="status"></span>
 </p>
-    <p id="game"></p>
-    <strong id="game-time"></strong>
+                    <p id="game"></p>
+                    <div id="game-time-container" style="display:none;"></div>
+  <strong id="game-time"></strong>
 <p>
   <strong><?= htmlspecialchars($t['discord_note'], ENT_QUOTES) ?></strong>
   <span id="note"></span>
 </p>
-  </div>
-</div>
+                </div>
+            </div>
+        </div>
 
+        <div class="stats-widget">
+            
+            <div class="badge-compact">
+                <img src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release">
+                <img src="https://img.shields.io/maintenance/yes/2025.svg?style=flat-square" alt="Maintenance">
+                <img src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo Size">
+                <img src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors">
+                <img src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
+                <img src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open Issues">
+                <img src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed Issues">
+                <img src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull Requests">
+            </div>
+            
+            <div class="star-row">
+                <span><?= htmlspecialchars($t['star_github'], ENT_QUOTES) ?></span>
+                <iframe 
+                    src="https://ghbtns.com/github-btn.html?user=Kotok7&repo=kotokk.dev&type=star&count=true&size=small"
+                    frameborder="0" scrolling="0" width="80" height="20"
+                    title="GitHub Star">
+                </iframe>
+            </div>
+            
+            <div class="commit-info">
+                <div class="commit-message" id="commit-message">
+                    <span class="loading"><?= htmlspecialchars($t['commit_loading'], ENT_QUOTES) ?></span>
+                </div>
+                <p id="commit-date"><?= htmlspecialchars($t['checking_commit'], ENT_QUOTES) ?></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="github2.js"></script>
+    <script src="discord.js"></script>
 <section class="quote-display">
   <h2><?= htmlspecialchars($t['facts_title2'], ENT_QUOTES) ?></h2>
   <?php
@@ -492,7 +533,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   </div>
 
 <div class="project-card" data-sort1="12" data-sort2="12">
-      <div class="last-updated badge">Last updated: 7 July</div>
+      <div class="last-updated badge">Last updated: 8 July</div>
   <div class="project-content">
     <h3><?= htmlspecialchars($t['update_section'], ENT_QUOTES) ?></h3>
     <?= $t['changelog']?>

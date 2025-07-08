@@ -460,12 +460,30 @@
 	}
 }
 
-@media (prefers-color-scheme: dark) {
+@media (max-width: 768px) {
+  .widgets-container > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-	#game-div,
-	.stats-widget {
-		background: linear-gradient(135deg, #0f1014 0%, #1a1d21 50%, #23272a 100%);
-	}
+  #game-div,
+  .stats-widget {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .widgets-container > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #game-div,
+  .stats-widget {
+    margin: 0 auto;
+  }
 }
 
 .zx-notification-floating {

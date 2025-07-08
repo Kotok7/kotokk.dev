@@ -77,7 +77,7 @@ To create a comprehensive digital presence that demonstrates technical expertise
 ### Backend Technologies
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| ![.htaccess](https://img.shields.io/badge/.htaccess-critical?style=flat&logo=apache&logoColor=white) | Redirecting to 404 not found page |
+| ![.htaccess](https://img.shields.io/badge/.htaccess-critical?style=flat&logo=apache&logoColor=white) | | Redirecting to 404 not found page |
 | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white) | 8.1+ | Server-side Logic |
 | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white) | 8.0+ | Database Management |
 | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white) | 3.35+ | Lightweight Database |

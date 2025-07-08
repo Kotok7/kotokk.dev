@@ -85,11 +85,9 @@ $translations = [
         'github1'          => 'Now on GitHub',
         'github2'          => 'View source and contribute',
         'changelog'        => '<ul><li>Added "donate me" option with crypto adresses</li><li>Added 404 not found site</li><li>Added new iOS screen time emulator to the main page</li><li>Added a small badge on the top</li><li>Added Binance crypto adress</li><li>Added a popup informing that the site is on GitHub</li><li>Added GitHub widget</li></ul>',
-        'rewriting'        => 'Rewriting site to React...',
         'star_github'      => 'Star on GitHub!',
         'checking_commit'  => 'Checking last commit...',
         'commit_loading'   => 'Loading...',
-        'last_update'      => 'Updated: 8 July',
         'sleeping'         => [
             'question' => 'Am I sleeping right now?',
             'yes'      => 'Yes💤',
@@ -180,8 +178,6 @@ $translations = [
         'star_github'      => 'Dodaj gwiazdkę na GitHubie!',
         'checking_commit'  => 'Sprawdzanie ostatniego commita...',
         'commit_loading'   => 'Ładowanie...',
-        'rewriting'        => 'Przepisywanie strony do React...',
-        'last_update'      => 'Uaktualnione: 8 Lipca',
         'sleeping'         => [
             'question' => 'Czy teraz śpię?',
             'yes'      => 'Tak💤',
@@ -214,7 +210,7 @@ if ($visitorIp && !in_array($visitorIp, $ips, true)) {
 $uniqueVisitors = count($ips);
 
 $city = 'Krasnik';
-$apiKey = 'apikey';
+$apiKey = '311099b333603a0e8dd92c3212d7b714';
 $apiLang = ($lang_code === 'pl') ? 'pl' : 'en';
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city)
        . "&appid={$apiKey}&units=metric&lang={$apiLang}";
@@ -289,8 +285,10 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
       <span class="number"><?= htmlspecialchars($uniqueVisitors, ENT_QUOTES) ?></span>
     </div><br>
     <h1><?= htmlspecialchars($t['main_title'], ENT_QUOTES) ?><span class="cursor"></span></h1>
-    <div class="last-update"><?= htmlspecialchars($t['last_update'], ENT_QUOTES) ?></div>
-        </div>
+  <div class="last-update">
+    <img src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
+    <img src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release">
+  </div>
     <p><?= htmlspecialchars($t['subtitle'], ENT_QUOTES) ?></p>
     <br>
     <p>
@@ -359,10 +357,10 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
             
             <div class="badge-compact">
                 <img src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release">
+                <img src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
                 <img src="https://img.shields.io/maintenance/yes/2025.svg?style=flat-square" alt="Maintenance">
                 <img src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo Size">
                 <img src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors">
-                <img src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
                 <img src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open Issues">
                 <img src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed Issues">
                 <img src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull Requests">

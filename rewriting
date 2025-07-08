@@ -2,3 +2,59 @@
                 <span class="icon">⚛</span>
                 <?= htmlspecialchars($t['rewriting'], ENT_QUOTES) ?>
             </div>
+            <style>
+                        .rewriting-status {
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            font-family: 'Fira Code', monospace;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            border-radius: 8px;
+            border-left: 4px solid #6366f1;
+            max-width: 350px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .rewriting-status::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .rewriting-status:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+            border-left-color: #a855f7;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+        }
+        
+        .rewriting-status .icon {
+            display: inline-block;
+            font-size: 120%;
+            margin-right: 0.20rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+            </style>

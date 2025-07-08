@@ -2,7 +2,6 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
-  <img src="https://img.shields.io/badge/Version-2.0.2-blue" alt="Version">
   <img src="https://img.shields.io/badge/Maintained-Yes-green" alt="Maintained">
 </div>
 
@@ -132,23 +131,15 @@ To create a comprehensive digital presence that demonstrates technical expertise
 - [ ] **API Optimization**: Implementing more efficient data fetching
 
 ### ✅ Recently Fixed
-- [x] **Fixed**: Check commit history
-
----
-
-## 📈 Roadmap
-
-### 🎯 Version 2.0 (07.07)
-- [ ] **2.0** - Added site to GitHub
+- [x] **Fixed**: [Check commit history](https://github.com/Kotok7/kotokk.dev/commits/main) or [releases](https://github.com/Kotok7/kotokk.dev/releases)
 
 ---
 
 ### 📊 Repository Stats
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Repo Size](https://img.shields.io/github/repo-size/username/repo-name)
-![Lines of Code](https://img.shields.io/tokei/lines/github/username/repo-name)
-![Last Commit](https://img.shields.io/github/last-commit/username/repo-name)
-![Contributors](https://img.shields.io/github/contributors/username/repo-name)
+- ![Repo Size](https://img.shields.io/github/repo-size/Kotok7/kotokk.dev)
+- ![Lines of Code](https://img.shields.io/tokei/lines/github/Kotok7/kotokk.dev)
+- ![Last Commit](https://img.shields.io/github/last-commit/Kotok7/kotokk.dev)
+- ![Contributors](https://img.shields.io/github/contributors/Kotok7/kotokk.dev)
 
 ---
 

@@ -7,7 +7,7 @@
         
         messageEl.classList.remove('loading');
         messageEl.textContent = message;
-        dateEl.textContent = new Date(date).toLocaleString("pl-PL");
+        dateEl.textContent = new Date(date).toLocaleString("pl-PL") + " GMT+2";
       })
       .catch(err => {
         console.error("GitHub API error:", err);

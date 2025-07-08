@@ -108,6 +108,7 @@ To create a comprehensive digital presence that demonstrates technical expertise
 
 ### 🔧 Technical Features
 - **🔄 Dynamic Content** - JSON-driven content management
+- **🔑 API keys** - API keys are not visible
 - **🔐 Security Hardened** - Input validation and XSS protection
 - **🗃️ Caching System** - Optimized content delivery
 - **📱 Progressive Web App** - Offline functionality (coming soon)
@@ -121,17 +122,6 @@ To create a comprehensive digital presence that demonstrates technical expertise
 
 ### 📱 Mobile View
 <img src="https://github.com/Kotok7/kotokk.dev/blob/main/readme_files/mobile.png" alt="Mobile Homepage" width="300">
-
----
-
-## 🐛 Known Issues
-
-### 🔄 In Progress
-- [ ] **React Migration**: Converting vanilla JS components to React
-- [ ] **API Optimization**: Implementing more efficient data fetching
-
-### ✅ Recently Fixed
-- [x] **Fixed**: [Check commit history](https://github.com/Kotok7/kotokk.dev/commits/main) or [releases](https://github.com/Kotok7/kotokk.dev/releases)
 
 ---
 

@@ -1,7 +1,9 @@
-            <div class="rewriting-status">
+<div class="rewriting-status">
                 <span class="icon">⚛</span>
                 <?= htmlspecialchars($t['rewriting'], ENT_QUOTES) ?>
             </div>
+
+
             <style>
                         .rewriting-status {
             font-size: 0.85rem;
@@ -58,3 +60,7 @@
             50% { opacity: 0.6; }
         }
             </style>
+
+
+                    'rewriting'   => 'Rewriting site to React...'
+        'rewriting'        => 'Przepisywanie strony do React...',

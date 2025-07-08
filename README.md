@@ -21,7 +21,7 @@
 - [🚀 Features](#-features)
 - [📱 Screenshots](#-screenshots)
 - [🐛 Known Issues](#-known-issues)
-- [📈 Roadmap](#-roadmap)
+- [📈 Repository Stats](#-repository-stats)
 - [📬 Contact & Support](#-contact--support)
 
 ---

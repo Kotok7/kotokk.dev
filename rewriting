@@ -1,0 +1,4 @@
+            <div class="rewriting-status">
+                <span class="icon">⚛</span>
+                <?= htmlspecialchars($t['rewriting'], ENT_QUOTES) ?>
+            </div>

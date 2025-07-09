@@ -1,3 +1,4 @@
+this file needs to be renamed to ".htaccess". after renaming, remove this line
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]

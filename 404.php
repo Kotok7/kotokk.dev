@@ -39,6 +39,7 @@ $catalogs = [
         ['name' => 'Screentime emulator', 'url' => '/screentime'],
         ['name' => 'Share and explore sites', 'url' => '/share-sites'],
         ['name' => 'How to be like me', 'url' => '/tutorial'],
+        ['name' => 'And two more, but they are secret', 'url' => ''],
     ],
     'pl' => [
         ['name' => 'O mnie', 'url' => '/about-me'],
@@ -52,7 +53,8 @@ $catalogs = [
         ['name' => 'Emulator czasu przed ekranem', 'url' => '/screentimepl'],
         ['name' => 'Udostępniaj i odkrywaj strony', 'url' => '/share-sites'],
         ['name' => 'Jak być jak ja', 'url' => '/tutorial'],
-    ],
+        ['name' => 'I dwa więcej, ale są sekretne.', 'url' => ''],
+    ]
 ];
 
 if (!isset($translations[$lang_code])) {
@@ -383,6 +385,7 @@ http_response_code(404);
                 <?php foreach ($current_catalogs as $catalog): ?>
                     <a href="<?= htmlspecialchars($catalog['url'], ENT_QUOTES, 'UTF-8') ?>" class="catalog-link">
                         <?= htmlspecialchars($catalog['name'], ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars($t['more_urls'], ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 <?php endforeach; ?>
             </div>

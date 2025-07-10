@@ -29,7 +29,7 @@ $translations = [
 $catalogs = [
     'en' => [
         ['name' => 'About me', 'url' => '/about-me'],
-        ['name' => 'Agartha or hyperborea quiz', 'url' => '/agartha-or-hyperborea'],
+        ['name' => 'Agartha or hyperborea quiz (hidden)', 'url' => '/agartha-or-hyperborea'],
         ['name' => 'Blog', 'url' => '/blog'],
         ['name' => 'Live chat', 'url' => '/chat'],
         ['name' => 'Pentesting devices', 'url' => '/cybersecurity'],
@@ -44,7 +44,7 @@ $catalogs = [
     ],
     'pl' => [
         ['name' => 'O mnie', 'url' => '/about-me'],
-        ['name' => 'Agartha or hyperborea quiz', 'url' => '/agartha-or-hyperborea'],
+        ['name' => 'Agartha or hyperborea quiz (hidden)', 'url' => '/agartha-or-hyperborea'],
         ['name' => 'Blog', 'url' => '/blog'],
         ['name' => 'Live chat', 'url' => '/chat'],
         ['name' => 'Urządzenia cyberbezpieczeństwa', 'url' => '/cybersecurity'],

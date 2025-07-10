@@ -50,7 +50,7 @@ $catalogs = [
         ['name' => 'Niedokończone strony', 'url' => '/unfinished'],
         ['name' => 'Narzędzia kwantowe', 'url' => '/quantium-tools'],
         ['name' => 'Quiz o mnie', 'url' => '/quiz'],
-        ['name' => 'Emulator czasu przed ekranem', 'url' => '/screentimepl'],
+        ['name' => 'Emulator czasu przed ekranem', 'url' => '/screentime'],
         ['name' => 'Udostępniaj i odkrywaj strony', 'url' => '/share-sites'],
         ['name' => 'Jak być jak ja', 'url' => '/tutorial'],
         ['name' => 'I dwa więcej, ale są sekretne.', 'url' => ''],

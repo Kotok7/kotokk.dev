@@ -51,8 +51,7 @@ $translations = [
         'share_link'       => 'Discover',
         'screentime_title' => 'iOS screentime emulator',
         'screentime_desc'  => 'This website emulates the iOS screen time page on a website so you can get your screen time password from your parent.',
-        'screentime_link'  => 'English version',
-      'screentime_link_pl' => 'Polish version',
+        'screentime_link'  => 'Emulate',
         'footer'           => '&copy; 2025 kotokk.dev<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
@@ -141,8 +140,7 @@ $translations = [
         'share_link'       => 'Odkryj',
         'screentime_title' => 'Emulator czasu przed ekranem iOS',
         'screentime_desc'  => 'Ta strona internetowa emuluje stronę czasu przed ekranem z iOS, abyś mógł uzyskać hasło do czasu przed ekranem od swojego rodzica.',
-        'screentime_link'  => 'Angielska wersja',
-      'screentime_link_pl' => 'Polska wersja',
+        'screentime_link'  => 'Emuluj',
         'footer'           => '&copy; 2025 kotokk.dev<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>',
         'time'             => 'Czas w moim kraju:',
         'temp'             => 'Temperatura w moim mieście:',
@@ -501,12 +499,11 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="10" data-sort2="1">
     <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 06 June</div>
+    <div class="last-updated badge">Last updated: 10 June</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
       <a href="screentime/index.html" class="project-link"><?= htmlspecialchars($t['screentime_link'], ENT_QUOTES) ?></a>
-      <a href="screentimepl/index.html" class="project-link" style="margin-top: 10px;"><?= htmlspecialchars($t['screentime_link_pl'], ENT_QUOTES) ?></a>
     </div>
   </div>
 

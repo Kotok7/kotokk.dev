@@ -1,3 +1,3 @@
 # 📦 Catalog Repository
 
-This catalog is available at: [GitHub Repository](https://github.com/Kotok7/LumiBorad)
+This catalog is available [here](https://github.com/Kotok7/LumiBoard)

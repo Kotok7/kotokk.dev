@@ -257,19 +257,6 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-      <div class="zx-notification-floating" id="zxGithubAnnouncementWidget">
-        <a href="#" class="zx-external-navigator" target="_blank" rel="noopener noreferrer">
-            <svg class="zx-repo-emblem" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-        </a>
-        <div class="zx-message-wrapper">
-            <div class="zx-primary-text"><?= htmlspecialchars($t['github1'], ENT_QUOTES) ?></div>
-            <div class="zx-secondary-text"><a href="https://github.com/Kotok7/kotokk.dev"><?= htmlspecialchars($t['github2'], ENT_QUOTES) ?></a></div>
-        </div>
-        <button class="zx-dismiss-trigger" onclick="zxDismissRepoNotification()" aria-label="Close">×</button>
-    </div>
-    <script src="github.js"></script>
 <header>
   <a href="?lang=<?= $lang_code === 'pl' ? 'en' : 'pl' ?>">
     <img src="photos/<?= $lang_code === 'pl' ? 'united-states.png' : 'poland.png' ?>"
@@ -283,10 +270,6 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
       <span class="number"><?= htmlspecialchars($uniqueVisitors, ENT_QUOTES) ?></span>
     </div><br>
     <h1><?= htmlspecialchars($t['main_title'], ENT_QUOTES) ?><span class="cursor"></span></h1>
-  <div class="last-update">
-    <img src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
-    <img src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release">
-  </div>
     <p><?= htmlspecialchars($t['subtitle'], ENT_QUOTES) ?></p>
     <br>
     <p>
@@ -350,39 +333,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
                 </div>
             </div>
         </div>
-
-        <div class="stats-widget">
-            
-            <div class="badge-compact">
-                <img src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release">
-                <img src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
-                <img src="https://img.shields.io/maintenance/yes/2025.svg?style=flat-square" alt="Maintenance">
-                <img src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo Size">
-                <img src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors">
-                <img src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open Issues">
-                <img src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed Issues">
-                <img src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull Requests">
-            </div>
-            
-            <div class="star-row">
-                <span><?= htmlspecialchars($t['star_github'], ENT_QUOTES) ?></span>
-                <iframe 
-                    src="https://ghbtns.com/github-btn.html?user=Kotok7&repo=kotokk.dev&type=star&count=true&size=small"
-                    frameborder="0" scrolling="0" width="80" height="20"
-                    title="GitHub Star">
-                </iframe>
-            </div>
-            
-            <div class="commit-info">
-                <div class="commit-message" id="commit-message">
-                    <span class="loading"><?= htmlspecialchars($t['commit_loading'], ENT_QUOTES) ?></span>
-                </div>
-                <p id="commit-date"><?= htmlspecialchars($t['checking_commit'], ENT_QUOTES) ?></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="github2.js"></script>
+</div>
     <script src="discord.js"></script>
 <section class="quote-display">
   <h2><?= htmlspecialchars($t['facts_title2'], ENT_QUOTES) ?></h2>
@@ -417,7 +368,43 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
 <div id="projectsContainer" class="projects-grid">
 
-  <div class="project-card" data-sort1="1" data-sort2="10">
+<div class="project-card1" data-sort1="1" data-sort2="1">
+  <div class="project-content1">
+    <h3><?= htmlspecialchars($t['github1'], ENT_QUOTES) ?></h3>
+    <p><?= htmlspecialchars($t['github2'], ENT_QUOTES) ?></p>
+
+    <div class="stats-widget">
+      <div class="badge-compact">
+        <img loading="lazy" src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release badge">
+        <img loading="lazy" src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last commit badge">
+        <img loading="lazy" src="https://img.shields.io/maintenance/yes/2025.svg?style=flat-square" alt="Maintenance badge">
+        <img loading="lazy" src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo size badge">
+        <img loading="lazy" src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors badge">
+        <img loading="lazy" src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open issues badge">
+        <img loading="lazy" src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed issues badge">
+        <img loading="lazy" src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull requests badge">
+      </div>
+
+      <div class="star-row">
+        <span><?= htmlspecialchars($t['star_github'], ENT_QUOTES) ?></span>
+        <iframe
+          src="https://ghbtns.com/github-btn.html?user=Kotok7&repo=kotokk.dev&type=star&count=true&size=small"
+          frameborder="0" scrolling="0" width="80" height="20" title="GitHub Star">
+        </iframe>
+      </div>
+
+      <div class="commit-info">
+        <div id="commit-message">
+          <span class="loading"><?= htmlspecialchars($t['commit_loading'], ENT_QUOTES) ?></span>
+        </div>
+        <p id="commit-date"><?= htmlspecialchars($t['checking_commit'], ENT_QUOTES) ?></p>
+      </div>
+    </div>
+  </div>
+    <script src="github.js"></script>
+    </div>
+
+  <div class="project-card" data-sort1="2" data-sort2="11">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -427,7 +414,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="2" data-sort2="2">
+  <div class="project-card" data-sort1="3" data-sort2="3">
     <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 4 July</div>
     <div class="project-content">
@@ -437,7 +424,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="3" data-sort2="3">
+  <div class="project-card" data-sort1="4" data-sort2="4">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 30 June</div>
     <div class="project-content">
@@ -447,7 +434,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="4" data-sort2="9">
+  <div class="project-card" data-sort1="5" data-sort2="10">
     <img src="photos/qjf.png" alt="<?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -457,7 +444,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="5" data-sort2="8">
+  <div class="project-card" data-sort1="6" data-sort2="9">
     <img src="photos/dev.png" alt="<?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -467,7 +454,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="8" data-sort2="7">
+  <div class="project-card" data-sort1="9" data-sort2="8">
     <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -477,7 +464,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="6" data-sort2="4">
+  <div class="project-card" data-sort1="7" data-sort2="5">
     <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 14 June</div>
     <div class="project-content">
@@ -487,7 +474,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="7" data-sort2="5">
+  <div class="project-card" data-sort1="8" data-sort2="6">
     <img src="photos/quantium.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 13 June</div>
     <div class="project-content">
@@ -497,9 +484,9 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-    <div class="project-card" data-sort1="10" data-sort2="1">
+    <div class="project-card" data-sort1="11" data-sort2="2">
     <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 10 June</div>
+    <div class="last-updated badge">Last updated: 10 July</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
@@ -507,7 +494,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="9" data-sort2="11">
+  <div class="project-card" data-sort1="10" data-sort2="12">
     <img src="photos/cybersecurity.png" alt="<?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: April</div>
     <div class="project-content">
@@ -517,7 +504,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="11" data-sort2="6">
+  <div class="project-card" data-sort1="12" data-sort2="7">
     <img src="photos/other.png" alt="<?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 04 June</div>
     <div class="project-content">
@@ -526,14 +513,6 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
       <a href="unfinished/index.php" class="project-link"><?= htmlspecialchars($t['other_link'], ENT_QUOTES) ?></a>
     </div>
   </div>
-
-<div class="project-card" data-sort1="12" data-sort2="12">
-      <div class="last-updated badge">Last updated: 8 July</div>
-  <div class="project-content">
-    <h3><?= htmlspecialchars($t['update_section'], ENT_QUOTES) ?></h3>
-    <?= $t['changelog']?>
-  </div>
-</div>
 
 </div>
 

@@ -410,11 +410,17 @@ Back to main page
                     <div class="project-content">
                         <h3><?= htmlspecialchars($p['title'], ENT_QUOTES) ?></h3>
                         <p><?= htmlspecialchars($p['description'], ENT_QUOTES) ?></p>
+                                                <p class="project-url">
+    <p href="<?= htmlspecialchars($p['url'], ENT_QUOTES) ?>"
+       target="_blank"
+       rel="noopener">
+       <?= htmlspecialchars($p['url'], ENT_QUOTES) ?>
+                    </p>
+</p>
                         <a href="<?= htmlspecialchars($p['url'], ENT_QUOTES) ?>" 
                            class="project-link" 
                            target="_blank" 
                            rel="noopener"><?= htmlspecialchars(t('visit', $lang), ENT_QUOTES) ?></a>
-                        
                         <div class="votes">
                             <form method="post" class="vote-form">
                                 <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES) ?>">

@@ -7,6 +7,151 @@
 	--hover-color: rgba(48, 140, 244, 0.653);
 }
 
+.project-card1 {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    opacity: 0;
+    animation: fadeUp 0.6s forwards;
+}
+
+.project-card1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card1:hover::before {
+    opacity: 1;
+}
+
+.project-card1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(48, 140, 244, 0.653) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-content1 {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card1 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.project-card1 p {
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.stats-widget {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.badge-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.badge-compact img {
+    height: 20px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.badge-compact img:hover {
+    transform: scale(1.05);
+}
+
+.star-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.star-row span {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.commit-info {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    padding: 0.8rem;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.commit-message {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.commit-message .loading1 {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+#commit-date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.stats-widget {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.badge-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.badge-compact img {
+    height: 20px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.badge-compact img:hover {
+    transform: scale(1.05);
+}
+
 .widgets-container {
 	display: flex;
 	gap: 24px;
@@ -484,90 +629,6 @@
   .stats-widget {
     margin: 0 auto;
   }
-}
-
-.zx-notification-floating {
-	position: fixed;
-	top: 20px;
-	right: 20px;
-	background: white;
-	border: 1px solid #e1e5e9;
-	border-radius: 8px;
-	padding: 16px 20px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	z-index: 1000;
-	animation: zx-slide-entrance 0.3s ease-out;
-	min-width: 280px;
-}
-
-@keyframes zx-slide-entrance {
-	from {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateX(0);
-		opacity: 1;
-	}
-}
-
-.zx-repo-emblem {
-	width: 24px;
-	height: 24px;
-	fill: #000;
-	flex-shrink: 0;
-}
-
-.zx-message-wrapper {
-	flex: 1;
-}
-
-.zx-primary-text {
-	font-size: 14px;
-	font-weight: 600;
-	color: #000;
-	margin: 0 0 2px 0;
-}
-
-.zx-secondary-text {
-	font-size: 12px;
-	color: #666;
-	margin: 0;
-}
-
-.zx-dismiss-trigger {
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 4px;
-	color: #666;
-	font-size: 16px;
-	line-height: 1;
-	border-radius: 4px;
-	transition: all 0.2s ease;
-}
-
-.zx-dismiss-trigger:hover {
-	background: #f0f0f0;
-	color: #000;
-}
-
-.zx-external-navigator {
-	color: #000;
-	text-decoration: none;
-	transition: color 0.2s ease;
-}
-
-.zx-external-navigator:hover {
-	color: #0366d6;
-}
-
-.zx-external-navigator:hover .zx-repo-emblem {
-	fill: #0366d6;
 }
 
 #donateBtn {

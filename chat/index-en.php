@@ -100,7 +100,7 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
   </section>
 </main>
 <footer>
-  <p>&copy; 2025 kotokk.dev<br>My website: <a href="https://kotokk.dev" target="_blank">kotokk.dev</a></p>
+  <p>&copy; 2025 kotokk.dev</p>
 </footer>
 
 <script>

@@ -41,6 +41,8 @@ $catalogs = [
         ['name' => 'Screentime emulator', 'url' => '/screentime'],
         ['name' => 'Share and explore sites', 'url' => '/share-sites'],
         ['name' => 'How to be like me', 'url' => '/tutorial'],
+        ['name' => 'My TikTok', 'url' => '/tiktok'],
+        ['name' => 'My GitHub', 'url' => '/github'],
         ['name' => 'And two more, but they are secret', 'url' => ''],
     ],
     'pl' => [
@@ -57,6 +59,8 @@ $catalogs = [
         ['name' => 'Emulator czasu przed ekranem', 'url' => '/screentime'],
         ['name' => 'Udostępniaj i odkrywaj strony', 'url' => '/share-sites'],
         ['name' => 'Jak być jak ja', 'url' => '/tutorial'],
+        ['name' => 'Mój TikTok', 'url' => '/tiktok'],
+        ['name' => 'Mój GitHub', 'url' => '/github'],
         ['name' => 'I dwa więcej, ale są sekretne.', 'url' => ''],
     ]
 ];

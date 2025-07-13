@@ -1,0 +1,4 @@
+this file needs to be renamed to ".htaccess". after renaming, remove this line
+RewriteEngine On
+
+RewriteRule ^$ https://tiktok.com/@kotokk_dev [R=301,L]

@@ -208,7 +208,7 @@ if ($visitorIp && !in_array($visitorIp, $ips, true)) {
 $uniqueVisitors = count($ips);
 
 $city = 'Krasnik';
-$apiKey = 'apikey';
+$apiKey = 'API_KEY';
 $apiLang = ($lang_code === 'pl') ? 'pl' : 'en';
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city)
        . "&appid={$apiKey}&units=metric&lang={$apiLang}";
@@ -377,20 +377,14 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
       <div class="badge-compact">
         <img loading="lazy" src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release badge">
         <img loading="lazy" src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last commit badge">
-        <img loading="lazy" src="https://img.shields.io/maintenance/yes/2025.svg?style=flat-square" alt="Maintenance badge">
         <img loading="lazy" src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo size badge">
         <img loading="lazy" src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors badge">
         <img loading="lazy" src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open issues badge">
         <img loading="lazy" src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed issues badge">
         <img loading="lazy" src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull requests badge">
-      </div>
-
-      <div class="star-row">
-        <span><?= htmlspecialchars($t['star_github'], ENT_QUOTES) ?></span>
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=Kotok7&repo=kotokk.dev&type=star&count=true&size=small"
-          frameborder="0" scrolling="0" width="80" height="20" title="GitHub Star">
-        </iframe>
+  <div style="flex-basis:100%; height:0;"></div>
+        <a href="https://github.com/Kotok7"><img src="https://img.shields.io/github/followers/Kotok7?label=Follow&style=social" alt="Follow button"></a>
+        <a href="https://github.com/Kotok7/kotokk.dev"><img src="https://img.shields.io/github/stars/Kotok7/kotokk.dev?style=social&label=Star" alt="GitHub stars"></a>
       </div>
 
       <div class="commit-info">

@@ -33,7 +33,7 @@ $translations = [
         'reflection_p1'    => 'Everyone should use the system that suits them best. Forcing or convincing people “Windows is this, Linux is that...” makes no sense. That’s why I avoid Linux communities - they can be toxic.',
         'reflection_p2'    => 'For now, I’ll stick with Windows 11. It’s simply the best fit for what I do.',
         'tags'             => ['OS', 'Windows', 'ThinkPad', 'Linux', 'Tech'],
-        'footer_copy'      => '© 2025 kotokk.dev',
+        'footer_copy'      => '© 2025',
         'footer_reserved'  => 'All rights reserved',
         'translate'        => 'Switch to Polish',
         'message_leave'    => 'Leave your message here',
@@ -75,7 +75,7 @@ $translations = [
         'reflection_p1'    => 'Niech każdy wybiera system, który mu odpowiada. Przekonywanie “Linux jest lepszy, Windows gorszy, Mac jeszcze co innego” mija się z celem. Unikam społeczności Linuxa - bywają zbyt toksyczne.',
         'reflection_p2'    => 'Na razie zostaję przy Windows 11. To najlepszy wybór dla moich potrzeb.',
         'tags'             => ['OS', 'Windows', 'ThinkPad', 'Linux', 'Tech'],
-        'footer_copy'      => '© 2025 kotokk.dev',
+        'footer_copy'      => '© 2025',
         'footer_reserved'  => 'Wszelkie prawa zastrzeżone',
         'translate'        => 'Przełącz na angielski',
         'message_leave'    => 'Zostaw wiadomość',
@@ -232,7 +232,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? null;
 
     <footer>
         <div class="footer-content">
-            <p><?= htmlspecialchars($t['footer_copy'], ENT_QUOTES) ?></p>
+            <p><?= $t['footer_copy'] ?>  <a style="color: #3557b3ff;" href="https://kotokk.dev">kotokk.dev</a></p>
             <p><?= htmlspecialchars($t['footer_reserved'], ENT_QUOTES) ?></p>
         </div>
     </footer>

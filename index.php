@@ -43,9 +43,9 @@ $translations = [
         'chat_title'       => 'Live Chat',
         'chat_desc'        => 'A simple real-time web chat with live user count, image and voice messages sharing!',
         'chat_link'        => 'Start texting',
-        'quantium_title'   => 'Quantium tools',
-        'quantium_desc'    => 'A simple website with some shitty "tools": age calculator, fake server stats, name checker, weather app and a calculator. The program was originally written in Python and later rewritten as a web version.',
-        'quantium_link'    => 'Take a look',
+        'quantum_title'    => 'Quantum tools',
+        'quantum_desc'     => 'A simple website with some shitty "tools": age calculator, fake server stats, name checker, weather app and a calculator. The program was originally written in Python and later rewritten as a web version.',
+        'quantum_link'     => 'Take a look',
         'share_title'      => 'Share sites',
         'share_desc'       => 'Share interesting sites with other people or rate and explore other sites!',
         'share_link'       => 'Discover',
@@ -132,9 +132,9 @@ $translations = [
         'chat_title'       => 'Live Chat',
         'chat_desc'        => 'Prosty czat internetowy w czasie rzeczywistym z opcjonalnym udostępnianiem obrazów, wiadomości głosowych i licznikiem aktywnych użytkowników na żywo!',
         'chat_link'        => 'Zacznij pisać',
-        'quantium_title'   => 'Narzędzia kwantowe',
-        'quantium_desc'    => 'Prosta strona internetowa z paroma "narzędziami": kalkulatorem wieku, fałszywymi statystykami serwera, sprawdzaczem imion, aplikacją pogodową i kalkulatorem. Program został przepisany z wersji w Pythonie na HTML.',
-        'quantium_link'    => 'Przejrzyj',
+        'quantum_title'    => 'Narzędzia kwantowe',
+        'quantum_desc'     => 'Prosta strona internetowa z paroma "narzędziami": kalkulatorem wieku, fałszywymi statystykami serwera, sprawdzaczem imion, aplikacją pogodową i kalkulatorem. Program został przepisany z wersji w Pythonie na HTML.',
+        'quantum_link'     => 'Przejrzyj',
         'share_title'      => 'Udostępniaj strony internetowe',
         'share_desc'       => 'Udostępniaj ciekawe strony internetowe z innymi ludźmi, oraz oceniaj i odkrywaj nowe strony internetowe!',
         'share_link'       => 'Odkryj',
@@ -208,7 +208,7 @@ if ($visitorIp && !in_array($visitorIp, $ips, true)) {
 $uniqueVisitors = count($ips);
 
 $city = 'Krasnik';
-$apiKey = 'API_KEY';
+$apiKey = '311099b333603a0e8dd92c3212d7b714';
 $apiLang = ($lang_code === 'pl') ? 'pl' : 'en';
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city)
        . "&appid={$apiKey}&units=metric&lang={$apiLang}";
@@ -469,12 +469,12 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   </div>
 
   <div class="project-card" data-sort1="8" data-sort2="6">
-    <img src="photos/quantium.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 13 June</div>
     <div class="project-content">
-      <h3><?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['quantium_desc'], ENT_QUOTES) ?></p>
-      <a href="quantium-tools/index.html" class="project-link"><?= htmlspecialchars($t['quantium_link'], ENT_QUOTES) ?></a>
+      <h3><?= htmlspecialchars($t['quantum_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['quantum_desc'], ENT_QUOTES) ?></p>
+      <a href="quantum-tools/index.html" class="project-link"><?= htmlspecialchars($t['quantum_link'], ENT_QUOTES) ?></a>
     </div>
   </div>
 

@@ -46,7 +46,7 @@ $translations = [
                 ]
             ]
         ],
-        'footer'       => '© 2025 kotokk.dev',
+        'footer'       => '© 2025 <a style="color: #3557b3ff;" href="https://kotokk.dev">kotokk.dev</a><br>All rights reserved.',
         'back_button'  => 'Back to main page',
     ],
     'pl' => [
@@ -93,7 +93,7 @@ $translations = [
                 ]
             ]
         ],
-        'footer'       => '© 2025 kotokk.dev',
+        'footer'       => '© 2025 <a style="color: #3557b3ff;" href="https://kotokk.dev">kotokk.dev</a><br>Wszelkie prawa zastrzeżone.',
         'back_button'  => 'Wróć do strony głównej',
     ]
 ];

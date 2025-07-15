@@ -382,21 +382,21 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
         <img loading="lazy" src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open issues badge">
         <img loading="lazy" src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed issues badge">
         <img loading="lazy" src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull requests badge">
-  <div style="flex-basis:100%; height:0;"></div>
+        <div style="flex-basis:100%; height:0;"></div>
         <a href="https://github.com/Kotok7"><img src="https://img.shields.io/github/followers/Kotok7?label=Follow&style=social" alt="Follow button"></a>
         <a href="https://github.com/Kotok7/kotokk.dev"><img src="https://img.shields.io/github/stars/Kotok7/kotokk.dev?style=social&label=Star" alt="GitHub stars"></a>
       </div>
 
       <div class="commit-info">
-        <div id="commit-message">
-          <span class="loading"><?= htmlspecialchars($t['commit_loading'], ENT_QUOTES) ?></span>
-        </div>
-        <p id="commit-date"><?= htmlspecialchars($t['checking_commit'], ENT_QUOTES) ?></p>
+        <ul id="commit-list" class="commit-list">
+          <li class="loading"><?= htmlspecialchars($t['commit_loading'], ENT_QUOTES) ?></li>
+        </ul>
+        <button id="toggle-commits" class="btn-toggle">Show more</button>
       </div>
     </div>
-  </div>
-    <script src="github.js"></script>
-    </div>
+</div>
+</div>
+<script src="github.js"></script>
 
   <div class="project-card" data-sort1="2" data-sort2="11">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">

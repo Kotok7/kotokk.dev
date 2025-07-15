@@ -30,9 +30,9 @@ $translations = [
                   'desc'  => 'Need to display a simple list? Better use a state management library, three custom hooks, and a microservice architecture. Just to be safe.'],
         ],
         'quote'          => '“I don\'t always test my code, but when I do, I do it in production.”',
-        'footer'         => '© 2025 kotokk.dev | Caffeine-Powered Development',
+        'footer'         => 'Caffeine-Powered Development. All rights reserved',
         'btn_text'       => 'Buy Me a Coffee',
-        'alert_message'  => 'I don\'t know backend, so you can\'t☕',
+        'alert_message'  => 'I am too lazy to make this work',
         'back_button'    => 'Back to main page',
     ],
     'pl' => [
@@ -63,9 +63,9 @@ $translations = [
                   'desc'  => 'Potrzebujesz wyświetlić prostą listę? Lepiej użyć biblioteki do zarządzania stanem, trzech hooków i mikroserwisów. Dla pewności.'],
         ],
         'quote'          => '„Nie zawsze testuję kod, ale gdy to robię, robię to w produkcji.”',
-        'footer'         => '© 2025 kotokk.dev | Zasilane kofeiną',
+        'footer'         => 'Zasilane kofeiną. Wszelkie prawa zastrzeżone',
         'btn_text'       => 'Postaw mi kawę',
-        'alert_message'  => 'Nie znam backendu, więc nie możesz☕',
+        'alert_message'  => 'Jestem za bardzo leniwy aby zrobić żeby to działało',
         'back_button'    => 'Wróć do strony głównej',
     ],
 ];
@@ -132,7 +132,7 @@ $t = $translations[$lang_code];
     </main>
 
     <footer>
-        <p><?= $t['footer'] ?></p>
+        <p>&copy; 2025 <a style="color: #3557b3ff;" href="https://kotokk.dev">kotokk.dev</a><br><?= $t['footer'] ?>  </p>
         <button class="coffee-btn" onclick="pokazAlert()"><?= $t['btn_text'] ?></button>
         <script>
           function pokazAlert() {

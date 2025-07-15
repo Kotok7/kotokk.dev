@@ -145,6 +145,14 @@
     text-decoration: underline;
 }
 
+.widgets-container {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 #discord-div img {
 	border-radius: 12px;
 	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);

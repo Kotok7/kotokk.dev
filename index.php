@@ -52,7 +52,7 @@ $translations = [
         'screentime_title' => 'iOS screentime emulator',
         'screentime_desc'  => 'This website emulates the iOS screen time page on a website so you can get your screen time password from your parent.',
         'screentime_link'  => 'Emulate',
-        'footer'           => '&copy; 2025 kotokk.dev<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>',
+        'footer'           => 'All rights reserved.<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
         'my_desc'          => 'I am a teenager from Kraśnik, Poland, who loves programming!<br>Pronouns: he/him<br>Programming languages: HTML, CSS, Javascript, PHP, Python and React<br>kotokk.dev is my main project<br>More about me below',
@@ -141,7 +141,7 @@ $translations = [
         'screentime_title' => 'Emulator czasu przed ekranem iOS',
         'screentime_desc'  => 'Ta strona internetowa emuluje stronę czasu przed ekranem z iOS, abyś mógł uzyskać hasło do czasu przed ekranem od swojego rodzica.',
         'screentime_link'  => 'Emuluj',
-        'footer'           => '&copy; 2025 kotokk.dev<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>',
+        'footer'           => 'Wszelkie prawa zastrzeżone.<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Czas w moim kraju:',
         'temp'             => 'Temperatura w moim mieście:',
         'my_desc'          => 'Jestem nastolatkiem z Kraśnika w Polsce, który uwielbia programować!<br>Zaimki: on/jego<br>Języki programowania: HTML, CSS, Javascript, PHP, Python i React<br>kotokk.dev to mój główny projekt<br>Więcej o mnie poniżej',
@@ -592,7 +592,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 <?= htmlspecialchars($t['bnc_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['bnc_adress'], ENT_QUOTES) ?></span>
   <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
 </div><br>
-  <p><?= $t['footer'] ?></p>
+  <p>&copy; 2025 <a href="https://kotokk.dev">kotokk.dev</a><br><?= $t['footer'] ?></p>
 </footer>
 <script>
 (function(){

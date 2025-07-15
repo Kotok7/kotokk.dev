@@ -9,7 +9,7 @@ $translations = [
         'translate'        => 'Translate to Polish',
         'main_title'       => 'Unfinished projects',
         'subtitle'         => 'All the unfinished projects, that will be avaiable on the main page soon!',
-        'footer'           => '&copy; 2025 kotokk.dev',
+        'footer'           => 'All rights reserved.',
         'pusheen_title'    => 'PusheenWeb',
         'pusheen_desc'     => 'Cute website about Pusheen',
         'pusheen_link'     => 'Visit Site',
@@ -26,7 +26,7 @@ $translations = [
         'translate'        => 'Przetłumacz na angielski',
         'main_title'       => 'Nieukończone projekty',
         'subtitle'         => 'Nieukończone projekty które wkrótce będą dostępne na stronie głównej!',
-        'footer'           => '&copy; 2025 kotokk.dev',
+        'footer'           => 'Wszelkie prawa zastrzeżone',
         'pusheen_title'    => 'PusheenWeb',
         'pusheen_desc'     => 'Urocza strona o Pusheenie',
         'pusheen_link'     => 'Odwiedź stronę',
@@ -97,7 +97,7 @@ $t = $translations[$lang_code] ?? $translations['en'];
 </main>
 
 <footer>
-  <p><?= $t['footer'] ?></p>
+  <p>&copy; 2025 <a style="color: #3557b3ff;" href="https://kotokk.dev">kotokk.dev</a><br><?= $t['footer'] ?>  </p>
 </footer>
 </body>
 </html>

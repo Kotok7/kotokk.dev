@@ -28,10 +28,6 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-.project-card1:hover::before {
-    opacity: 1;
-}
-
 .project-card1::before {
     content: '';
     position: absolute;
@@ -45,6 +41,10 @@
     transition: opacity 0.4s ease;
 }
 
+.project-card1:hover::before {
+    opacity: 1;
+}
+
 .project-content1 {
     padding: 1.5rem;
     position: relative;
@@ -52,112 +52,97 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
 }
 
-.project-card1 h3 {
+.project-content1 > h3 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0;
     color: var(--accent-color);
 }
 
-.project-card1 p {
+.project-content1 > p {
+    flex-grow: 0;
+    margin: 0;
     color: #94a3b8;
-    margin-bottom: 1rem;
-    flex-grow: 1;
 }
 
 .stats-widget {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.badge-compact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-bottom: 1rem;
-}
-
-.badge-compact img {
-    height: 20px;
-    border-radius: 4px;
-    transition: transform 0.2s ease;
-}
-
-.badge-compact img:hover {
-    transform: scale(1.05);
-}
-
-.star-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 8px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.star-row span {
-    color: var(--accent-color);
-    font-weight: 600;
+    margin-top: 0.5rem;
 }
 
 .commit-info {
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(139, 92, 246, 0.05);
     border-radius: 8px;
-    padding: 0.8rem;
+    padding: 0.5rem 1rem;
     border: 1px solid rgba(139, 92, 246, 0.2);
+    margin-top: 0.5rem;
+}
+
+.commit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.commit-item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    transition: all 0.4s ease;
+    opacity: 1;
+    max-height: 500px;
+    margin: 0.25rem 0;
+    padding: 0.5rem 0;
+}
+
+.commit-item:last-child {
+    border-bottom: none;
+}
+
+.commit-list:not(.expanded) .commit-item:nth-child(n+2) {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .commit-message {
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
     color: var(--text-color);
+    margin: 0;
+    word-break: break-word;
 }
 
-.commit-message .loading1 {
-    color: #94a3b8;
+.commit-date {
+    font-size: 0.75rem;
+    color: #7c3aed;
+    margin: 0.2rem 0 0;
     font-style: italic;
 }
 
-#commit-date {
-    font-size: 0.8rem;
+.commit-list .loading {
     color: #94a3b8;
+    font-style: italic;
     margin: 0;
 }
 
-.stats-widget {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
+.btn-toggle {
+    margin-top: 0.25rem;
+    background: transparent;
+    border: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
 }
 
-.badge-compact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-bottom: 1rem;
-}
-
-.badge-compact img {
-    height: 20px;
-    border-radius: 4px;
-    transition: transform 0.2s ease;
-}
-
-.badge-compact img:hover {
-    transform: scale(1.05);
-}
-
-.widgets-container {
-	display: flex;
-	gap: 24px;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-start;
+.btn-toggle:hover {
+    text-decoration: underline;
 }
 
 #discord-div img {

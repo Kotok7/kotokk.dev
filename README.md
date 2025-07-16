@@ -105,7 +105,7 @@ To create a comprehensive digital presence that demonstrates technical expertise
 <img src="https://github.com/Kotok7/kotokk.dev/blob/main/readme_files/desktop.png" alt="Desktop Homepage" width="600">
 
 ### 📱 Mobile View
-<img src="https://github.com/Kotok7/kotokk.dev/blob/main/readme_files/mobile.png" alt="Mobile Homepage" width="300">
+<img src="https://github.com/Kotok7/kotokk.dev/blob/main/readme_files/mobile.png" alt="Mobile Homepage" width="200" height="400">
 
 ---
 

@@ -41,26 +41,31 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
     <form id="chat-form" enctype="multipart/form-data">
 
       <?php if ($storedNick): ?>
-        <p><strong style="color:<?=htmlspecialchars($storedColor)?>;">
-          <?=htmlspecialchars($storedNick, ENT_QUOTES)?>
-        </strong></p>
+        <p>Twój nick:
+          <strong style="color:<?=htmlspecialchars($storedColor)?>;">
+            <?=htmlspecialchars($storedNick, ENT_QUOTES)?>
+          </strong>
+        </p>
       <?php else: ?>
         <label style="display:block;margin-bottom:8px;">
           Twój nick:
           <input type="text" name="nick" required minlength="2" maxlength="20" placeholder="Wpisz nick">
         </label>
-        <label style="display:block;margin-bottom:8px;">
-          Kolor nicku:
-          <input type="color" name="nick_color" value="#000000">
-        </label>
       <?php endif; ?>
+
+      <label style="display:block;margin-bottom:12px;">
+        Kolor nicku:
+        <input type="color" name="nick_color" value="<?=htmlspecialchars($storedColor)?>">
+      </label>
 
       <input type="hidden" name="cf-turnstile-response" id="cf-token">
       <input type="hidden" name="reply_to" id="reply-to-input" value="">
 
       <label style="display:block;margin-bottom:8px;">
         Wiadomość:
-        <textarea name="message" required minlength="3" maxlength="200" placeholder="Napisz wiadomość" style="width:100%;height:60px;"></textarea>
+        <textarea name="message" required minlength="3" maxlength="200"
+                  placeholder="Napisz wiadomość"
+                  style="width:100%;height:60px;"></textarea>
       </label>
 
       <div id="reply-preview" style="display:none;margin-bottom:8px;font-style:italic;color:#555;">
@@ -69,7 +74,7 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
       </div>
 
       <div id="voice-record-section" style="margin-bottom:12px;border:1px solid #ccc;padding:8px;border-radius:4px;">
-        <p style="margin:0 0 8px 0;">Nagrywaj wiadomość głosową (max 20 MB):</p>
+        <p style="margin:0 0 8px 0;">Nagrywaj wiadomość głosową (max 20 MB):</p>
         <button type="button" id="start-record-btn">Rozpocznij nagrywanie</button>
         <button type="button" id="stop-record-btn" disabled>Zatrzymaj nagrywanie</button>
         <button type="button" id="delete-record-btn" style="display:none;">Usuń nagranie</button>
@@ -83,7 +88,7 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
       </div>
 
       <label style="display:block;margin-bottom:12px;">
-        Zdjęcie (max 20 MB):
+        Zdjęcie (max 20 MB):
         <input type="file" name="photo" accept="image/png,image/jpeg,image/gif">
       </label>
 
@@ -91,6 +96,7 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
            data-callback="onTurnstileSuccess"
            data-error-callback="onTurnstileError"
            data-expired-callback="onTurnstileExpire"></div>
+
       <button type="submit" id="send-button" style="padding:8px 16px;">Wyślij</button>
       <p class="error" id="form-error" style="display:none;color:red;margin-top:8px;"></p>
     </form>

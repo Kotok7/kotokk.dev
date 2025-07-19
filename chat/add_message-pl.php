@@ -1,4 +1,4 @@
-<?php
+<?php 
 date_default_timezone_set('Europe/Warsaw');
 header('Content-Type: application/json; charset=UTF-8');
 
@@ -38,15 +38,17 @@ if (!isset($_COOKIE['blog_nick'])) {
     if (strlen($nick)>=2 && strlen($nick)<=20) {
         setcookie('blog_nick', $nick, time()+30*24*3600, '/');
         $_COOKIE['blog_nick'] = $nick;
-        $col = preg_match('/^#[0-9A-Fa-f]{6}$/', ($_POST['nick_color'] ?? ''))
-             ? $_POST['nick_color'] : '#000000';
-        setcookie('blog_nick_color', $col, time()+30*24*3600, '/');
-        $_COOKIE['blog_nick_color'] = $col;
     } else {
         echo json_encode(['success'=>false,'error'=>'length','error_msg'=>'Nick musi mieć 2–20 znaków.']);
         exit;
     }
 }
+
+$col = preg_match('/^#[0-9A-Fa-f]{6}$/', ($_POST['nick_color'] ?? ''))
+     ? $_POST['nick_color'] 
+     : ($_COOKIE['blog_nick_color'] ?? '#000000');
+setcookie('blog_nick_color', $col, time()+30*24*3600, '/');
+$_COOKIE['blog_nick_color'] = $col;
 
 if (strlen($message)<3 || strlen($message)>200) {
     echo json_encode(['success'=>false,'error'=>'length','error_msg'=>'Wiadomość musi mieć 3–200 znaków.']);
@@ -128,7 +130,7 @@ $replyTo = isset($_POST['reply_to']) && is_numeric($_POST['reply_to'])
 $entry = [
     'id'       => $newId,
     'nick'     => htmlspecialchars($nick, ENT_QUOTES, 'UTF-8'),
-    'color'    => $_COOKIE['blog_nick_color'] ?? '#000000',
+    'color'    => $_COOKIE['blog_nick_color'],
     'text'     => htmlspecialchars($message, ENT_QUOTES, 'UTF-8'),
     'date'     => date('Y-m-d H:i:s'),
     'photo'    => $photoFilename,

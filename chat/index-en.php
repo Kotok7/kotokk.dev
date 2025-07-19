@@ -41,26 +41,31 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
     <form id="chat-form" enctype="multipart/form-data">
 
       <?php if ($storedNick): ?>
-        <p><strong style="color:<?=htmlspecialchars($storedColor)?>;">
-          <?=htmlspecialchars($storedNick, ENT_QUOTES)?>
-        </strong></p>
+        <p>Your nick:
+          <strong style="color:<?=htmlspecialchars($storedColor)?>;">
+            <?=htmlspecialchars($storedNick, ENT_QUOTES)?>
+          </strong>
+        </p>
       <?php else: ?>
         <label style="display:block;margin-bottom:8px;">
           Your nick:
-          <input type="text" name="nick" required minlength="2" maxlength="20" placeholder="Enter nick">
-        </label>
-        <label style="display:block;margin-bottom:8px;">
-          Nick color:
-          <input type="color" name="nick_color" value="#000000">
+          <input type="text" name="nick" required minlength="2" maxlength="20" placeholder="Enter your nick">
         </label>
       <?php endif; ?>
+
+      <label style="display:block;margin-bottom:12px;">
+        Nick color:
+        <input type="color" name="nick_color" value="<?=htmlspecialchars($storedColor)?>">
+      </label>
 
       <input type="hidden" name="cf-turnstile-response" id="cf-token">
       <input type="hidden" name="reply_to" id="reply-to-input" value="">
 
       <label style="display:block;margin-bottom:8px;">
         Message:
-        <textarea name="message" required minlength="3" maxlength="200" placeholder="Write a message" style="width:100%;height:60px;"></textarea>
+        <textarea name="message" required minlength="3" maxlength="200"
+                  placeholder="Write a message"
+                  style="width:100%;height:60px;"></textarea>
       </label>
 
       <div id="reply-preview" style="display:none;margin-bottom:8px;font-style:italic;color:#555;">
@@ -69,29 +74,29 @@ $storedColor = $_COOKIE['blog_nick_color'] ?? '#000000';
       </div>
 
       <div id="voice-record-section" style="margin-bottom:12px;border:1px solid #ccc;padding:8px;border-radius:4px;">
-        <p style="margin:0 0 8px 0;">Record voice message (max 20 MB):</p>
+        <p style="margin:0 0 8px 0;">Record a voice message (max 20 MB):</p>
         <button type="button" id="start-record-btn">Start recording</button>
         <button type="button" id="stop-record-btn" disabled>Stop recording</button>
         <button type="button" id="delete-record-btn" style="display:none;">Delete recording</button>
         <span id="record-timer" style="margin-left:8px;"></span>
         <div id="audio-preview" style="margin-top:8px;"></div>
         <label id="voice-file-label" style="display:none;margin-top:8px;">
-          Or upload audio file:
+          Or load a file:
           <input type="file" name="voice" accept="audio/mpeg,audio/ogg,audio/wav,audio/webm">
         </label>
-        <button type="button" id="toggle-voice-mode-btn" style="margin-top:8px;">Upload file</button>
+        <button type="button" id="toggle-voice-mode-btn" style="margin-top:8px;">Load file</button>
       </div>
 
       <label style="display:block;margin-bottom:12px;">
-        Photo (max 20 MB):
+        Photo (max 20 MB):
         <input type="file" name="photo" accept="image/png,image/jpeg,image/gif">
       </label>
 
-      <div class="cf-turnstile"
-           data-sitekey="0x4AAAAAABd4n1oTvz_2DaHU"
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAABd4n1oTvz_2DaHU"
            data-callback="onTurnstileSuccess"
            data-error-callback="onTurnstileError"
            data-expired-callback="onTurnstileExpire"></div>
+
       <button type="submit" id="send-button" style="padding:8px 16px;">Send</button>
       <p class="error" id="form-error" style="display:none;color:red;margin-top:8px;"></p>
     </form>

@@ -23,7 +23,7 @@ $translations = [
         'message_letknow'  => 'Tell me what could i change on my website or just say hi!',
         'nick'             => 'Your nick',
         'about_title'      => 'About Me (recommended)',
-        'about_desc'       => 'Learn more about who I am',
+        'about_desc'       => 'Learn about who I am, what tools do i use and more',
         'about_link'       => 'View Profile',
         'cyber_title'      => 'Pentesting devices',
         'cyber_desc'       => 'All of my devices I use and share on TikTok',
@@ -52,6 +52,9 @@ $translations = [
         'screentime_title' => 'iOS screentime emulator',
         'screentime_desc'  => 'This website emulates the iOS screen time page on a website so you can get your screen time password from your parent.',
         'screentime_link'  => 'Emulate',
+        'music_title'      => 'Share and discover songs',
+        'music_desc'       => 'Share your favourite songs and discover new music!',
+        'music_link'       => 'Discover',
         'footer'           => 'All rights reserved.<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
@@ -112,7 +115,7 @@ $translations = [
         'message_letknow'  => 'Powiedz co mógłbym zmienić na stronie lub po prostu się przywitaj!',
         'nick'             => 'Twój pseudonim',
         'about_title'      => 'O mnie (rekomendowane)',
-        'about_desc'       => 'Dowiedz się więcej o mnie',
+        'about_desc'       => 'Dowiedz się kim jestem, jakich narzędzi używam i więcej',
         'about_link'       => 'Zobacz profil',
         'cyber_title'      => 'Narzędzia pentestingu',
         'cyber_desc'       => 'Wszystkie narzędzia, których używam i którymi dzielę się na TikToku',
@@ -141,6 +144,9 @@ $translations = [
         'screentime_title' => 'Emulator czasu przed ekranem iOS',
         'screentime_desc'  => 'Ta strona internetowa emuluje stronę czasu przed ekranem z iOS, abyś mógł uzyskać hasło do czasu przed ekranem od swojego rodzica.',
         'screentime_link'  => 'Emuluj',
+        'music_title'      => 'Udostępniaj i odkrywaj piosenki',
+        'music_desc'       => 'Udostępniaj swoje ulubione piosenki i odkrywaj nową muzykę!',
+        'music_link'       => 'Posłuchaj',
         'footer'           => 'Wszelkie prawa zastrzeżone.<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Czas w moim kraju:',
         'temp'             => 'Temperatura w moim mieście:',
@@ -208,7 +214,7 @@ if ($visitorIp && !in_array($visitorIp, $ips, true)) {
 $uniqueVisitors = count($ips);
 
 $city = 'Krasnik';
-$apiKey = 'APIKEY';
+$apiKey = 'API_KEY';
 $apiLang = ($lang_code === 'pl') ? 'pl' : 'en';
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city)
        . "&appid={$apiKey}&units=metric&lang={$apiLang}";
@@ -398,7 +404,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 </div>
 <script src="github.js"></script>
 
-  <div class="project-card" data-sort1="2" data-sort2="11">
+  <div class="project-card" data-sort1="2" data-sort2="12">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -408,17 +414,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="3" data-sort2="3">
-    <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 4 July</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['share_desc'], ENT_QUOTES) ?></p>
-      <a href="share-sites/index.php" class="project-link"><?= htmlspecialchars($t['share_link'], ENT_QUOTES) ?></a>
-    </div>
-  </div>
-
-  <div class="project-card" data-sort1="4" data-sort2="4">
+    <div class="project-card" data-sort1="3" data-sort2="5">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 30 June</div>
     <div class="project-content">
@@ -428,7 +424,27 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="5" data-sort2="10">
+  <div class="project-card" data-sort1="4" data-sort2="4">
+    <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge">Last updated: 4 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['share_desc'], ENT_QUOTES) ?></p>
+      <a href="share-sites/index.php" class="project-link"><?= htmlspecialchars($t['share_link'], ENT_QUOTES) ?></a>
+    </div>
+  </div>
+
+    <div class="project-card" data-sort1="5" data-sort2="2">
+    <img src="photos/share-music.png" alt="<?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge">Last updated: 21 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['music_desc'], ENT_QUOTES) ?></p>
+      <a href="share-music/index.php" class="project-link"><?= htmlspecialchars($t['music_link'], ENT_QUOTES) ?></a>
+    </div>
+  </div>
+
+  <div class="project-card" data-sort1="6" data-sort2="11">
     <img src="photos/qjf.png" alt="<?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -438,7 +454,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="6" data-sort2="9">
+  <div class="project-card" data-sort1="7" data-sort2="10">
     <img src="photos/dev.png" alt="<?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
@@ -448,17 +464,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="9" data-sort2="8">
-    <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: May</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['blog_desc'], ENT_QUOTES) ?></p>
-      <a href="blog/index.php" class="project-link"><?= htmlspecialchars($t['blog_link'], ENT_QUOTES) ?></a>
-    </div>
-  </div>
-
-  <div class="project-card" data-sort1="7" data-sort2="5">
+    <div class="project-card" data-sort1="8" data-sort2="6">
     <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 14 June</div>
     <div class="project-content">
@@ -468,7 +474,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="8" data-sort2="6">
+    <div class="project-card" data-sort1="9" data-sort2="7">
     <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 13 June</div>
     <div class="project-content">
@@ -478,17 +484,17 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-    <div class="project-card" data-sort1="11" data-sort2="2">
-    <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 10 July</div>
+  <div class="project-card" data-sort1="10" data-sort2="9">
+    <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge">Last updated: May</div>
     <div class="project-content">
-      <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
-      <a href="screentime/index.html" class="project-link"><?= htmlspecialchars($t['screentime_link'], ENT_QUOTES) ?></a>
+      <h3><?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['blog_desc'], ENT_QUOTES) ?></p>
+      <a href="blog/index.php" class="project-link"><?= htmlspecialchars($t['blog_link'], ENT_QUOTES) ?></a>
     </div>
   </div>
 
-  <div class="project-card" data-sort1="10" data-sort2="12">
+    <div class="project-card" data-sort1="11" data-sort2="13">
     <img src="photos/cybersecurity.png" alt="<?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: April</div>
     <div class="project-content">
@@ -498,7 +504,17 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
   </div>
 
-  <div class="project-card" data-sort1="12" data-sort2="7">
+    <div class="project-card" data-sort1="12" data-sort2="3">
+    <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge">Last updated: 10 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
+      <a href="screentime/index.html" class="project-link"><?= htmlspecialchars($t['screentime_link'], ENT_QUOTES) ?></a>
+    </div>
+  </div>
+
+  <div class="project-card" data-sort1="13" data-sort2="8">
     <img src="photos/other.png" alt="<?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge">Last updated: 04 June</div>
     <div class="project-content">

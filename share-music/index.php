@@ -14,7 +14,7 @@ $translations = [
         'song_artist'  => 'Song artist',
         'enter_desc'   => 'Enter song description...',
         'song_desc'    => 'Song description (optional)',
-        'song_link'    => 'Link to the song (optional)',
+        'song_link'    => 'Link to the song (automatically generated)',
         'add'          => 'Add',
         'song_list'    => 'List of shared songs',
     ],
@@ -31,7 +31,7 @@ $translations = [
         'song_artist'  => 'Artysta piosenki',
         'enter_desc'   => 'Wpisz opis piosenki...',
         'song_desc'    => 'Opis piosenki (opcjonalne)',
-        'song_link'    => 'Link do piosenki (opcjonalne)',
+        'song_link'    => 'Link do piosenki (automatycznie wygenerowane)',
         'add'          => 'Dodaj',
         'song_list'    => 'Lista dodanych piosenek',
     ]

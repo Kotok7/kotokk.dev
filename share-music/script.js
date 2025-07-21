@@ -5,10 +5,18 @@ class SongApp {
         this.submitBtn = document.getElementById('submitBtn');
         this.messageContainer = document.getElementById('message-container');
         this.coverPreview = document.getElementById('cover-preview');
+        this.linkInput = document.getElementById('link');
+
         this.init();
     }
 
     init() {
+        this.linkInput.readOnly = true;
+        this.linkInput.style.pointerEvents = 'none';
+        this.linkInput.style.userSelect     = 'none';
+        this.linkInput.style.backgroundColor = '#f0f0f0';
+        this.linkInput.style.cursor          = 'not-allowed';
+
         this.form.addEventListener('submit', this.handleSubmit.bind(this));
         this.form.title.addEventListener('change', this.fetchSpotifyData.bind(this));
         this.form.author.addEventListener('change', this.fetchSpotifyData.bind(this));
@@ -19,17 +27,20 @@ class SongApp {
         const title = this.form.title.value.trim();
         const author = this.form.author.value.trim();
         if (!title || !author) return;
+
         try {
-            const response = await fetch(`spotify.php?track=${encodeURIComponent(title)}&artist=${encodeURIComponent(author)}`);
+            const response = await fetch(
+              `spotify.php?track=${encodeURIComponent(title)}&artist=${encodeURIComponent(author)}`
+            );
             if (!response.ok) throw new Error(`Spotify fetch error: ${response.status}`);
             const result = await response.json();
-            console.log('Spotify result:', result);
+
             if (result.cover) {
                 this.form.cover.value = result.cover;
                 this.showCoverPreview(result.cover);
             }
             if (result.spotify) {
-                this.form.link.value = result.spotify;
+                this.linkInput.value = result.spotify;
             }
         } catch (err) {
             console.warn('No data from Spotify:', err);
@@ -37,7 +48,10 @@ class SongApp {
     }
 
     showCoverPreview(url) {
-        this.coverPreview.innerHTML = `<img src="${this.escapeHtml(url)}" alt="Cover preview" style="width:150px;border-radius:8px;">`;
+        this.coverPreview.innerHTML = `
+          <img src="${this.escapeHtml(url)}" alt="Cover preview"
+               style="width:150px;border-radius:8px;">
+        `;
     }
 
     async loadSongs() {
@@ -48,13 +62,15 @@ class SongApp {
             this.renderSongs(songs);
         } catch (error) {
             this.showMessage('Failed to load songs. Try refreshing the page.', 'error');
-            this.list.innerHTML = '<div class="empty-state">❌ An error occurred while loading</div>';
+            this.list.innerHTML = 
+              '<div class="empty-state">❌ An error occurred while loading</div>';
         }
     }
 
     renderSongs(songs) {
         if (!Array.isArray(songs) || songs.length === 0) {
-            this.list.innerHTML = '<div class="empty-state">🎵 There are no songs yet. Add the first one!</div>';
+            this.list.innerHTML = 
+              '<div class="empty-state">🎵 There are no songs yet. Add the first one!</div>';
             return;
         }
         this.list.innerHTML = '';
@@ -62,12 +78,16 @@ class SongApp {
             const li = document.createElement('li');
             li.className = 'song-item';
             li.innerHTML = `
-                ${song.cover ? `<img src="${this.escapeHtml(song.cover)}" alt="Cover" class="song-cover" style="width:100px;">` : ''}
+                ${song.cover ? `<img src="${this.escapeHtml(song.cover)}" alt="Cover"
+                   class="song-cover" style="width:100px;">` : ''}
                 <div class="song-title">${this.escapeHtml(song.title)}</div>
                 <div class="song-author">👤 ${this.escapeHtml(song.author)}</div>
                 <div class="song-date">📅 Added: ${this.formatDate(song.added)}</div>
-                ${song.description ? `<div class="song-description">${this.escapeHtml(song.description)}</div>` : ''}
-                ${song.link ? `<a href="${this.escapeHtml(song.link)}" target="_blank" rel="noopener noreferrer" class="song-link">🎧 Posłuchaj</a>` : ''}
+                ${song.description ? `<div class="song-description">
+                   ${this.escapeHtml(song.description)}</div>` : ''}
+                ${song.link ? `<a href="${this.escapeHtml(song.link)}"
+                   target="_blank" rel="noopener noreferrer"
+                   class="song-link">🎧 Posłuchaj</a>` : ''}
             `;
             this.list.appendChild(li);
         });
@@ -100,6 +120,7 @@ class SongApp {
             });
             const result = await response.json();
             if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
+
             this.form.reset();
             this.coverPreview.innerHTML = '';
             this.showMessage('The song has been successfully added! 🎉', 'success');

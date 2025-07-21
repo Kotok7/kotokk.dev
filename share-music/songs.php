@@ -23,76 +23,56 @@ define('MAX_SONGS_COUNT', 1000);
 
 function initializeDataStructure(): void {
     if (!is_dir(DATA_DIR)) {
-        if (!mkdir(DATA_DIR, 0755, true)) {
-            throw new Exception('Cannot create data directory');
-        }
+        mkdir(DATA_DIR, 0755, true);
     }
     if (!file_exists(DATA_FILE)) {
-        $initialData = [];
-        if (file_put_contents(DATA_FILE, json_encode($initialData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX) === false) {
-            throw new Exception('Cannot create data file');
-        }
+        file_put_contents(DATA_FILE, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
     }
 }
 
 function loadSongs(): array {
-    if (!file_exists(DATA_FILE)) {
-        return [];
-    }
     $content = file_get_contents(DATA_FILE);
-    if ($content === false) {
-        throw new Exception('Cannot read data file');
-    }
     $songs = json_decode($content, true);
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        throw new Exception('JSON parsing error: ' . json_last_error_msg());
-    }
     return is_array($songs) ? $songs : [];
 }
 
 function saveSongs(array $songs): void {
-    $json = json_encode($songs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    if ($json === false) {
-        throw new Exception('JSON serialization error');
-    }
-    if (file_put_contents(DATA_FILE, $json, LOCK_EX) === false) {
-        throw new Exception('Cannot save data');
-    }
+    file_put_contents(DATA_FILE, json_encode($songs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
 }
 
 function validateAndSanitizeInput(array $data): array {
     $errors = [];
 
     $title = trim($data['title'] ?? '');
-    if (empty($title)) {
+    if ($title === '') {
         $errors[] = 'Title is required';
     } elseif (mb_strlen($title) > MAX_TITLE_LENGTH) {
-        $errors[] = 'Title is too long (max ' . MAX_TITLE_LENGTH . ' characters)';
+        $errors[] = 'Title too long';
     }
 
     $author = trim($data['author'] ?? '');
-    if (empty($author)) {
+    if ($author === '') {
         $errors[] = 'Author is required';
     } elseif (mb_strlen($author) > MAX_AUTHOR_LENGTH) {
-        $errors[] = 'Author name is too long (max ' . MAX_AUTHOR_LENGTH . ' characters)';
+        $errors[] = 'Author too long';
     }
 
     $description = trim($data['description'] ?? '');
     if (mb_strlen($description) > MAX_DESCRIPTION_LENGTH) {
-        $errors[] = 'Description is too long (max ' . MAX_DESCRIPTION_LENGTH . ' characters)';
+        $errors[] = 'Description too long';
     }
 
     $link = trim($data['link'] ?? '');
-    if (!empty($link) && !filter_var($link, FILTER_VALIDATE_URL)) {
-        $errors[] = 'The provided link has an invalid format';
+    if ($link !== '' && !filter_var($link, FILTER_VALIDATE_URL)) {
+        $errors[] = 'Invalid song link';
     }
 
     $cover = trim($data['cover'] ?? '');
-    if (!empty($cover) && !filter_var($cover, FILTER_VALIDATE_URL)) {
-        $errors[] = 'The provided cover URL has an invalid format';
+    if ($cover !== '' && !filter_var($cover, FILTER_VALIDATE_URL)) {
+        $errors[] = 'Invalid cover URL';
     }
 
-    if (!empty($errors)) {
+    if ($errors) {
         throw new InvalidArgumentException(implode(', ', $errors));
     }
 
@@ -107,55 +87,53 @@ function validateAndSanitizeInput(array $data): array {
 
 function handleError(Exception $e, int $statusCode = 500): void {
     http_response_code($statusCode);
-    $errorResponse = [
-        'error'     => $e->getMessage(),
-        'timestamp' => date('c')
-    ];
-    echo json_encode($errorResponse);
-    error_log("Songs API Error: " . $e->getMessage());
+    echo json_encode(['error' => $e->getMessage(), 'timestamp' => date('c')]);
+    exit;
 }
 
 try {
     initializeDataStructure();
+
     switch ($_SERVER['REQUEST_METHOD']) {
         case 'GET':
             echo json_encode(loadSongs());
             break;
+
         case 'POST':
             $input = file_get_contents('php://input');
-            if ($input === false) {
-                throw new Exception('Cannot read input data');
-            }
             $data = json_decode($input, true);
             if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new InvalidArgumentException('Invalid JSON format: ' . json_last_error_msg());
+                throw new InvalidArgumentException('Invalid JSON');
             }
-            $validatedData = validateAndSanitizeInput($data);
+
+            $v = validateAndSanitizeInput($data);
+
             $songs = loadSongs();
             if (count($songs) >= MAX_SONGS_COUNT) {
-                throw new Exception('Maximum number of songs reached (' . MAX_SONGS_COUNT . ')');
+                throw new Exception('Maximum number of songs reached');
             }
+
             $newSong = [
-                'id'              => uniqid('song_', true),
-                'title'           => $validatedData['title'],
-                'author'          => $validatedData['author'],
-                'description'     => $validatedData['description'],
-                'link'            => $validatedData['link'],
-                'cover'           => $validatedData['cover'],
-                'added'           => date('Y-m-d'),
-                'added_timestamp' => time()
+                'id'        => uniqid('song_', true),
+                'title'     => $v['title'],
+                'author'    => $v['author'],
+                'description'=> $v['description'],
+                'link'      => $v['link'],
+                'cover'     => $v['cover'],
+                'added'     => date('Y-m-d'),
+                'added_timestamp'=> time()
             ];
+
             array_unshift($songs, $newSong);
             saveSongs($songs);
+
             http_response_code(201);
             echo json_encode($songs);
             break;
+
         default:
             http_response_code(405);
-            echo json_encode([
-                'error'           => 'Method ' . $_SERVER['REQUEST_METHOD'] . ' is not supported',
-                'allowed_methods' => ['GET', 'POST']
-            ]);
+            echo json_encode(['error' => 'Method not allowed']);
             break;
     }
 } catch (InvalidArgumentException $e) {

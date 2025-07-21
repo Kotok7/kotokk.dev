@@ -1,8 +1,8 @@
 <?php
 header('Content-Type: application/json');
 
-$clientId     = '7b4833e4dbad4f70b0debf875befabc0';
-$clientSecret = '703a2a3dcf3f4ccd832b06a7ef4bbbdb';
+$clientId     = 'id';
+$clientSecret = 'sectet_id';
 
 $track  = $_GET['track']  ?? '';
 $artist = $_GET['artist'] ?? '';
@@ -61,6 +61,6 @@ if (!$item) {
 }
 
 echo json_encode([
-    'cover'   => $item['album']['images'][0]['url']   ?? '',
-    'spotify' => $item['external_urls']['spotify']     ?? ''
+    'cover'   => $item['album']['images'][0]['url']         ?? '',
+    'spotify' => $item['external_urls']['spotify']           ?? ''
 ]);

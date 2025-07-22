@@ -81,13 +81,15 @@ $translations = [
         'bnc_message'      => 'Binance adress: ',
         'bnc_adress'       => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
         'copied_crypto'    => 'Copied',
+        'polish_room'      => 'Polish room',
+        'english_room'     => 'English room',
         'discord_note'     => 'Note: ',
         'discord_status'   => 'Status: ',
-        'update_section'   => 'Changelog',
         'github1'          => 'Now on GitHub',
         'github2'          => 'View source and contribute',
         'changelog'        => '<ul><li>Added "donate me" option with crypto adresses</li><li>Added 404 not found site</li><li>Added new iOS screen time emulator to the main page</li><li>Added a small badge on the top</li><li>Added Binance crypto adress</li><li>Added a popup informing that the site is on GitHub</li><li>Added GitHub widget</li></ul>',
         'star_github'      => 'Star on GitHub!',
+        'last_updated'     => 'Last updated: ',
         'checking_commit'  => 'Checking last commit...',
         'commit_loading'   => 'Loading...',
         'sleeping'         => [
@@ -173,14 +175,16 @@ $translations = [
         'bnc_message'      => 'Adres Binance: ',
         'bnc_adress'       => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
         'copied_crypto'    => 'Skopiowano',
+        'polish_room'      => 'Polski czat',
+        'english_room'     => 'Angielski czat',
         'discord_note'     => 'Notatka: ',
         'discord_status'   => 'Status: ',
-        'update_section'   => 'Dziennik zmian',
         'changelog'        => '<ul><li>Dodano opcje "wesprzyj mnie" z adresami crypto</li><li>Dodano stronę 404</li><li>Dodano nowy emulator czasu przed ekranem do strony głównej</li><li>Dodano małą plakietkę na górze strony</li><li>Dodano adres Binance do adresów krypto</li><li>Dodano popup informujący o tym że strona jest na GitHubie</li><li>Dodano widget GitHuba</li></ul>',
         'github1'          => 'Od teraz na GitHubie',
         'github2'          => 'Zobacz kod i kontrybuuj',
         'star_github'      => 'Dodaj gwiazdkę na GitHubie!',
         'checking_commit'  => 'Sprawdzanie ostatniego commita...',
+        'last_updated'     => 'Ostatnio aktualizowane: ',
         'commit_loading'   => 'Ładowanie...',
         'sleeping'         => [
             'question' => 'Czy teraz śpię?',
@@ -406,7 +410,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
   <div class="project-card" data-sort1="2" data-sort2="12">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: May</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['about_desc'], ENT_QUOTES) ?></p>
@@ -416,7 +420,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="3" data-sort2="5">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 30 June</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>30 June</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['chat_desc'], ENT_QUOTES) ?></p>
@@ -426,7 +430,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
   <div class="project-card" data-sort1="4" data-sort2="4">
     <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 4 July</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>4 July</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['share_desc'], ENT_QUOTES) ?></p>
@@ -436,7 +440,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="5" data-sort2="2">
     <img src="photos/share-music.png" alt="<?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 21 July</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>21 July</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['music_desc'], ENT_QUOTES) ?></p>
@@ -446,7 +450,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
   <div class="project-card" data-sort1="6" data-sort2="11">
     <img src="photos/qjf.png" alt="<?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: May</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['facts_desc'], ENT_QUOTES) ?></p>
@@ -456,7 +460,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
   <div class="project-card" data-sort1="7" data-sort2="10">
     <img src="photos/dev.png" alt="<?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: May</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['dev_desc'], ENT_QUOTES) ?></p>
@@ -466,7 +470,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="8" data-sort2="6">
     <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 14 June</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>14 June</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['quiz_desc'], ENT_QUOTES) ?></p>
@@ -476,7 +480,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="9" data-sort2="7">
     <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 13 June</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>13 June</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['quantum_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['quantum_desc'], ENT_QUOTES) ?></p>
@@ -486,7 +490,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
   <div class="project-card" data-sort1="10" data-sort2="9">
     <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: May</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['blog_desc'], ENT_QUOTES) ?></p>
@@ -496,7 +500,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="11" data-sort2="13">
     <img src="photos/cybersecurity.png" alt="<?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: April</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>April</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['cyber_desc'], ENT_QUOTES) ?></p>
@@ -506,7 +510,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="project-card" data-sort1="12" data-sort2="3">
     <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 10 July</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 July</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
@@ -516,7 +520,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
   <div class="project-card" data-sort1="13" data-sort2="8">
     <img src="photos/other.png" alt="<?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge">Last updated: 04 June</div>
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>04 June</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['other_desc'], ENT_QUOTES) ?></p>
@@ -528,7 +532,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
 <div class="two-columns">
   <section class="leave-message" id="leave-message-pl">
-    <h2><?= htmlspecialchars($t['message_leave'], ENT_QUOTES) ?><br>Polish room</h2>
+    <h2><?= htmlspecialchars($t['message_leave'], ENT_QUOTES) ?><br><?= htmlspecialchars($t['polish_room'], ENT_QUOTES) ?></h2>
     <?php if (!empty($_GET['msg_error'])): ?>
       <p class="error">
         <?= $_GET['msg_error'] === 'length' ? htmlspecialchars($t['facts_error'], ENT_QUOTES) : htmlspecialchars($t['wait'], ENT_QUOTES) ?>
@@ -557,7 +561,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   </section>
 
   <section class="leave-message" id="leave-message-en">
-    <h2><?= htmlspecialchars($t['message_leave'], ENT_QUOTES) ?><br>English room</h2>
+    <h2><?= htmlspecialchars($t['message_leave'], ENT_QUOTES) ?><br><?= htmlspecialchars($t['english_room'], ENT_QUOTES) ?></h2>
     <?php if (!empty($_GET['msg_error'])): ?>
       <p class="error">
         <?= $_GET['msg_error'] === 'length' ? htmlspecialchars($t['facts_error'], ENT_QUOTES) : htmlspecialchars($t['wait'], ENT_QUOTES) ?>

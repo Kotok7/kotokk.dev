@@ -17,6 +17,7 @@ $translations = [
         'song_link'    => 'Link to the song (automatically generated)',
         'add'          => 'Add',
         'song_list'    => 'List of shared songs',
+        'listen'       => '🎧 Listen',
     ],
     'pl' => [
         'html_lang'    => 'pl',
@@ -34,6 +35,7 @@ $translations = [
         'song_link'    => 'Link do piosenki (automatycznie wygenerowane)',
         'add'          => 'Dodaj',
         'song_list'    => 'Lista dodanych piosenek',
+        'listen'       => '🎧 Posłuchaj',
     ]
 ];
 if (!isset($translations[$lang_code])) {
@@ -91,6 +93,9 @@ $t = $translations[$lang_code];
             <ul id="songsList" class="songs-list"></ul>
         </div>
     </div>
+<script>
+    const LISTEN_LABEL = <?= json_encode($t['listen'], JSON_UNESCAPED_UNICODE) ?>;
+  </script>
     <script src="script.js"></script>
 </body>
 </html>

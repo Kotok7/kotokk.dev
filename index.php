@@ -58,7 +58,7 @@ $translations = [
         'footer'           => 'All rights reserved.<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
-        'my_desc'          => 'I am a teenager from Kraśnik, Poland, who loves programming!<br>Pronouns: he/him<br>Programming languages: HTML, CSS, Javascript, PHP, Python and React<br>kotokk.dev is my main project<br>More about me below',
+        'my_desc'          => 'I am a teenager from Kraśnik, Poland, who loves programming!<br>Pronouns: he/him<br>Programming languages: HTML, CSS, Javascript, PHP and Python<br>kotokk.dev is my main project<br>More about me below',
         'add_button'       => 'Add',
         'sort_select1'     => 'Most interesting (default)',
         'sort_select2'     => 'Last updated',
@@ -152,7 +152,7 @@ $translations = [
         'footer'           => 'Wszelkie prawa zastrzeżone.<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Czas w moim kraju:',
         'temp'             => 'Temperatura w moim mieście:',
-        'my_desc'          => 'Jestem nastolatkiem z Kraśnika w Polsce, który uwielbia programować!<br>Zaimki: on/jego<br>Języki programowania: HTML, CSS, Javascript, PHP, Python i React<br>kotokk.dev to mój główny projekt<br>Więcej o mnie poniżej',
+        'my_desc'          => 'Jestem nastolatkiem z Kraśnika w Polsce, który uwielbia programować!<br>Zaimki: on/jego<br>Języki programowania: HTML, CSS, Javascript, PHP i Python<br>kotokk.dev to mój główny projekt<br>Więcej o mnie poniżej',
         'add_button'       => 'Dodaj',
         'sort_select1'     => 'Najciekawsze (domyślne)',
         'sort_select2'     => 'Ostatnio uaktualnione',
@@ -409,7 +409,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 <script src="github.js"></script>
 
   <div class="project-card" data-sort1="2" data-sort2="12">
-    <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <img src="photos/about-me-old.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?></h3>

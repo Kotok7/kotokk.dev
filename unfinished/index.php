@@ -16,6 +16,9 @@ $translations = [
         'lumi_title'       => 'LumiBoard',
         'lumi_desc'        => 'Lumiboard is a sleek, web-based dashboard displaying time, weather, calendar, and more in a minimalist, modern interface.',
         'lumi_link'        => 'See now',
+        'about_title'      => 'Redesigned About Me',
+        'about_desc'       => 'Refreshed version of my About Me',
+        'about_link'       => 'Przeczytaj',
         'back'             => 'Back to main page',
     ],
 
@@ -33,6 +36,9 @@ $translations = [
         'lumi_title'       => 'LumiBoard',
         'lumi_desc'        => 'Lumiboard to elegancki, internetowy pulpit wyświetlający godzinę, pogodę, kalendarz i inne informacje w minimalistycznym, nowoczesnym interfejsie.',
         'lumi_link'        => 'Zobacz teraz',
+        'about_title'      => 'Nowy design O Mnie',
+        'about_desc'       => 'Odświeżony wygląd strony z informacjami o mnie',
+        'about_link'       => 'Przeczytaj',
         'back'             => 'Wróć do strony głównej',
 
     ],
@@ -75,6 +81,15 @@ $t = $translations[$lang_code] ?? $translations['en'];
 </header>
 <main>
   <div class="projects-grid">
+
+      <div class="project-card">
+      <img src="photos/about-me-new.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+      <div class="project-content">
+        <h3><?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?></h3>
+        <p><?= htmlspecialchars($t['about_desc'], ENT_QUOTES) ?></p>
+        <a href="about-me-new/index.html" class="project-link"><?= htmlspecialchars($t['about_link'], ENT_QUOTES) ?></a>
+      </div>
+    </div>
 
     <div class="project-card">
       <img src="photos/pusheenweb.png" alt="<?= htmlspecialchars($t['pusheen_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">

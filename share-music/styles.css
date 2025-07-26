@@ -4,6 +4,77 @@
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.song-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.song-cover {
+  width: 120px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.song-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.song-nickname {
+  font-style: italic;
+  color: #555;
+}
+
+.song-description {
+  margin: 8px 0;
+  color: #333;
+}
+
+.song-link {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.star-container {
+  margin: 6px 0;
+  user-select: none;
+}
+
+.star {
+  font-size: 1.4em;
+  color: #ccc;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.star.hovered,
+.star.selected {
+  color: gold;
+}
+
+.star.disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.success-message { color: #2c7; }
+.error-message   { color: #c27; }
+
 .back-button {
 	display: inline-flex;
 	align-items: center;
@@ -243,6 +314,7 @@ h2 {
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 1rem;
+  max-width: 110px;
 }
 
 .song-link:hover {

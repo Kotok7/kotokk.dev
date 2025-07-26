@@ -67,26 +67,36 @@ $t = $translations[$lang_code];
             <h1><?= htmlspecialchars($t['share_song'], ENT_QUOTES) ?> 🎵</h1>
         </div>
         <div class="content">
-            <form id="songForm">
-                <div class="form-group">
-                    <label for="title"><?= htmlspecialchars($t['song_name'], ENT_QUOTES) ?> *</label>
-                    <input type="text" id="title" name="title" required placeholder="<?= htmlspecialchars($t['enter_name'], ENT_QUOTES) ?>">
-                </div>
-                <div class="form-group">
-                    <label for="author"><?= htmlspecialchars($t['song_artist'], ENT_QUOTES) ?> *</label>
-                    <input type="text" id="author" name="author" required placeholder="<?= htmlspecialchars($t['enter_artist'], ENT_QUOTES) ?>">
-                </div>
-                <div class="form-group">
-                    <label for="description"><?= htmlspecialchars($t['song_desc'], ENT_QUOTES) ?></label>
-                    <textarea id="description" name="description" rows="3" placeholder="<?= htmlspecialchars($t['enter_desc'], ENT_QUOTES) ?>"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="link"><?= htmlspecialchars($t['song_link'], ENT_QUOTES) ?></label>
-                    <input type="url" id="link" name="link" placeholder="https://" readonly>
-                </div>
-                <input type="hidden" id="cover" name="cover">
-                <button type="submit" class="submit-btn" id="submitBtn"><?= htmlspecialchars($t['add'], ENT_QUOTES) ?></button>
-            </form>
+     <form id="songForm">
+  <div class="form-group">
+    <label for="title"><?= htmlspecialchars($t['song_name'], ENT_QUOTES) ?> *</label>
+    <input type="text" id="title" name="title" required placeholder="<?= htmlspecialchars($t['enter_name'], ENT_QUOTES) ?>">
+  </div>
+
+  <div class="form-group">
+    <label for="author"><?= htmlspecialchars($t['song_artist'], ENT_QUOTES) ?> *</label>
+    <input type="text" id="author" name="author" required placeholder="<?= htmlspecialchars($t['enter_artist'], ENT_QUOTES) ?>">
+  </div>
+
+  <div class="form-group">
+    <label for="nickname">Your nickname *</label>
+    <input type="text" id="nickname" name="nickname" required placeholder="Enter your nickname...">
+  </div>
+
+  <div class="form-group">
+    <label for="description"><?= htmlspecialchars($t['song_desc'], ENT_QUOTES) ?></label>
+    <textarea id="description" name="description" rows="3"
+      placeholder="<?= htmlspecialchars($t['enter_desc'], ENT_QUOTES) ?>"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="link"><?= htmlspecialchars($t['song_link'], ENT_QUOTES) ?></label>
+    <input type="url" id="link" name="link" placeholder="https://" readonly>
+  </div>
+
+  <input type="hidden" id="cover" name="cover">
+  <button type="submit" class="submit-btn" id="submitBtn"><?= htmlspecialchars($t['add'], ENT_QUOTES) ?></button>
+</form>
             <div id="cover-preview" style="margin-top:10px;"></div>
             <div id="message-container"></div>
             <h2>📋 <?= htmlspecialchars($t['song_list'], ENT_QUOTES) ?></h2>

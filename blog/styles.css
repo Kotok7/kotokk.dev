@@ -84,7 +84,6 @@ body {
 }
 
 header {
-  padding: 60px 0 40px;
   text-align: center;
   position: relative;
 }
@@ -105,10 +104,6 @@ header {
   color: #9aa0a6;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
-}
-
-.posts-section {
-  padding: 60px 0;
 }
 
 .posts-grid {

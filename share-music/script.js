@@ -1,70 +1,68 @@
 class SongApp {
-  constructor() {
-    this.form = document.getElementById('songForm');
-    this.list = document.getElementById('songsList');
-    this.submitBtn = document.getElementById('submitBtn');
-    this.messageContainer = document.getElementById('message-container');
-    this.coverPreview = document.getElementById('cover-preview');
-    this.linkInput = document.getElementById('link');
-    this.linkInput.readOnly = true;
-    this.linkInput.style.pointerEvents = 'none';
-    this.linkInput.style.userSelect = 'none';
-    this.linkInput.style.backgroundColor = '#f0f0f0';
-    this.linkInput.style.cursor = 'not-allowed';
-    this.form.addEventListener('submit', this.handleSubmit.bind(this));
-    this.form.title.addEventListener('change', this.fetchSpotifyData.bind(this));
-    this.form.author.addEventListener('change', this.fetchSpotifyData.bind(this));
+  constructor(){
+    this.form=document.getElementById('songForm');
+    this.list=document.getElementById('songsList');
+    this.submitBtn=document.getElementById('submitBtn');
+    this.messageContainer=document.getElementById('message-container');
+    this.coverPreview=document.getElementById('cover-preview');
+    this.linkInput=document.getElementById('link');
+    Object.assign(this.linkInput.style,{
+      pointerEvents:'none',
+      userSelect:'none',
+      backgroundColor:'#f0f0f0',
+      cursor:'not-allowed'
+    });
+    this.linkInput.readOnly=true;
+    this.form.addEventListener('submit',this.handleSubmit.bind(this));
+    this.form.title.addEventListener('change',this.fetchSpotifyData.bind(this));
+    this.form.author.addEventListener('change',this.fetchSpotifyData.bind(this));
     this.loadSongs();
   }
-  async fetchSpotifyData() {
-    const title = this.form.title.value.trim();
-    const author = this.form.author.value.trim();
-    if (!title || !author) return;
-    try {
-      const res = await fetch(`spotify.php?track=${encodeURIComponent(title)}&artist=${encodeURIComponent(author)}`);
-      if (!res.ok) throw new Error(res.status);
-      const data = await res.json();
-      if (data.cover) {
-        this.form.cover.value = data.cover;
-        this.coverPreview.innerHTML = `<img src="${data.cover}" style="width:150px;border-radius:8px;">`;
+  async fetchSpotifyData(){
+    const t=this.form.title.value.trim(),a=this.form.author.value.trim();
+    if(!t||!a)return;
+    try{
+      const res=await fetch(`spotify.php?track=${encodeURIComponent(t)}&artist=${encodeURIComponent(a)}`);
+      if(!res.ok)throw'';
+      const d=await res.json();
+      if(d.cover){
+        this.form.cover.value=d.cover;
+        this.coverPreview.innerHTML=`<img src="${d.cover}" style="width:150px;border-radius:8px;">`;
       }
-      if (data.spotify) this.linkInput.value = data.spotify;
-    } catch {}
+      if(d.spotify)this.linkInput.value=d.spotify;
+    }catch{}
   }
-  async loadSongs() {
-    try {
-      const res = await fetch('songs.php');
-      const songs = await res.json();
-      this.renderSongs(songs);
+  async loadSongs(){
+    try{
+      const res=await fetch('songs.php');
+      const s=await res.json();
+      this.renderSongs(s);
       this.attachRatingHandlers();
-    } catch {
-      this.showMessage('Failed to load songs. Please refresh.', 'error');
-      this.list.innerHTML = '<div class="empty-state">❌ An error occurred while loading</div>';
+    }catch{
+      this.showMessage('Failed to load songs. Please refresh.','error');
+      this.list.innerHTML='<div class="empty-state">❌ An error occurred while loading</div>';
     }
   }
-  renderSongs(songs) {
-    this.list.innerHTML = '';
-    if (!songs.length) {
-      this.list.innerHTML = '<div class="empty-state">🎵 No songs yet. Add your first one!</div>';
+  renderSongs(songs){
+    this.list.innerHTML='';
+    if(!songs.length){
+      this.list.innerHTML='<div class="empty-state">🎵 No songs yet. Add your first one!</div>';
       return;
     }
-    songs.forEach(song => {
-      const avg = song.ratings && song.ratings.length
-        ? (song.ratings.reduce((a,b)=>a+b,0)/song.ratings.length).toFixed(1)
-        : '–';
-      const votedKey = `voted_${song.id}`;
-      const hasVoted = !!localStorage.getItem(votedKey);
-      const stars = [1,2,3,4,5].map(n => {
-        const cls = hasVoted
-          ? (n <= (localStorage.getItem(`${votedKey}_value`)||0) ? 'star selected' : 'star disabled')
-          : 'star';
-        return `<span class="${cls}" data-value="${n}">&#9733;</span>`;
+    songs.forEach(song=>{
+      const avg=song.ratings&&song.ratings.length?(song.ratings.reduce((a,b)=>a+b,0)/song.ratings.length).toFixed(1):'–';
+      const votedKey=`voted_${song.id}`,hasVoted=!!localStorage.getItem(votedKey);
+      const stars=[1,2,3,4,5].map(n=>{
+        const cls=hasVoted?(n<=localStorage.getItem(`${votedKey}_value`)?'star selected':'star disabled'):'star';
+        return`<span class="${cls}" data-value="${n}">&#9733;</span>`;
       }).join('');
-      this.list.insertAdjacentHTML('beforeend', `
+      const tags=song.genres&&song.genres.length?`<div class="song-genres">${song.genres.map(g=>`<span class="tag">${g}</span>`).join(' ')}</div>`:'';
+      this.list.insertAdjacentHTML('beforeend',`
         <li class="song-item">
           <div class="song-nickname">👤 ${song.nickname}</div>
           ${song.cover?`<img src="${song.cover}" class="song-cover">`:''}
           <div class="song-title">${song.title}</div>
+          ${tags}
           <div class="song-rating">Rating: ${avg} / 5 (${song.ratings?.length||0})</div>
           <div class="star-container" data-id="${song.id}">${stars}</div>
           <div class="song-author">${song.author}</div>
@@ -75,86 +73,68 @@ class SongApp {
       `);
     });
   }
-  attachRatingHandlers() {
-    document.querySelectorAll('.star-container').forEach(container => {
-      const songId = container.dataset.id;
-      const votedKey = `voted_${songId}`;
-      if (localStorage.getItem(votedKey)) return;
-      container.querySelectorAll('.star').forEach(star => {
-        star.addEventListener('mouseenter', () => {
-          const v = +star.dataset.value;
-          container.querySelectorAll('.star').forEach(s => {
-            s.classList.toggle('hovered', +s.dataset.value <= v);
-          });
+  attachRatingHandlers(){
+    document.querySelectorAll('.star-container').forEach(c=>{
+      const id=c.dataset.id,key=`voted_${id}`;
+      if(localStorage.getItem(key))return;
+      c.querySelectorAll('.star').forEach(star=>{
+        star.addEventListener('mouseenter',()=>{
+          const v=+star.dataset.value;
+          c.querySelectorAll('.star').forEach(s=>s.classList.toggle('hovered',+s.dataset.value<=v));
         });
-        star.addEventListener('mouseleave', () => {
-          container.querySelectorAll('.star').forEach(s => s.classList.remove('hovered'));
-        });
-        star.addEventListener('click', async () => {
-          const rating = +star.dataset.value;
-          try {
-            const res = await fetch('songs.php', {
-              method: 'POST',
-              headers: {'Content-Type':'application/json'},
-              body: JSON.stringify({id: songId, rating})
-            });
-            const json = await res.json();
-            if (!res.ok) throw new Error();
-            localStorage.setItem(votedKey, 'true');
-            localStorage.setItem(`${votedKey}_value`, rating);
-            this.showMessage('Thanks for your vote! ⭐', 'success');
-            this.renderSongs(json);
+        star.addEventListener('mouseleave',()=>c.querySelectorAll('.star').forEach(s=>s.classList.remove('hovered')));
+        star.addEventListener('click',async()=>{
+          const r=+star.dataset.value;
+          try{
+            const res=await fetch('songs.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,rating:r})});
+            const j=await res.json();
+            if(!res.ok)throw'';
+            localStorage.setItem(key,'true');
+            localStorage.setItem(`${key}_value`,r);
+            this.showMessage('Thanks for your vote! ⭐','success');
+            this.renderSongs(j);
             this.attachRatingHandlers();
-          } catch {
-            this.showMessage('Vote failed. Try again.', 'error');
+          }catch{
+            this.showMessage('Vote failed. Try again.','error');
           }
         });
       });
     });
   }
-  async handleSubmit(e) {
+  async handleSubmit(e){
     e.preventDefault();
-    const fd = new FormData(this.form);
-    const payload = {
-      title: fd.get('title').trim(),
-      author: fd.get('author').trim(),
-      nickname: fd.get('nickname').trim(),
-      description: fd.get('description').trim(),
-      link: fd.get('link').trim(),
-      cover: fd.get('cover').trim()
+    const fd=new FormData(this.form);
+    const p={
+      title:fd.get('title').trim(),
+      author:fd.get('author').trim(),
+      nickname:fd.get('nickname').trim(),
+      genres:fd.get('genres').trim(),
+      description:fd.get('description').trim(),
+      link:fd.get('link').trim(),
+      cover:fd.get('cover').trim()
     };
-    if (!payload.title || !payload.author || !payload.nickname) {
-      this.showMessage('Title, artist and nickname are required!', 'error');
+    if(!p.title||!p.author||!p.nickname){
+      this.showMessage('Title, artist and nickname are required!','error');
       return;
     }
-    this.submitBtn.disabled = true;
-    this.submitBtn.textContent = 'Adding...';
-    try {
-      const res = await fetch('songs.php', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(payload)
-      });
-      const json = await res.json();
-      if (!res.ok) throw new Error();
-      this.form.reset();
-      this.coverPreview.innerHTML = '';
-      this.showMessage('Song added successfully! 🎉', 'success');
-      this.renderSongs(json);
-      this.attachRatingHandlers();
-    } catch {
-      this.showMessage('Error adding song.', 'error');
-    } finally {
-      this.submitBtn.disabled = false;
-      this.submitBtn.textContent = 'Add song';
+    this.submitBtn.disabled=true;this.submitBtn.textContent='Adding...';
+    try{
+      const res=await fetch('songs.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+      const j=await res.json();
+      if(!res.ok)throw'';
+      this.form.reset();this.coverPreview.innerHTML='';
+      this.showMessage('Song added successfully! 🎉','success');
+      this.renderSongs(j);this.attachRatingHandlers();
+    }catch{
+      this.showMessage('Error adding song.','error');
+    }finally{
+      this.submitBtn.disabled=false;this.submitBtn.textContent='Add song';
     }
   }
-  showMessage(text, type) {
-    this.messageContainer.innerHTML = `<div class="${type}-message">${text}</div>`;
-    setTimeout(() => { this.messageContainer.innerHTML = ''; }, 5000);
+  showMessage(t,type){
+    this.messageContainer.innerHTML=`<div class="${type}-message">${t}</div>`;
+    setTimeout(()=>this.messageContainer.innerHTML='',5000);
   }
-  formatDate(d) {
-    return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  }
+  formatDate(d){return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});}
 }
-document.addEventListener('DOMContentLoaded', () => new SongApp());
+document.addEventListener('DOMContentLoaded',()=>new SongApp());

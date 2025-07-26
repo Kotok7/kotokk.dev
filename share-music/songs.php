@@ -7,113 +7,119 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Access-Control-Allow-Credentials: true');
 }
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+if ($_SERVER['REQUEST_METHOD']=='OPTIONS') {
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
-    exit(0);
+    exit;
 }
-define('DATA_DIR', __DIR__ . '/data');
-define('DATA_FILE', DATA_DIR . '/songs.json');
-define('MAX_TITLE_LENGTH', 100);
-define('MAX_AUTHOR_LENGTH', 100);
-define('MAX_DESCRIPTION_LENGTH', 100);
-define('MAX_NICKNAME_LENGTH', 50);
-define('MAX_SONGS_COUNT', 1000);
+define('DATA_DIR', __DIR__.'/data');
+define('DATA_FILE', DATA_DIR.'/songs.json');
+define('MAX_TITLE_LENGTH',100);
+define('MAX_AUTHOR_LENGTH',100);
+define('MAX_DESCRIPTION_LENGTH',100);
+define('MAX_NICKNAME_LENGTH',50);
+define('MAX_SONGS_COUNT',1000);
 function initializeDataStructure(): void {
-    if (!is_dir(DATA_DIR)) mkdir(DATA_DIR, 0755, true);
-    if (!file_exists(DATA_FILE)) file_put_contents(DATA_FILE, json_encode([], JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE), LOCK_EX);
+    if(!is_dir(DATA_DIR)) mkdir(DATA_DIR,0755,true);
+    if(!file_exists(DATA_FILE)) file_put_contents(DATA_FILE,json_encode([],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE),LOCK_EX);
 }
 function loadSongs(): array {
-    $content = file_get_contents(DATA_FILE);
-    $songs = json_decode($content, true);
-    return is_array($songs) ? $songs : [];
+    $c=file_get_contents(DATA_FILE);
+    $s=json_decode($c,true);
+    return is_array($s)?$s:[];
 }
-function saveSongs(array $songs): void {
-    file_put_contents(DATA_FILE, json_encode($songs, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE), LOCK_EX);
+function saveSongs(array $s): void {
+    file_put_contents(DATA_FILE,json_encode($s,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE),LOCK_EX);
 }
-function validateAndSanitizeInput(array $data): array {
-    $errors = [];
-    $title = trim($data['title'] ?? '');
-    if ($title === '') $errors[] = 'Title is required';
-    elseif (mb_strlen($title) > MAX_TITLE_LENGTH) $errors[] = 'Title too long';
-    $author = trim($data['author'] ?? '');
-    if ($author === '') $errors[] = 'Author is required';
-    elseif (mb_strlen($author) > MAX_AUTHOR_LENGTH) $errors[] = 'Author too long';
-    $description = trim($data['description'] ?? '');
-    if (mb_strlen($description) > MAX_DESCRIPTION_LENGTH) $errors[] = 'Description too long';
-    $link = trim($data['link'] ?? '');
-    if ($link !== '' && !filter_var($link, FILTER_VALIDATE_URL)) $errors[] = 'Invalid song link';
-    $cover = trim($data['cover'] ?? '');
-    if ($cover !== '' && !filter_var($cover, FILTER_VALIDATE_URL)) $errors[] = 'Invalid cover URL';
-    $nickname = trim($data['nickname'] ?? '');
-    if ($nickname === '') $errors[] = 'Nickname is required';
-    elseif (mb_strlen($nickname) > MAX_NICKNAME_LENGTH) $errors[] = 'Nickname too long';
-    if ($errors) throw new InvalidArgumentException(implode(', ', $errors));
+function validateAndSanitizeInput(array $d): array {
+    $e=[];
+    $t=trim($d['title']??'');
+    if($t==='') $e[]='Title is required';
+    elseif(mb_strlen($t)>MAX_TITLE_LENGTH) $e[]='Title too long';
+    $a=trim($d['author']??'');
+    if($a==='') $e[]='Author is required';
+    elseif(mb_strlen($a)>MAX_AUTHOR_LENGTH) $e[]='Author too long';
+    $desc=trim($d['description']??'');
+    if(mb_strlen($desc)>MAX_DESCRIPTION_LENGTH) $e[]='Description too long';
+    $link=trim($d['link']??'');
+    if($link!=''&&!filter_var($link,FILTER_VALIDATE_URL)) $e[]='Invalid song link';
+    $cover=trim($d['cover']??'');
+    if($cover!=''&&!filter_var($cover,FILTER_VALIDATE_URL)) $e[]='Invalid cover URL';
+    $nick=trim($d['nickname']??'');
+    if($nick==='') $e[]='Nickname is required';
+    elseif(mb_strlen($nick)>MAX_NICKNAME_LENGTH) $e[]='Nickname too long';
+    $genres=trim($d['genres']??'');
+    $tagList = $genres!=='' 
+        ? array_values(array_filter(array_map('trim',explode(',',$genres))))
+        : [];
+    if($tagList!==array_unique($tagList)) $e[]='Duplicate genres';
+    if($e) throw new InvalidArgumentException(implode(', ',$e));
     return [
-        'title'       => htmlspecialchars($title, ENT_QUOTES|ENT_HTML5, 'UTF-8'),
-        'author'      => htmlspecialchars($author, ENT_QUOTES|ENT_HTML5, 'UTF-8'),
-        'description' => htmlspecialchars($description, ENT_QUOTES|ENT_HTML5, 'UTF-8'),
-        'link'        => $link,
-        'cover'       => $cover,
-        'nickname'    => htmlspecialchars($nickname, ENT_QUOTES|ENT_HTML5, 'UTF-8'),
+        'title'=>htmlspecialchars($t,ENT_QUOTES|ENT_HTML5,'UTF-8'),
+        'author'=>htmlspecialchars($a,ENT_QUOTES|ENT_HTML5,'UTF-8'),
+        'description'=>htmlspecialchars($desc,ENT_QUOTES|ENT_HTML5,'UTF-8'),
+        'link'=>$link,
+        'cover'=>$cover,
+        'nickname'=>htmlspecialchars($nick,ENT_QUOTES|ENT_HTML5,'UTF-8'),
+        'genres'=>$tagList
     ];
 }
-function handleError(Exception $e, int $statusCode = 500): void {
-    http_response_code($statusCode);
-    echo json_encode(['error'=>$e->getMessage(),'timestamp'=>date('c')]);
+function handleError(Exception $ex,int $sc=500): void {
+    http_response_code($sc);
+    echo json_encode(['error'=>$ex->getMessage(),'timestamp'=>date('c')]);
     exit;
 }
 try {
     initializeDataStructure();
-    switch ($_SERVER['REQUEST_METHOD']) {
+    switch($_SERVER['REQUEST_METHOD']) {
         case 'GET':
             echo json_encode(loadSongs());
             break;
         case 'POST':
-            $input = file_get_contents('php://input');
-            $data = json_decode($input, true);
-            if (json_last_error() !== JSON_ERROR_NONE) throw new InvalidArgumentException('Invalid JSON');
-            if (isset($data['id'], $data['rating'])) {
-                $songs = loadSongs();
-                foreach ($songs as &$song) {
-                    if ($song['id'] === $data['id']) {
-                        $r = (int)$data['rating'];
-                        if ($r < 1 || $r > 5) throw new InvalidArgumentException('Invalid rating');
-                        if (!isset($song['ratings']) || !is_array($song['ratings'])) $song['ratings'] = [];
-                        $song['ratings'][] = $r;
+            $in=file_get_contents('php://input');
+            $d=json_decode($in,true);
+            if(json_last_error()!==JSON_ERROR_NONE) throw new InvalidArgumentException('Invalid JSON');
+            if(isset($d['id'],$d['rating'])) {
+                $s=loadSongs();
+                foreach($s as&$song){
+                    if($song['id']===$d['id']){
+                        $r=(int)$d['rating'];
+                        if($r<1||$r>5) throw new InvalidArgumentException('Invalid rating');
+                        if(!isset($song['ratings'])||!is_array($song['ratings'])) $song['ratings']=[];
+                        $song['ratings'][]=$r;
                     }
                 }
-                saveSongs($songs);
-                echo json_encode($songs);
+                saveSongs($s);
+                echo json_encode($s);
                 break;
             }
-            $v = validateAndSanitizeInput($data);
-            $songs = loadSongs();
-            if (count($songs) >= MAX_SONGS_COUNT) throw new Exception('Maximum number of songs reached');
-            $newSong = [
-                'id'               => uniqid('song_', true),
-                'title'            => $v['title'],
-                'author'           => $v['author'],
-                'description'      => $v['description'],
-                'link'             => $v['link'],
-                'cover'            => $v['cover'],
-                'nickname'         => $v['nickname'],
-                'ratings'          => [],
-                'added'            => date('Y-m-d'),
-                'added_timestamp'  => time()
+            $v=validateAndSanitizeInput($d);
+            $s=loadSongs();
+            if(count($s)>=MAX_SONGS_COUNT) throw new Exception('Maximum number of songs reached');
+            $new=[
+                'id'=>uniqid('song_',true),
+                'title'=>$v['title'],
+                'author'=>$v['author'],
+                'description'=>$v['description'],
+                'link'=>$v['link'],
+                'cover'=>$v['cover'],
+                'nickname'=>$v['nickname'],
+                'genres'=>$v['genres'],
+                'ratings'=>[],
+                'added'=>date('Y-m-d'),
+                'added_timestamp'=>time()
             ];
-            array_unshift($songs, $newSong);
-            saveSongs($songs);
+            array_unshift($s,$new);
+            saveSongs($s);
             http_response_code(201);
-            echo json_encode($songs);
+            echo json_encode($s);
             break;
         default:
             http_response_code(405);
             echo json_encode(['error'=>'Method not allowed']);
-            break;
     }
-} catch (InvalidArgumentException $e) {
-    handleError($e, 400);
-} catch (Exception $e) {
-    handleError($e, 500);
+} catch(InvalidArgumentException $e){
+    handleError($e,400);
+} catch(Exception $e){
+    handleError($e,500);
 }

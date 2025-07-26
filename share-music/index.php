@@ -12,6 +12,10 @@ $translations = [
         'song_name'    => 'Song title',
         'enter_artist' => 'Enter artist name...',
         'song_artist'  => 'Song artist',
+        'enter_nick'   => 'Enter your nickname...',
+        'nickname'     => 'Your nickname',
+        'enter_genres' => 'Enter genres, separated by commas...',
+        'genres'       => 'Genres (tags)',
         'enter_desc'   => 'Enter song description...',
         'song_desc'    => 'Song description (optional)',
         'song_link'    => 'Link to the song (automatically generated)',
@@ -30,6 +34,10 @@ $translations = [
         'song_name'    => 'Tytuł piosenki',
         'enter_artist' => 'Wpisz nazwę artysty...',
         'song_artist'  => 'Artysta piosenki',
+        'enter_nick'   => 'Wpisz swój nickname...',
+        'nickname'     => 'Twój nickname',
+        'enter_genres' => 'Wpisz gatunki, oddzielone przecinkami...',
+        'genres'       => 'Gatunki (tagi)',
         'enter_desc'   => 'Wpisz opis piosenki...',
         'song_desc'    => 'Opis piosenki (opcjonalne)',
         'song_link'    => 'Link do piosenki (automatycznie wygenerowane)',
@@ -38,74 +46,64 @@ $translations = [
         'listen'       => '🎧 Posłuchaj',
     ]
 ];
-if (!isset($translations[$lang_code])) {
-    $lang_code = 'en';
-}
+if (!isset($translations[$lang_code])) $lang_code = 'en';
 $t = $translations[$lang_code];
 ?>
 <!DOCTYPE html>
-<html lang="<?= htmlspecialchars($t['html_lang'], ENT_QUOTES) ?>">
+<html lang="<?=htmlspecialchars($t['html_lang'],ENT_QUOTES)?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($t['title'], ENT_QUOTES) ?></title>
-    <meta name="description" content="<?= htmlspecialchars($t['meta_desc'], ENT_QUOTES) ?>">
-    <link rel="icon" type="image/png" href="photos/website-icon.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <title><?=htmlspecialchars($t['title'],ENT_QUOTES)?></title>
+    <meta name="description" content="<?=htmlspecialchars($t['meta_desc'],ENT_QUOTES)?>">
+    <link rel="icon" type="image/png" href="photos/website-icon.png"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <button onclick="window.location.href='index.php'" class="back-button">
-                ← <?= htmlspecialchars($t['back_button'], ENT_QUOTES) ?>
-            </button>
-            <a href="?lang=<?= $lang_code==='pl'?'en':'pl' ?>">
-                <img src="<?= $lang_code==='pl'?'photos/united-states.png':'photos/poland.png' ?>"
-                     alt="<?= $t['translate'] ?>" title="<?= $t['translate'] ?>"
-                     width="30">
-            </a>
-            <h1><?= htmlspecialchars($t['share_song'], ENT_QUOTES) ?> 🎵</h1>
-        </div>
-        <div class="content">
-     <form id="songForm">
-  <div class="form-group">
-    <label for="title"><?= htmlspecialchars($t['song_name'], ENT_QUOTES) ?> *</label>
-    <input type="text" id="title" name="title" required placeholder="<?= htmlspecialchars($t['enter_name'], ENT_QUOTES) ?>">
-  </div>
-
-  <div class="form-group">
-    <label for="author"><?= htmlspecialchars($t['song_artist'], ENT_QUOTES) ?> *</label>
-    <input type="text" id="author" name="author" required placeholder="<?= htmlspecialchars($t['enter_artist'], ENT_QUOTES) ?>">
-  </div>
-
-  <div class="form-group">
-    <label for="nickname">Your nickname *</label>
-    <input type="text" id="nickname" name="nickname" required placeholder="Enter your nickname...">
-  </div>
-
-  <div class="form-group">
-    <label for="description"><?= htmlspecialchars($t['song_desc'], ENT_QUOTES) ?></label>
-    <textarea id="description" name="description" rows="3"
-      placeholder="<?= htmlspecialchars($t['enter_desc'], ENT_QUOTES) ?>"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="link"><?= htmlspecialchars($t['song_link'], ENT_QUOTES) ?></label>
-    <input type="url" id="link" name="link" placeholder="https://" readonly>
-  </div>
-
-  <input type="hidden" id="cover" name="cover">
-  <button type="submit" class="submit-btn" id="submitBtn"><?= htmlspecialchars($t['add'], ENT_QUOTES) ?></button>
-</form>
-            <div id="cover-preview" style="margin-top:10px;"></div>
-            <div id="message-container"></div>
-            <h2>📋 <?= htmlspecialchars($t['song_list'], ENT_QUOTES) ?></h2>
-            <ul id="songsList" class="songs-list"></ul>
-        </div>
+  <div class="container">
+    <div class="header">
+      <button onclick="window.location.href='index.php'" class="back-button">← <?=htmlspecialchars($t['back_button'],ENT_QUOTES)?></button>
+      <a href="?lang=<?=$lang_code==='pl'?'en':'pl'?>">
+        <img src="<?=$lang_code==='pl'?'photos/united-states.png':'photos/poland.png'?>" alt="<?=$t['translate']?>" title="<?=$t['translate']?>" width="30">
+      </a>
+      <h1><?=htmlspecialchars($t['share_song'],ENT_QUOTES)?> 🎵</h1>
     </div>
-<script>
-    const LISTEN_LABEL = <?= json_encode($t['listen'], JSON_UNESCAPED_UNICODE) ?>;
-  </script>
-    <script src="script.js"></script>
+    <div class="content">
+      <form id="songForm">
+        <div class="form-group">
+          <label for="title"><?=htmlspecialchars($t['song_name'],ENT_QUOTES)?> *</label>
+          <input type="text" id="title" name="title" required placeholder="<?=htmlspecialchars($t['enter_name'],ENT_QUOTES)?>">
+        </div>
+        <div class="form-group">
+          <label for="author"><?=htmlspecialchars($t['song_artist'],ENT_QUOTES)?> *</label>
+          <input type="text" id="author" name="author" required placeholder="<?=htmlspecialchars($t['enter_artist'],ENT_QUOTES)?>">
+        </div>
+        <div class="form-group">
+          <label for="nickname"><?=htmlspecialchars($t['nickname'],ENT_QUOTES)?> *</label>
+          <input type="text" id="nickname" name="nickname" required placeholder="<?=htmlspecialchars($t['enter_nick'],ENT_QUOTES)?>">
+        </div>
+        <div class="form-group">
+          <label for="genres"><?=htmlspecialchars($t['genres'],ENT_QUOTES)?></label>
+          <input type="text" id="genres" name="genres" placeholder="<?=htmlspecialchars($t['enter_genres'],ENT_QUOTES)?>">
+        </div>
+        <div class="form-group">
+          <label for="description"><?=htmlspecialchars($t['song_desc'],ENT_QUOTES)?></label>
+          <textarea id="description" name="description" rows="3" placeholder="<?=htmlspecialchars($t['enter_desc'],ENT_QUOTES)?>"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="link"><?=htmlspecialchars($t['song_link'],ENT_QUOTES)?></label>
+          <input type="url" id="link" name="link" placeholder="https://" readonly>
+        </div>
+        <input type="hidden" id="cover" name="cover">
+        <button type="submit" class="submit-btn" id="submitBtn"><?=htmlspecialchars($t['add'],ENT_QUOTES)?></button>
+      </form>
+      <div id="cover-preview" style="margin-top:10px;"></div>
+      <div id="message-container"></div>
+      <h2>📋 <?=htmlspecialchars($t['song_list'],ENT_QUOTES)?></h2>
+      <ul id="songsList" class="songs-list"></ul>
+    </div>
+  </div>
+  <script>const LISTEN_LABEL = <?=json_encode($t['listen'],JSON_UNESCAPED_UNICODE)?>;</script>
+  <script src="script.js"></script>
 </body>
 </html>

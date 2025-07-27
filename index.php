@@ -2,6 +2,10 @@
 date_default_timezone_set('Europe/Warsaw');
 $polishHour = (int) date('G');
 
+  $counter = include __DIR__ . '/daily_counter.php';
+  $dailyVisits    = $counter['dailyVisits'];
+  $isFirstVisitor = $counter['isFirstVisitor'];
+
 $lang_code = $_GET['lang'] ?? 'en';
 
 $translations = [
@@ -97,6 +101,10 @@ $translations = [
             'yes'      => 'Yes💤',
             'no'       => 'No🚀',
         ],
+        'daily_visits_label'   => 'Visits today:',
+        'first_visit_title'    => '🎉 You are the first visitor today!',
+        'first_visit_message'  => 'Thank you for being here first.',
+        'first_visit_close'    => 'Close',
     ],
 
     'pl' => [
@@ -191,6 +199,10 @@ $translations = [
             'yes'      => 'Tak💤',
             'no'       => 'Nie🚀',
         ],
+        'daily_visits_label'   => 'Liczba wizyt dzisiaj:',
+        'first_visit_title'    => '🎉 Jesteś pierwszą osobą w tym dniu!',
+        'first_visit_message'  => 'Dziękuję za odwiedziny.',
+        'first_visit_close'    => 'Zamknij',
     ],
 ];
 
@@ -278,7 +290,36 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     <div class="visitor-counter">
       <?= htmlspecialchars($t['unique_visitors'], ENT_QUOTES) ?>
       <span class="number"><?= htmlspecialchars($uniqueVisitors, ENT_QUOTES) ?></span>
-    </div><br>
+    </div>
+
+    <div class="visitor-counter">
+  <?= htmlspecialchars($t['daily_visits_label'], ENT_QUOTES) ?>
+  <span class="number"><?= htmlspecialchars($dailyVisits, ENT_QUOTES) ?></span>
+</div>
+
+<?php if ($isFirstVisitor): ?>
+   <div id="fv-modal">
+    <div class="box">
+      <h2><?= htmlspecialchars($t['first_visit_title'], ENT_QUOTES) ?></h2>
+      <p><?= htmlspecialchars($t['first_visit_message'], ENT_QUOTES) ?></p>
+      <button onclick="closeModal()">
+        <?= htmlspecialchars($t['first_visit_close'], ENT_QUOTES) ?>
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    function closeModal() {
+      const modal = document.getElementById('fv-modal');
+      modal.classList.add('closing');
+      setTimeout(() => {
+        modal.remove();
+      }, 200);
+    }
+  </script>
+<?php endif; ?>
+
+    <br>
     <h1><?= htmlspecialchars($t['main_title'], ENT_QUOTES) ?><span class="cursor"></span></h1>
     <p><?= htmlspecialchars($t['subtitle'], ENT_QUOTES) ?></p>
     <br>

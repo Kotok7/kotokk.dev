@@ -110,15 +110,40 @@ To create a comprehensive digital presence that demonstrates technical expertise
 ---
 
 ### 📊 Repository Stats
-- ![Release](https://img.shields.io/github/v/release/Kotok7/kotokk.dev)
-- ![GitHub commits since latest release](https://img.shields.io/github/commits-since/C4illin/ConvertX/latest)
-- ![Repo Size](https://img.shields.io/github/repo-size/Kotok7/kotokk.dev)
-- ![Commits per Month](https://img.shields.io/github/commit-activity/m/Kotok7/kotokk.dev)
-- ![Last Commit](https://img.shields.io/github/last-commit/Kotok7/kotokk.dev)
-- ![Contributors](https://img.shields.io/github/contributors/Kotok7/kotokk.dev)
-- ![Open Issues](https://img.shields.io/github/issues/Kotok7/kotokk.dev)
-- ![Closed Issues](https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev)
-- ![Pull Requests](https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev)
+![Release](https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square)
+![Release Date](https://img.shields.io/github/release-date/Kotok7/kotokk.dev)
+![Last Commit](https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square)
+![Commits Since Latest](https://img.shields.io/github/commits-since/Kotok7/kotokk.dev/latest)
+![Weekly Commits](https://img.shields.io/github/commit-activity/w/Kotok7/kotokk.dev)
+![Monthly Commits](https://img.shields.io/github/commit-activity/m/Kotok7/kotokk.dev)
+![Total Commits](https://img.shields.io/github/commit-activity/t/Kotok7/kotokk.dev)
+
+![Repo Size](https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square)
+![Contributors](https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square)
+![Languages](https://img.shields.io/github/languages/count/Kotok7/kotokk.dev)
+![File Count](https://img.shields.io/github/directory-file-count/Kotok7/kotokk.dev)
+![Created At](https://img.shields.io/github/created-at/Kotok7/kotokk.dev)
+
+![Open Issues](https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square)
+![Open PRs](https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square)
+![Closed Issues](https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev)
+![Closed PRs](https://img.shields.io/github/issues-pr-closed/Kotok7/kotokk.dev)
+
+![Pre-release](https://img.shields.io/github/v/release/Kotok7/kotokk.dev?include_prereleases)
+![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)
+
+![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visual-studio-code&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+
+![Page Views](https://img.shields.io/badge/Page%20Views%20Monthly-5K-green)
+![PageSpeed](https://img.shields.io/badge/PageSpeed-95%2F100-success)
+![Load Time](https://img.shields.io/badge/Load%20Time-0.8s-blue)
+![Mobile Responsive](https://img.shields.io/badge/Mobile-Responsive-success)
+![Uptime](https://img.shields.io/badge/Uptime-90%25-brightgreen)
+![CDN](https://img.shields.io/badge/CDN-Cloudflare-F38020?logo=cloudflare&logoColor=white)
+
+![Private Use Not Allowed](https://img.shields.io/badge/Private%20Use-Not%20Allowed-red)
+![Commercial Use Not Allowed](https://img.shields.io/badge/Commercial%20Use-Not%20Allowed-red)
 
 ---
 

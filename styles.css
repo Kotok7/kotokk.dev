@@ -533,7 +533,7 @@
 .badge-compact {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
+	gap: 5px;
 	margin-bottom: 16px;
 }
 

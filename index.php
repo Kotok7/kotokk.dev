@@ -95,6 +95,8 @@ $translations = [
         'star_github'      => 'Star on GitHub!',
         'last_updated'     => 'Last updated: ',
         'checking_commit'  => 'Checking last commit...',
+        'show_more'        => 'Show more',
+        'show_less'        => 'Show less',
         'commit_loading'   => 'Loading...',
         'sleeping'         => [
             'question' => 'Am I sleeping right now?',
@@ -194,6 +196,8 @@ $translations = [
         'checking_commit'  => 'Sprawdzanie ostatniego commita...',
         'last_updated'     => 'Ostatnio aktualizowane: ',
         'commit_loading'   => 'Ładowanie...',
+        'show_more'        => 'Pokaż więcej',
+        'show_less'        => 'Pokaż mniej',
         'sleeping'         => [
             'question' => 'Czy teraz śpię?',
             'yes'      => 'Tak💤',
@@ -423,7 +427,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <div class="project-content1">
     <h3><?= htmlspecialchars($t['github1'], ENT_QUOTES) ?></h3>
     <p><?= htmlspecialchars($t['github2'], ENT_QUOTES) ?></p>
-    
+
 <div class="stats-widget">
   <div class="badge-compact" id="badge-compact">
     <a href="https://github.com/Kotok7"><img src="https://img.shields.io/github/followers/Kotok7?label=Follow&style=social" alt="Follow button"></a>
@@ -461,10 +465,9 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
       <!-- Contribution friendliness -->
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs Welcome">
 </div>
-  
   <button id="toggle-badges" class="btn-toggle">
     <i class="fas fa-chevron-down"></i>
-    <span>Show more</span>
+    <span><?= htmlspecialchars($t['show_more'], ENT_QUOTES) ?></span>
   </button>
 <script src="badges.js"></script>
 
@@ -472,7 +475,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
         <ul id="commit-list" class="commit-list">
           <li class="loading"><?= htmlspecialchars($t['commit_loading'], ENT_QUOTES) ?></li>
         </ul>
-        <button id="toggle-commits" class="btn-toggle">Show more</button>
+        <button id="toggle-commits" class="btn-toggle"><?= htmlspecialchars($t['show_more'], ENT_QUOTES) ?></button>
       </div>
     </div>
 </div>

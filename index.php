@@ -426,13 +426,18 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 
     <div class="stats-widget">
       <div class="badge-compact">
-        <img loading="lazy" src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release badge">
-        <img loading="lazy" src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last commit badge">
-        <img loading="lazy" src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo size badge">
-        <img loading="lazy" src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors badge">
-        <img loading="lazy" src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open issues badge">
-        <img loading="lazy" src="https://img.shields.io/github/issues-closed/Kotok7/kotokk.dev.svg?style=flat-square" alt="Closed issues badge">
-        <img loading="lazy" src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull requests badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/release-date/Kotok7/kotokk.dev" alt="Release Date">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last commit badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/commits-since/Kotok7/kotokk.dev/latest" alt="Commits Since Latest">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/commit-activity/w/Kotok7/kotokk.dev" alt="Weekly Commits">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo size badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/languages/count/Kotok7/kotokk.dev" alt="Languages">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/issues/Kotok7/kotokk.dev.svg?style=flat-square" alt="Open issues badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/issues-pr/Kotok7/kotokk.dev.svg?style=flat-square" alt="Pull requests badge">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/directory-file-count/Kotok7/kotokk.dev" alt="File Count">
+        <img style="height:17px;width:auto !important;" loading="lazy" src="https://img.shields.io/github/created-at/Kotok7/kotokk.dev" alt="Created At">
         <div style="flex-basis:100%; height:0;"></div>
         <a href="https://github.com/Kotok7"><img src="https://img.shields.io/github/followers/Kotok7?label=Follow&style=social" alt="Follow button"></a>
         <a href="https://github.com/Kotok7/kotokk.dev"><img src="https://img.shields.io/github/stars/Kotok7/kotokk.dev?style=social&label=Star" alt="GitHub stars"></a>

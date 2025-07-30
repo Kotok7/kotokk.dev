@@ -456,14 +456,9 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <div style="flex-basis:100%; height:0;"></div>
 
   <!-- Site stats & performance -->
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/badge/Page%20Views%20Monthly-5K-green" alt="Monthly Page Views">
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/badge/PageSpeed-95%2F100-success" alt="PageSpeed">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/badge/Uptime-90%25-brightgreen" alt="Uptime">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/badge/CDN-Cloudflare-F38020?logo=cloudflare&logoColor=white" alt="CDN">
   <div style="flex-basis:100%; height:0;"></div>
-
-      <!-- Contribution friendliness -->
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs Welcome">
 </div>
   <button id="toggle-badges" class="btn-toggle">
     <i class="fas fa-chevron-down"></i>

@@ -283,6 +283,12 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <button id="backToTop" class="back-to-top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <polyline points="18,15 12,9 6,15"></polyline>
+  </svg>
+</button>
+<script src="back-to-top.js"></script>
 <header>
   <a href="?lang=<?= $lang_code === 'pl' ? 'en' : 'pl' ?>">
     <img src="photos/<?= $lang_code === 'pl' ? 'united-states.png' : 'poland.png' ?>"

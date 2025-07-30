@@ -283,7 +283,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <button id="backToTop" class="back-to-top">
+  <button id="backToTop" class="back-to-top" title="Wróć na górę">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <polyline points="18,15 12,9 6,15"></polyline>
   </svg>
@@ -440,10 +440,10 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     <a href="https://github.com/Kotok7/kotokk.dev"><img src="https://img.shields.io/github/stars/Kotok7/kotokk.dev?style=social&label=Star" alt="GitHub stars"></a>
     <div style="flex-basis:100%; height:0;"></div>
   <!-- Core GitHub badges -->
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev.svg?style=flat-square" alt="Release">
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/release-date/Kotok7/kotokk.dev" alt="Release Date">
+  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/v/release/Kotok7/kotokk.dev?include_prereleases" alt="Release">
+  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/release-date/Kotok7/kotokk.dev?include_prereleases" alt="Release Date">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/last-commit/Kotok7/kotokk.dev.svg?style=flat-square" alt="Last Commit">
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/commits-since/Kotok7/kotokk.dev/latest" alt="Commits Since Latest">
+  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/commits-since/Kotok7/kotokk.dev/latest?include_prereleases" alt="Commits Since Latest">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/commit-activity/w/Kotok7/kotokk.dev" alt="Weekly Commits">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/commit-activity/m/Kotok7/kotokk.dev" alt="Monthly Commits">
   <div style="flex-basis:100%; height:0;"></div>

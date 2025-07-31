@@ -79,7 +79,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? null;
 </button><br><br>
             <a href="?lang=<?= $lang_code === 'pl' ? 'en' : 'pl' ?>">
                 <img
-                    src="<?= $lang_code === 'pl' ? 'united-states.png' : 'poland.png' ?>"
+                    src="/photos<?= $lang_code === 'pl' ? 'united-states.png' : 'poland.png' ?>"
                     alt="<?= htmlspecialchars($t['translate'], ENT_QUOTES) ?>"
                     title="<?= htmlspecialchars($t['translate'], ENT_QUOTES) ?>"
                     width="30" height="30" loading="lazy"

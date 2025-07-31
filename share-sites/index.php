@@ -330,7 +330,7 @@ $projects = loadAndPrepareProjects();
 <body>
     <div class="lang-switch">
         <a href="?lang=<?= htmlspecialchars($otherLang, ENT_QUOTES) ?>">
-            <img src="<?= $otherLang === 'pl' ? 'poland.png' : 'united-states.png' ?>"
+            <img src="/photos/<?= $otherLang === 'pl' ? 'poland.png' : 'united-states.png' ?>"
                  alt="<?= htmlspecialchars(t('translate', $lang), ENT_QUOTES) ?>"
                  title="<?= htmlspecialchars(t('translate', $lang), ENT_QUOTES) ?>"
                  width="30" height="30" loading="lazy">

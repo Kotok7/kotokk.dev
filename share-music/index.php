@@ -56,7 +56,7 @@ $t = $translations[$lang_code];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=htmlspecialchars($t['title'],ENT_QUOTES)?></title>
     <meta name="description" content="<?=htmlspecialchars($t['meta_desc'],ENT_QUOTES)?>">
-    <link rel="icon" type="image/png" href="photos/website-icon.png"/>
+    <link rel="icon" type="image/png" href="website-icon.png"/>
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>

@@ -124,7 +124,7 @@ $t = $translations[$lang_code];
 <?= htmlspecialchars($t['back_button'], ENT_QUOTES) ?>
 </button><br>
             <a href="?lang=<?= $lang_code==='pl'?'en':'pl' ?>">
-            <img src="<?= $lang_code==='pl'?'photos/united-states.png':'photos/poland.png' ?>"
+            <img src="<?= $lang_code==='pl'?'/photos/united-states.png':'/photos/poland.png' ?>"
                  alt="<?= $t['translate'] ?>"
                  title="<?= $t['translate'] ?>"
                  loading="lazy" style="width:30px;height:30px;">

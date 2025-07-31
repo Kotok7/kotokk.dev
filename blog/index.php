@@ -70,6 +70,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? null;
 
     <div class="container">
         <header>
+            <br>
 <button onclick="window.location.href='/index.php'" class="back-button">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="m12 19-7-7 7-7"/>
@@ -79,7 +80,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? null;
 </button><br><br>
             <a href="?lang=<?= $lang_code === 'pl' ? 'en' : 'pl' ?>">
                 <img
-                    src="/photos<?= $lang_code === 'pl' ? 'united-states.png' : 'poland.png' ?>"
+                    src="/photos/<?= $lang_code === 'pl' ? 'united-states.png' : 'poland.png' ?>"
                     alt="<?= htmlspecialchars($t['translate'], ENT_QUOTES) ?>"
                     title="<?= htmlspecialchars($t['translate'], ENT_QUOTES) ?>"
                     width="30" height="30" loading="lazy"

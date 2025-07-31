@@ -64,7 +64,7 @@ $t = $translations[$lang_code];
     <div class="header">
       <button onclick="window.location.href='index.php'" class="back-button">← <?=htmlspecialchars($t['back_button'],ENT_QUOTES)?></button>
       <a href="?lang=<?=$lang_code==='pl'?'en':'pl'?>">
-        <img src="<?=$lang_code==='pl'?'photos/united-states.png':'photos/poland.png'?>" alt="<?=$t['translate']?>" title="<?=$t['translate']?>" width="30">
+        <img src="<?=$lang_code==='pl'?'/photos/united-states.png':'/photos/poland.png'?>" alt="<?=$t['translate']?>" title="<?=$t['translate']?>" width="30">
       </a>
       <h1><?=htmlspecialchars($t['share_song'],ENT_QUOTES)?> 🎵</h1>
     </div>

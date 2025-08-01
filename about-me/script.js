@@ -1,10 +1,4 @@
 const createCodeParticles = () => {
-  const showAlertOnce = () => {
-    if (!localStorage.getItem('alertShown')) {
-      alert('This website is in beta and may not function fully as expected. A Polish version is coming soon');
-      localStorage.setItem('alertShown', 'true');
-    }
-  };
 
   const setupCursor = () => {
     const cursor = document.querySelector('.cursor');
@@ -14,10 +8,11 @@ const createCodeParticles = () => {
       cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     };
     window.addEventListener('mousemove', e => {
-      mouseX = e.clientX; mouseY = e.clientY;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
       updateCursor();
     });
-    ['scroll','resize'].forEach(ev =>
+    ['scroll', 'resize'].forEach(ev =>
       window.addEventListener(ev, updateCursor)
     );
     document.querySelectorAll('a').forEach(link => {
@@ -32,7 +27,7 @@ const createCodeParticles = () => {
     const update = () => {
       const top = window.pageYOffset;
       const height = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.width = height > 0 ? (top/height)*100 + '%' : '0%';
+      progress.style.width = height > 0 ? (top / height) * 100 + '%' : '0%';
     };
     window.addEventListener('scroll', update);
     window.addEventListener('resize', update);
@@ -95,7 +90,7 @@ const createCodeParticles = () => {
   };
 
   const setupNavToggle = () => {
-    const btn  = document.querySelector('.nav-toggle');
+    const btn = document.querySelector('.nav-toggle');
     const menu = document.querySelector('.nav-menu');
     if (!btn || !menu) return;
     btn.addEventListener('click', () => {
@@ -104,7 +99,6 @@ const createCodeParticles = () => {
     });
   };
 
-  showAlertOnce();
   setupCursor();
   setupScrollProgress();
   setupIntersectionAnimations();

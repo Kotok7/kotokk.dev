@@ -65,6 +65,9 @@ $translations = [
         'quotes_title'     => 'Add and discover quotes!',
         'quotes_desc'      => 'Add, discover, view and save quotes!',
         'quotes_link'      => 'Discover',
+        'story_title'      => 'Collaborative Story',
+        'story_desc'       => 'Everyone adds one sentence and has a one-hour cooldown.',
+        'story_link'       => 'Read',
         'footer'           => 'All rights reserved.<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
@@ -171,6 +174,9 @@ $translations = [
         'quotes_title'     => 'Dodawaj i odkrywaj cytaty!',
         'quotes_desc'      => 'Dodawaj, odkrywaj, oglądaj i zapisuj cytaty!',
         'quotes_link'      => 'Odkrywaj',
+        'story_title'      => 'Wspólna opowieść',
+        'story_desc'       => 'Każdy dodaje po jednym zdaniu i ma cooldown na godzinę.',
+        'story_link'       => 'Przeczytaj',
         'footer'           => 'Wszelkie prawa zastrzeżone.<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Czas w moim kraju:',
         'temp'             => 'Temperatura w moim mieście:',
@@ -495,7 +501,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 </div>
 <script src="github.js"></script>
 
-<div class="project-card" data-sort1="2" data-sort2="4">
+<div class="project-card" data-sort1="2" data-sort2="5">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>31 July</div>
     <div class="project-content">
@@ -505,7 +511,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="3" data-sort2="9">
+<div class="project-card" data-sort1="3" data-sort2="10">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>30 June</div>
     <div class="project-content">
@@ -515,7 +521,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="4" data-sort2="8">
+<div class="project-card" data-sort1="4" data-sort2="9">
     <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>4 July</div>
     <div class="project-content">
@@ -525,7 +531,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="5" data-sort2="6">
+<div class="project-card" data-sort1="5" data-sort2="7">
     <img src="photos/share-music.png" alt="<?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>21 July</div>
     <div class="project-content">
@@ -535,7 +541,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="6" data-sort2="2">
+<div class="project-card" data-sort1="6" data-sort2="3">
     <img src="photos/quotes.png" alt="<?= htmlspecialchars($t['quotes_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
     <div class="project-content">
@@ -545,7 +551,17 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="7" data-sort2="13">
+<div class="project-card" data-sort1="7" data-sort2="2">
+    <img src="photos/story.png" alt="<?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['story_desc'], ENT_QUOTES) ?></p>
+      <a href="story/index.php" class="project-link"><?= htmlspecialchars($t['story_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="8" data-sort2="14">
     <img src="photos/qjf.png" alt="<?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
@@ -555,7 +571,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="8" data-sort2="14">
+<div class="project-card" data-sort1="9" data-sort2="15">
     <img src="photos/dev.png" alt="<?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
@@ -565,7 +581,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="9" data-sort2="10">
+<div class="project-card" data-sort1="10" data-sort2="11">
     <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>14 June</div>
     <div class="project-content">
@@ -575,7 +591,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="10" data-sort2="11">
+<div class="project-card" data-sort1="11" data-sort2="12">
     <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>13 June</div>
     <div class="project-content">
@@ -585,7 +601,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="11" data-sort2="5">
+<div class="project-card" data-sort1="12" data-sort2="6">
     <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>26 July</div>
     <div class="project-content">
@@ -595,7 +611,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="12" data-sort2="3">
+<div class="project-card" data-sort1="13" data-sort2="4">
     <img src="photos/time-converter.png" alt="<?= htmlspecialchars($t['convert_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>3 August</div>
     <div class="project-content">
@@ -605,7 +621,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="13" data-sort2="15">
+<div class="project-card" data-sort1="14" data-sort2="16">
     <img src="photos/cybersecurity.png" alt="<?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>April</div>
     <div class="project-content">
@@ -615,7 +631,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="14" data-sort2="7">
+<div class="project-card" data-sort1="15" data-sort2="8">
     <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 July</div>
     <div class="project-content">
@@ -625,7 +641,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="15" data-sort2="12">
+<div class="project-card" data-sort1="16" data-sort2="13">
     <img src="photos/other.png" alt="<?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>04 June</div>
     <div class="project-content">

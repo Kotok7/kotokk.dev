@@ -46,7 +46,7 @@ arsort($allTags);
 <link rel="stylesheet" href="styles.css">
 <meta name="description" content="Add, discover, view and save quotes!" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<link rel="icon" type="image/png" href="photos/website-icon.jpg" />
+<link rel="icon" type="image/png" href="photos/website-icon.png" />
 </head>
 <body>
 <header class="site-header">
@@ -100,6 +100,6 @@ arsort($allTags);
     </ul>
   <?php endif; ?>
 </main>
-    <script src="popup.js"></script>
+<script src="popup.js"></script>
 </body>
 </html>

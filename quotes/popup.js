@@ -1,7 +1,7 @@
 if (!localStorage.getItem('alertShown')) {
     alert(
-      'This site is not translated to Polish yet\n' +
-      'Ta strona nie została jeszcze przetłumaczona na Polski'
+      'Quotes are not translated\n' +
+      'Cytaty nie są tłumaczone.'
     );
     localStorage.setItem('alertShown', 'true');
 }

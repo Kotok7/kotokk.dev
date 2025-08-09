@@ -495,7 +495,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 </div>
 <script src="github.js"></script>
 
-<div class="project-card" data-sort1="2" data-sort2="3">
+<div class="project-card" data-sort1="2" data-sort2="4">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>31 July</div>
     <div class="project-content">
@@ -595,7 +595,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="12" data-sort2="4">
+<div class="project-card" data-sort1="12" data-sort2="3">
     <img src="photos/time-converter.png" alt="<?= htmlspecialchars($t['convert_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>3 August</div>
     <div class="project-content">

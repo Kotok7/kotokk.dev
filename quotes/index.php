@@ -100,5 +100,6 @@ arsort($allTags);
     </ul>
   <?php endif; ?>
 </main>
+    <script src="popup.js"></script>
 </body>
 </html>

@@ -19,8 +19,8 @@ $translations = [
         'tag2'             => 'Artificial intelligence',
         'post_title2'      => 'The Future of AI in programming',
         'post_desc2'       => 'How AI tools are transforming software development, from smart code completion to automated testing, and what it means for developers.',
-        'date2'            => 'Coming soon',
-        'read_time2'       => '???',
+        'date2'            => '9 August',
+        'read_time2'       => '3 min read',
     ],
     'pl' => [
         'html_lang'        => 'pl',
@@ -39,8 +39,8 @@ $translations = [
         'tag2'             => 'Sztuczna inteligencja',
         'post_title2'      => 'Przyszłość sztucznej inteligencji w programowaniu',
         'post_desc2'       => 'Jak narzędzia AI transformują tworzenie oprogramowania, od inteligentnego uzupełniania kodu po automatyczne testowanie, i co to oznacza dla programistów.',
-        'date2'            => 'Dostępne wkrótce',
-        'read_time2'       => '???',
+        'date2'            => '9 Sierpnia',
+        'read_time2'       => '3 minuty czytania',
     ],
 ];
 
@@ -136,7 +136,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? null;
             <?= htmlspecialchars($t['read_time2'], ENT_QUOTES) ?>
         </span>
     </div>
-    <a href="#" class="read-button" onclick="event.stopPropagation(); selectPost('ai-future')">
+    <a href="ai/index.php" class="read-button" onclick="event.stopPropagation(); selectPost('ai-future')">
         <?= htmlspecialchars($t['read'], ENT_QUOTES) ?>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>

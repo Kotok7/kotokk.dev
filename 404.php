@@ -84,6 +84,13 @@ $catalogs = [
             'icon' => '🗣️'
         ],
         [
+            'name' => 'Collaborative Story',
+            'url' => '/story',
+            'description' => 'Everyone adds one sentence and has a one-hour cooldown.',
+            'category' => 'creative',
+            'icon' => '📩'
+        ],
+        [
             'name' => 'Facts, quotes and jokes',
             'url' => '/facts',
             'description' => 'Programming Quotes, funny jokes and interesing facts you did not know!',
@@ -224,6 +231,13 @@ $catalogs = [
             'description' => 'Dodawaj, odkrywaj, oglądaj i zapisuj cytaty!',
             'category' => 'creative',
             'icon' => '🗣️'
+        ],
+        [
+            'name' => 'Wspólna opowieść',
+            'url' => '/story',
+            'description' => ' Każdy dodaje po jednym zdaniu i ma cooldown na godzinę."',
+            'category' => 'creative',
+            'icon' => '📩'
         ],
         [
             'name' => 'Fakty, cytaty i żarty',

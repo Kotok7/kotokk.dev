@@ -77,6 +77,13 @@ $catalogs = [
             'icon' => '🎵'
         ],
         [
+            'name' => 'Discover and add quotes',
+            'url' => '/quotes',
+            'description' => 'Add, discover, view and save quotes!',
+            'category' => 'creative',
+            'icon' => '🗣️'
+        ],
+        [
             'name' => 'Facts, quotes and jokes',
             'url' => '/facts',
             'description' => 'Programming Quotes, funny jokes and interesing facts you did not know!',
@@ -210,6 +217,13 @@ $catalogs = [
             'description' => 'Udostępnij swoje ulubione piosenki i odkrywaj nową muzykę!',
             'category' => 'creative',
             'icon' => '🎵'
+        ],
+        [
+            'name' => 'Odkrywaj i dodawaj cytaty',
+            'url' => '/quotes',
+            'description' => 'Dodawaj, odkrywaj, oglądaj i zapisuj cytaty!',
+            'category' => 'creative',
+            'icon' => '🗣️'
         ],
         [
             'name' => 'Fakty, cytaty i żarty',

@@ -101,6 +101,7 @@ function format_datetime_for_tz(?string $iso, string $tz, string $fmt = 'Y-m-d H
 
 $TRANSLATIONS = [
     'title' => ['en'=>'Kotokk - Discover and add quotes','pl'=>'Kotokk - Odkrywaj i dodawaj cytaty'],
+    'back-to-top' => ['en'=>'Back to main page','pl'=>'Wróć do strony głównej'],
     'meta_description' => ['en'=>'Add, discover, view and save quotes!','pl'=>'Dodawaj, odkrywaj, przeglądaj i zapisuj cytaty!'],
     'header_h1' => ['en'=>'Discover Quotes','pl'=>'Odkrywaj cytaty'],
     'nav_add' => ['en'=>'Add Quote','pl'=>'Dodaj cytat'],

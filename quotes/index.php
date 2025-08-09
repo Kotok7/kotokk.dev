@@ -57,6 +57,13 @@ if (!in_array($tz, timezone_identifiers_list(), true)) $tz = 'UTC';
 </head>
 <body>
 <header class="site-header">
+              <button onclick="window.location.href='/index.php'" class="back-button">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 19-7-7 7-7"/>
+    <path d="M19 12H5"/>
+  </svg>
+<?= htmlspecialchars(t('back-to-top', $lang), ENT_QUOTES, 'UTF-8') ?>
+</button>
   <h1><?= htmlspecialchars(t('header_h1', $lang), ENT_QUOTES, 'UTF-8') ?></h1>
   <nav>
     <a href="<?= htmlspecialchars('add_quote.php?lang=' . urlencode($lang), ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(t('nav_add', $lang), ENT_QUOTES, 'UTF-8') ?></a> ·

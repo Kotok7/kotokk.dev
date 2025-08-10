@@ -258,7 +258,7 @@ if ($visitorIp && !in_array($visitorIp, $ips, true)) {
 $uniqueVisitors = count($ips);
 
 $city = 'Krasnik';
-$apiKey = 'e4c067643e5b5a18dd302f81fad75337';
+$apiKey = 'API_KEY';
 $apiLang = ($lang_code === 'pl') ? 'pl' : 'en';
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city)
        . "&appid={$apiKey}&units=metric&lang={$apiLang}";

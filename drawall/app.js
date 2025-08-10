@@ -9,24 +9,19 @@ window.addEventListener('load', () => {
   const newCountEl = document.getElementById('newCount');
   const zoomInput = document.getElementById('zoom');
   const zoomVal = document.getElementById('zoomVal');
-
+  const undoBtn = document.getElementById('undoBtn');
   const MIN_SIZE = 0.5;
   const MAX_SIZE = 18;
-
   let viewScale = parseFloat(zoomInput?.value) || 0.5;
   if (zoomVal) zoomVal.textContent = Math.round(viewScale * 100) + '%';
-
   let drawing = false;
   let currentStroke = null;
   let lastIndex = 0;
   let pollingInterval = 700;
   let activeTool = 'pen';
   let lastPos = null;
-
   let strokesCache = [];
-
   if (penBtn) penBtn.classList.add('active');
-
   if (penBtn) penBtn.addEventListener('click', () => {
     activeTool = 'pen';
     penBtn.classList.add('active');
@@ -37,12 +32,10 @@ window.addEventListener('load', () => {
     eraserBtn.classList.add('active');
     if (penBtn) penBtn.classList.remove('active');
   });
-
   function clampSize(v) {
     const n = parseFloat(v) || 0;
     return Math.max(MIN_SIZE, Math.min(MAX_SIZE, n));
   }
-
   function setupCanvas() {
     const ratio = window.devicePixelRatio || 1;
     let cssW = canvas.clientWidth || parseInt(getComputedStyle(canvas).width, 10) || 800;
@@ -56,26 +49,21 @@ window.addEventListener('load', () => {
     }
     cssW = Math.max(200, cssW);
     cssH = Math.max(200, cssH);
-
     canvas.width = Math.round(cssW * ratio);
     canvas.height = Math.round(cssH * ratio);
     canvas.style.width = cssW + 'px';
     canvas.style.height = cssH + 'px';
-
     ctx.save();
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.restore();
-
     const scale = viewScale;
     const offsetX = (cssW - cssW * scale) / 2;
     const offsetY = (cssH - cssH * scale) / 2;
-
     ctx.setTransform(ratio * scale, 0, 0, ratio * scale, Math.round(offsetX * ratio), Math.round(offsetY * ratio));
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
   }
-
   let resizeTimer = null;
   function onResize() {
     clearTimeout(resizeTimer);
@@ -86,9 +74,7 @@ window.addEventListener('load', () => {
   }
   setupCanvas();
   window.addEventListener('resize', onResize);
-
   canvas.style.touchAction = 'none';
-
   function getPosFromEvent(e) {
     const rect = canvas.getBoundingClientRect();
     const cssW = rect.width;
@@ -100,7 +86,6 @@ window.addEventListener('load', () => {
     const y = (e.clientY - rect.top - offsetY) / scale;
     return [x, y];
   }
-
   function drawSegment(a, b, tool, color, size) {
     if (!a || !b) return;
     const w = clampSize(size);
@@ -125,7 +110,6 @@ window.addEventListener('load', () => {
       ctx.restore();
     }
   }
-
   function drawSmooth(points, tool, color, size) {
     if (!points || points.length < 2) return;
     const w = clampSize(size);
@@ -152,27 +136,22 @@ window.addEventListener('load', () => {
     }
     ctx.restore();
   }
-
   function drawStroke(stroke) {
     if (!stroke || !Array.isArray(stroke.points) || stroke.points.length < 2) return;
     const s = Object.assign({}, stroke);
     s.size = clampSize(s.size);
     drawSmooth(s.points, s.tool || 'pen', s.color || '#000', s.size);
   }
-
   function redrawAll() {
     ctx.save();
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.restore();
-
     setupCanvas();
-
     if (Array.isArray(strokesCache)) {
       strokesCache.forEach(s => drawStroke(s));
     }
   }
-
   function pointerDown(e) {
     if (e.button && e.button !== 0) return;
     e.preventDefault();
@@ -185,10 +164,10 @@ window.addEventListener('load', () => {
       color: colorInput ? colorInput.value : '#000',
       size: sizeInput ? clampSize(sizeInput.value) : clampSize(6),
       tool: activeTool,
-      ts: Date.now()
+      ts: Date.now(),
+      owner: clientId
     };
   }
-
   function pointerMove(e) {
     if (!drawing || !currentStroke) return;
     e.preventDefault();
@@ -197,7 +176,6 @@ window.addEventListener('load', () => {
     currentStroke.points.push(p);
     lastPos = p;
   }
-
   function pointerUp(e) {
     if (!drawing) return;
     drawing = false;
@@ -210,17 +188,16 @@ window.addEventListener('load', () => {
     currentStroke = null;
     lastPos = null;
   }
-
   canvas.addEventListener('pointerdown', pointerDown);
   canvas.addEventListener('pointermove', pointerMove);
   canvas.addEventListener('pointerup', pointerUp);
   canvas.addEventListener('pointercancel', pointerUp);
   window.addEventListener('pointerup', pointerUp);
-
   async function sendStroke(stroke) {
     try {
       const payload = Object.assign({}, stroke);
       payload.size = clampSize(payload.size);
+      if (!payload.owner) payload.owner = clientId;
       const r = await fetch('save.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -234,7 +211,6 @@ window.addEventListener('load', () => {
       console.warn('send error', e);
     }
   }
-
   async function initialLoad() {
     try {
       const r = await fetch('load.php?after=0', { cache: 'no-store' });
@@ -257,7 +233,6 @@ window.addEventListener('load', () => {
       console.warn(e);
     }
   }
-
   async function poll() {
     try {
       const r = await fetch(`load.php?after=${lastIndex}`, { cache: 'no-store' });
@@ -288,7 +263,6 @@ window.addEventListener('load', () => {
       console.warn(e);
     }
   }
-
   if (zoomInput) {
     zoomInput.addEventListener('input', (ev) => {
       viewScale = parseFloat(ev.target.value) || viewScale;
@@ -297,7 +271,6 @@ window.addEventListener('load', () => {
       redrawAll();
     });
   }
-
   canvas.addEventListener('wheel', (e) => {
     if (!e.ctrlKey) return;
     e.preventDefault();
@@ -311,7 +284,33 @@ window.addEventListener('load', () => {
     setupCanvas();
     redrawAll();
   }, { passive: false });
-
+  let clientId = localStorage.getItem('drawall_clientId');
+  if (!clientId) {
+    clientId = (crypto && crypto.randomUUID) ? crypto.randomUUID() : ('id-' + Math.random().toString(36).slice(2));
+    localStorage.setItem('drawall_clientId', clientId);
+  }
+  if (undoBtn) {
+    undoBtn.addEventListener('click', async () => {
+      try {
+        undoBtn.disabled = true;
+        const r = await fetch('undo.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ owner: clientId })
+        });
+        if (!r.ok) throw new Error('http ' + r.status);
+        const j = await r.json();
+        if (j && typeof j.total === 'number') {
+          lastIndex = j.total;
+          await initialLoad();
+        }
+      } catch (e) {
+        console.warn('undo error', e);
+      } finally {
+        try { undoBtn.disabled = false; } catch (e) {}
+      }
+    });
+  }
   initialLoad();
   setInterval(poll, pollingInterval);
 });

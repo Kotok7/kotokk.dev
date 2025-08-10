@@ -9,7 +9,8 @@ $trans = [
     'pen' => 'Długopis',
     'eraser' => 'Gumka',
     'connected' => 'Status połączenia',
-    'new' => "Nowych stroke'ów"
+    'new' => "Nowych stroke'ów",
+    'cofnij' => 'Cofnij'
   ],
   'en' => [
     'title' => 'Drawall',
@@ -19,7 +20,8 @@ $trans = [
     'pen' => 'Pen',
     'eraser' => 'Eraser',
     'connected' => 'Connection',
-    'new' => 'New strokes'
+    'new' => 'New strokes',
+    'cofnij' => 'Undo'
   ]
 ];
 $t = $trans[$lang];
@@ -41,9 +43,9 @@ $t = $trans[$lang];
   <input id="zoom" type="range" min="0.2" max="3" step="0.05" value="0.5">
   <span id="zoomVal">50%</span>
 </label>
-
-    <label><?php echo htmlspecialchars($t['color'], ENT_QUOTES) ?>: <input id="color" type="color" value="#000000"></label>
     <label><?php echo htmlspecialchars($t['size'], ENT_QUOTES) ?>: <input id="size" type="range" min="1" max="60" value="6"></label>
+    <label><?php echo htmlspecialchars($t['color'], ENT_QUOTES) ?>: <input id="color" type="color" value="#000000"></label>
+    <button id="undoBtn" class="tool-btn"><?php echo htmlspecialchars($t['cofnij'], ENT_QUOTES) ?></button>
     <button id="penBtn" class="tool-btn"><?php echo htmlspecialchars($t['pen'], ENT_QUOTES) ?></button>
     <button id="eraserBtn" class="tool-btn"><?php echo htmlspecialchars($t['eraser'], ENT_QUOTES) ?></button>
     <div class="lang">

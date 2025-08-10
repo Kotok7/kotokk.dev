@@ -70,6 +70,13 @@ $catalogs = [
             'icon' => '🌐'
         ],
         [
+            'name' => 'Drawall',
+            'url' => '/drawall',
+            'description' => 'Wall where everyone can draw whatever they want!',
+            'category' => 'creative',
+            'icon' => '🖌️'
+        ],
+        [
             'name' => 'Share and discover songs',
             'url' => '/share-music',
             'description' => 'Share your favourite songs and discover new music!',
@@ -224,6 +231,13 @@ $catalogs = [
             'description' => 'Udostępnij swoje ulubione piosenki i odkrywaj nową muzykę!',
             'category' => 'creative',
             'icon' => '🎵'
+        ],
+        [
+            'name' => 'Drawall',
+            'url' => '/drawall',
+            'description' => 'Ściana gdzie każdy może rysować co tylko chce!',
+            'category' => 'creative',
+            'icon' => '🖌️'
         ],
         [
             'name' => 'Odkrywaj i dodawaj cytaty',

@@ -18,6 +18,7 @@
   </svg>
   Back to Main Page
 </button>
+<br>
       <a href="index-pl.php" class="icon-link">
         <img src="/photos/poland.png" alt="Przetłumacz na Polski" title="Przetłumacz na Polski" loading="lazy">
       </a>
@@ -29,6 +30,7 @@
       <h2>Story</h2>
       <div id="story-list" class="story-list">Loading...</div>
       <div class="actions">
+        <br>
         <button id="refresh" class="btn">Refresh</button>
       </div>
     </section>

@@ -18,6 +18,7 @@
   </svg>
   Wróć do strony głównej
 </button>
+<br>
       <a href="index.php" class="icon-link">
         <img src="/photos/united-states.png" alt="Przetłumacz na Angielski" title="Przetłumacz na Angielski" loading="lazy">
       </a>
@@ -29,6 +30,7 @@
       <h2>Opowieść</h2>
       <div id="story-list" class="story-list">Ładowanie...</div>
       <div class="actions">
+        <br>
         <button id="refresh" class="btn">Odśwież</button>
       </div>
     </section>

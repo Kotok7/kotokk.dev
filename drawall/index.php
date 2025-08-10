@@ -10,7 +10,8 @@ $trans = [
     'eraser' => 'Gumka',
     'connected' => 'Status połączenia',
     'new' => "Nowych stroke'ów",
-    'cofnij' => 'Cofnij'
+    'cofnij' => 'Cofnij',
+    'back' => 'Wróć do strony głównej'
   ],
   'en' => [
     'title' => 'Drawall',
@@ -21,7 +22,8 @@ $trans = [
     'eraser' => 'Eraser',
     'connected' => 'Connection',
     'new' => 'New strokes',
-    'cofnij' => 'Undo'
+    'cofnij' => 'Undo',
+    'back' => 'Back to main page'
   ]
 ];
 $t = $trans[$lang];
@@ -39,6 +41,13 @@ $t = $trans[$lang];
 <body>
   <h2 id="title"><?php echo htmlspecialchars($t['title'], ENT_QUOTES) ?></h2>
   <div class="controls">
+                <button onclick="window.location.href='/index.php'" class="tool-btn">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 19-7-7 7-7"/>
+    <path d="M19 12H5"/>
+  </svg>
+<?php echo htmlspecialchars($t['back'], ENT_QUOTES) ?>
+</button>
     <label>Zoom: 
   <input id="zoom" type="range" min="0.2" max="3" step="0.05" value="0.5">
   <span id="zoomVal">50%</span>

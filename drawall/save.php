@@ -21,7 +21,9 @@ foreach ($stroke['points'] as $p) {
     $points[] = [$x, $y];
 }
 if (count($points) < 2) { http_response_code(400); echo json_encode(['status'=>'error']); exit; }
+$owner = isset($stroke['owner']) ? substr((string)$stroke['owner'], 0, 128) : null;
 $clean = ['points'=>$points,'color'=>$color,'size'=>$size,'tool'=>$tool,'ts'=>time()];
+if ($owner !== null && $owner !== '') $clean['owner'] = $owner;
 $max = 8000;
 if (!file_exists($dataFile)) file_put_contents($dataFile, json_encode([]), LOCK_EX);
 $fp = fopen($dataFile, 'c+');

@@ -161,11 +161,11 @@ $catalogs = [
             'icon' => '📱'
         ],
         [
-            'name' => 'Unfinished sites',
-            'url' => '/unfinished',
-            'description' => 'All the unfinished projects, that will be avaiable on the main page soon!',
-            'category' => 'personal',
-            'icon' => '🚧'
+            'name' => 'Lumiboard',
+            'url' => '/lumiboard',
+            'description' => 'Sleek, web-based dashboard displaying time, weather, calendar, and more in a minimalist, modern interface.',
+            'category' => 'tools',
+            'icon' => '🕰️'
         ],
         [
             'name' => 'Agartha or hyperborea quiz',
@@ -317,11 +317,11 @@ $catalogs = [
             'icon' => '📱'
         ],
         [
-            'name' => 'Niedokończone strony',
-            'url' => '/unfinished',
-            'description' => 'Nieukończone projekty które wkrótce będą dostępne na stronie głównej!',
-            'category' => 'personal',
-            'icon' => '🚧'
+            'name' => 'Lumiboard',
+            'url' => '/lumiboard',
+            'description' => 'Elegancki, internetowy pulpit wyświetlający godzinę, pogodę, kalendarz i inne informacje w minimalistycznym, nowoczesnym interfejsie.',
+            'category' => 'tools',
+            'icon' => '🕰️'
         ],
         [
             'name' => 'Agartha or hyperborea quiz',

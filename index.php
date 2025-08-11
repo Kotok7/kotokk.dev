@@ -38,9 +38,9 @@ $translations = [
         'blog_title'       => 'My blog',
         'blog_desc'        => 'Blog where I share topics and insights that interest me.',
         'blog_link'        => 'Read now',
-        'other_title'      => 'Unfinished projects',
-        'other_desc'       => 'All the unfinished projects, that will be avaiable on the main page soon! Or maybe they will not...',
-        'other_link'       => 'See now',
+        'lumi_title'       => 'LumiBoard',
+        'lumi_desc'        => 'Sleek, web-based dashboard displaying time, weather, calendar, and more in a minimalist, modern interface.',
+        'lumi_link'        => 'See now',
         'quiz_title'       => 'Quiz about me',
         'quiz_desc'        => 'A web quiz that tests how well you know my programming preferences, favorite languages and more!',
         'quiz_link'        => 'Solve',
@@ -150,9 +150,6 @@ $translations = [
         'blog_title'       => 'Mój blog',
         'blog_desc'        => 'Blog, gdzie dzielę się tematami i przemyśleniami, które mnie interesują.',
         'blog_link'        => 'Czytaj',
-        'other_title'      => 'Nieukończone projekty',
-        'other_desc'       => 'Nieukończone projekty które wkrótce będą dostępne na stronie głównej! Albo może i nie będą...',
-        'other_link'       => 'Zobacz',
         'quiz_title'       => 'Quiz o mnie',
         'quiz_desc'        => 'Quiz internetowy, który sprawdzi, jak dobrze znasz moje preferencje programistyczne, ulubione języki i więcej!',
         'quiz_link'        => 'Rozwiąż',
@@ -180,6 +177,9 @@ $translations = [
         'story_title'      => 'Wspólna opowieść',
         'story_desc'       => 'Każdy dodaje po jednym zdaniu i ma cooldown na godzinę.',
         'story_link'       => 'Przeczytaj',
+        'lumi_title'       => 'LumiBoard',
+        'lumi_desc'        => 'Elegancki, internetowy pulpit wyświetlający godzinę, pogodę, kalendarz i inne informacje w minimalistycznym, nowoczesnym interfejsie.',
+        'lumi_link'        => 'Zobacz teraz',
         'draw_title'       => 'Drawall',
         'draw_desc'        => 'Ściana gdzie każdy może rysować co tylko chce!',
         'draw_link'        => 'Rysuj',
@@ -517,7 +517,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="3" data-sort2="7">
+<div class="project-card" data-sort1="3" data-sort2="12">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>30 June</div>
     <div class="project-content">
@@ -527,7 +527,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="4" data-sort2="8">
+<div class="project-card" data-sort1="4" data-sort2="11">
     <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>4 July</div>
     <div class="project-content">
@@ -537,7 +537,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="5" data-sort2="9">
+<div class="project-card" data-sort1="5" data-sort2="8">
     <img src="photos/share-music.png" alt="<?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>21 July</div>
     <div class="project-content">
@@ -557,7 +557,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="7" data-sort2="4">
+<div class="project-card" data-sort1="7" data-sort2="3">
     <img src="photos/quotes.png" alt="<?= htmlspecialchars($t['quotes_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
     <div class="project-content">
@@ -567,7 +567,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="8" data-sort2="3">
+<div class="project-card" data-sort1="8" data-sort2="4">
     <img src="photos/story.png" alt="<?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
     <div class="project-content">
@@ -597,7 +597,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="11" data-sort2="12">
+<div class="project-card" data-sort1="11" data-sort2="13">
     <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>14 June</div>
     <div class="project-content">
@@ -607,7 +607,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="12" data-sort2="13">
+<div class="project-card" data-sort1="12" data-sort2="14">
     <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>13 June</div>
     <div class="project-content">
@@ -657,16 +657,15 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="17" data-sort2="14">
-    <img src="photos/other.png" alt="<?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>04 June</div>
+<div class="project-card" data-sort1="17" data-sort2="10">
+    <img src="photos/lumiboard.png" alt="<?= htmlspecialchars($t['lumi_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 July</div>
     <div class="project-content">
-      <h3><?= htmlspecialchars($t['other_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['other_desc'], ENT_QUOTES) ?></p>
-      <a href="unfinished/index.php" class="project-link"><?= htmlspecialchars($t['other_link'], ENT_QUOTES) ?></a>
+      <h3><?= htmlspecialchars($t['lumi_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['lumi_desc'], ENT_QUOTES) ?></p>
+      <a href="lumiboard/index.html" class="project-link"><?= htmlspecialchars($t['lumi_link'], ENT_QUOTES) ?></a>
     </div>
 </div>
-
 </div>
 
 <div class="two-columns">

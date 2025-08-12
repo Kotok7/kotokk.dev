@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "BeamNG.drive",
+        "platform": "Steam",
+        "description": "Goated racing, crashing and driving simulator, not some bullshit",
+        "screenshots": [
+            "uploads/1755024195_2cecc43a5c3f.jpg",
+            "uploads/1755024195_f8d454611384.jpg",
+            "uploads/1755024195_01b689d6f33a.jpg"
+        ],
+        "created_at": "2025-08-12T18:43:15+00:00"
+    },
+    {
+        "id": 2,
+        "title": "Forza horizon 5",
+        "platform": "Steam",
+        "description": "nice racing simulator",
+        "screenshots": [
+            "uploads/1755024213_a6b26a1fe84e.jpg",
+            "uploads/1755024213_16ab0ab23035.webp",
+            "uploads/1755024213_f199f811dc6c.webp"
+        ],
+        "created_at": "2025-08-12T18:43:33+00:00"
+    }
+]

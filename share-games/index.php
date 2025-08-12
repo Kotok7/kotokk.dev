@@ -83,6 +83,5 @@ const JS_T = <?php echo json_encode([
 ], JSON_UNESCAPED_UNICODE); ?>;
 </script>
 <script src="script.js"></script>
-<script src="popup.js"></script>
 </body>
 </html>

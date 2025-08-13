@@ -26,6 +26,7 @@ if ($action === 'get_posts') {
         $p['likes'] = $likes;
         $p['dislikes'] = $dislikes;
         $p['user_reaction'] = $user_reaction;
+        if (!isset($p['tags']) || !is_array($p['tags'])) $p['tags'] = [];
     }
     echo json_encode(['ok' => true, 'posts' => $posts], JSON_UNESCAPED_UNICODE);
     exit;

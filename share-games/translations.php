@@ -11,6 +11,7 @@ if (isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], $available_langs)) {
 $translations = [
     'pl' => [
         'site_title'=>'Udostępniaj i odkrywaj gry',
+        'back-to-main'=>'Wróć do strony głównej',
         'meta'=>'Udostępniaj swoje ulubione gry i odkrywaj nowe!',
         'add_game'=>'Dodaj grę',
         'name'=>'Nazwa gry',
@@ -33,6 +34,7 @@ $translations = [
     ],
     'en' => [
         'site_title'=>'Share and discover games',
+        'back-to-main'=>'Back to main page',
         'meta'=>'Share your favourite games and discover new ones!',
         'add_game'=>'Add a game',
         'name'=>'Game title',

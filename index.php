@@ -482,7 +482,6 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/repo-size/Kotok7/kotokk.dev.svg?style=flat-square" alt="Repo Size">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/contributors/Kotok7/kotokk.dev.svg?style=flat-square" alt="Contributors">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/languages/count/Kotok7/kotokk.dev" alt="Languages">
-  <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/directory-file-count/Kotok7/kotokk.dev" alt="File Count">
   <img loading="lazy" style="height:17px;width:auto !important;" src="https://img.shields.io/github/created-at/Kotok7/kotokk.dev" alt="Created At">
   <div style="flex-basis:100%; height:0;"></div>
 
@@ -818,3 +817,4 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 <script src="script.js"></script>
 </body>
 </html>
+

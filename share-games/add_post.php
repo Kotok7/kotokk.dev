@@ -8,10 +8,25 @@ $postsFile = $dataDir . '/posts.json';
 $title = trim($_POST['title'] ?? '');
 $platform = trim($_POST['platform'] ?? '');
 $description = trim($_POST['description'] ?? '');
+$tagsRaw = trim($_POST['tags'] ?? '');
 if ($title === '') {
     header('Location: index.php');
     exit;
 }
+$tags = [];
+if ($tagsRaw !== '') {
+    $parts = array_map('trim', explode(',', $tagsRaw));
+    foreach ($parts as $t) {
+        if ($t === '') continue;
+        $clean = preg_replace('/[^\p{L}\p{N}\s\-]/u', '', $t);
+        $clean = trim($clean);
+        if ($clean === '') continue;
+        $tags[] = mb_strtolower($clean);
+    }
+    $tags = array_values(array_unique($tags));
+    if (count($tags) > 10) $tags = array_slice($tags, 0, 10);
+}
+
 $allowedMime = ['image/jpeg','image/png','image/gif','image/webp'];
 $screens = [];
 if (!empty($_FILES['screenshots']) && is_array($_FILES['screenshots']['tmp_name'])) {
@@ -57,6 +72,7 @@ $newPost = [
     'platform' => $platform,
     'description' => $description,
     'screenshots' => $screens,
+    'tags' => $tags,
     'created_at' => $date->format(DateTime::ATOM)
 ];
 $posts[] = $newPost;

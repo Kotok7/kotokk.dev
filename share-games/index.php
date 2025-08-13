@@ -48,7 +48,12 @@ $user_id = $_COOKIE['user_id'];
       </div>
       <div class="form-row">
         <label for="platform"><?php echo htmlspecialchars(t('platform_label')); ?></label>
-        <input id="platform" name="platform" type="text" maxlength="100" autocomplete="off" />
+        <input id="platform" name="platform" type="text" maxlength="100" placeholder="<?php echo htmlspecialchars(t('platform_placeholder')); ?>" autocomplete="off" />
+      </div>
+      <div class="form-row">
+        <label for="tags"><?php echo htmlspecialchars(t('tags_label')); ?></label>
+        <input id="tags" name="tags" type="text" maxlength="200" placeholder="<?php echo htmlspecialchars(t('tags_placeholder')); ?>" autocomplete="off" />
+        <div class="hint"><?php echo htmlspecialchars(t('tags_hint')); ?></div>
       </div>
       <div class="form-row">
         <label for="description"><?php echo htmlspecialchars(t('description')); ?></label>
@@ -68,6 +73,15 @@ $user_id = $_COOKIE['user_id'];
 
   <section id="list" aria-labelledby="list-heading">
     <h2 id="list-heading"><?php echo htmlspecialchars(t('list_title')); ?></h2>
+
+    <div class="sort-controls" style="margin-bottom:1rem;">
+      <label for="sortSelect" class="sort-label"><?php echo htmlspecialchars(t('sort_label')); ?>:</label>
+      <select id="sortSelect" aria-label="Sort posts">
+        <option value="newest"><?php echo htmlspecialchars(t('sort_newest')); ?></option>
+        <option value="likes"><?php echo htmlspecialchars(t('sort_likes')); ?></option>
+      </select>
+    </div>
+
     <div id="postsContainer" class="posts-container" role="list">
       <div class="placeholder"><?php echo htmlspecialchars(t('loading_posts')); ?></div>
     </div>
@@ -88,6 +102,11 @@ const JS_T = <?php echo json_encode([
     'max_uploads' => 5,
     'max_size_bytes' => 2 * 1024 * 1024,
     'upload_hint' => t('upload_hint'),
+    'tags_placeholder' => t('tags_placeholder'),
+    'tags_label' => t('tags_label'),
+    'sort_label' => t('sort_label'),
+    'sort_newest' => t('sort_newest'),
+    'sort_likes' => t('sort_likes'),
 ], JSON_UNESCAPED_UNICODE); ?>;
 </script>
 <script src="script.js"></script>

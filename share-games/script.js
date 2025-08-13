@@ -13,32 +13,23 @@ function timeAgo(isoString){
   const d = new Date(isoString);
   if (isNaN(d)) return '';
   const seconds = Math.floor((Date.now() - d.getTime())/1000);
-  const rtf = new Intl.RelativeTimeFormat(navigator.language || (LANG === 'pl' ? 'pl-PL':'en-US'), { numeric:'auto' });
-  const divisions = [
-    {amount:60,name:'second'},
-    {amount:60,name:'minute'},
-    {amount:24,name:'hour'},
-    {amount:7,name:'day'},
-    {amount:4.34524,name:'week'},
-    {amount:12,name:'month'},
-    {amount:Infinity,name:'year'}
+  if (seconds < 5) return JS_T.just_now || (LANG==='pl' ? 'przed chwilą' : 'just now');
+  const units = [
+    {name:'year', secs:31557600},
+    {name:'month', secs:2629800},
+    {name:'week', secs:604800},
+    {name:'day', secs:86400},
+    {name:'hour', secs:3600},
+    {name:'minute', secs:60},
+    {name:'second', secs:1}
   ];
-  let duration = seconds;
-  for (let i=0;i<divisions.length;i++){
-    const div = divisions[i];
-    if (Math.abs(duration) < div.amount){
-      const val = Math.round(duration / (i===0?1: div.amount===60 && i>0 ? Math.pow(60,i) : Math.pow(60,i)));
-      switch(div.name){
-        case 'second': return rtf.format(-duration,'second');
-      }
-      if (div.name === 'minute') return rtf.format(-Math.round(duration/60),'minute');
-      if (div.name === 'hour') return rtf.format(-Math.round(duration/3600),'hour');
-      if (div.name === 'day') return rtf.format(-Math.round(duration/86400),'day');
-      if (div.name === 'week') return rtf.format(-Math.round(duration/604800),'week');
-      if (div.name === 'month') return rtf.format(-Math.round(duration/2629800),'month');
-      return rtf.format(-Math.round(duration/31557600),'year');
+  const locale = navigator.language || (LANG === 'pl' ? 'pl-PL' : 'en-US');
+  const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
+  for (let u of units){
+    const v = Math.floor(seconds / u.secs);
+    if (v >= 1) {
+      return rtf.format(-v, u.name);
     }
-    duration /= div.amount;
   }
   return '';
 }

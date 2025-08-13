@@ -1,6 +1,6 @@
 <?php
 $available_langs = ['pl','en'];
-$lang = 'pl';
+$lang = 'en';
 if (isset($_GET['lang']) && in_array($_GET['lang'], $available_langs)) {
     setcookie('lang', $_GET['lang'], time()+31536000, '/');
     $_COOKIE['lang'] = $_GET['lang'];
@@ -57,7 +57,7 @@ $translations = [
 function t($key) {
     global $translations, $lang;
     if (isset($translations[$lang][$key])) return $translations[$lang][$key];
-    if (isset($translations['pl'][$key])) return $translations['pl'][$key];
+    if (isset($translations['en'][$key])) return $translations['en'][$key];
     return $key;
 }
 $current_lang = $lang;

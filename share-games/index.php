@@ -77,6 +77,7 @@ const JS_T = <?php echo json_encode([
     'error_missing_title' => t('error_missing_title'),
     'like_text' => t('like_text'),
     'dislike_text' => t('dislike_text'),
+    'just_now' => ($current_lang === 'pl') ? 'przed chwilą' : 'just now',
     'max_uploads' => 5,
     'max_size_bytes' => 2 * 1024 * 1024,
     'upload_hint' => t('upload_hint'),

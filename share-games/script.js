@@ -33,6 +33,10 @@ function timeAgo(isoString){
   }
   return '';
 }
+
+let _postsCache = [];
+let _currentSort = 'newest';
+
 async function fetchPosts(){
   const container = document.getElementById('postsContainer');
   container.innerHTML = '';
@@ -48,48 +52,78 @@ async function fetchPosts(){
       container.innerHTML = `<p class="no-posts">${escapeHtml((LANG==='pl')? 'Brak gier — bądź pierwszy!' : 'No games yet — be the first!')}</p>`;
       return;
     }
-    posts.sort((a,b)=> new Date(b.created_at) - new Date(a.created_at));
-    posts.forEach(p => {
-      const article = document.createElement('article');
-      article.className = 'post';
-      article.setAttribute('data-id', p.id);
-      const thumbsHTML = (p.screenshots && p.screenshots.length)? `<div class="thumbs">${p.screenshots.map(s=>`<img loading="lazy" src="${escapeHtml(s)}" alt="${escapeHtml(p.title)} screenshot">`).join('') }</div>` : `<div class="thumbs empty"></div>`;
-      const platform = p.platform ? escapeHtml(p.platform) : '-';
-      const createdLocal = formatLocalTime(p.created_at);
-      const ago = timeAgo(p.created_at);
-      const desc = p.description ? `<p class="desc">${escapeHtml(p.description).replace(/\n/g,'<br>')}</p>` : '';
-      const likes = Number(p.likes||0);
-      const dislikes = Number(p.dislikes||0);
-      const ur = Number(p.user_reaction||0);
-      article.innerHTML = `
-        ${thumbsHTML}
-        <div class="content">
-          <h3>${escapeHtml(p.title)}</h3>
-          <p class="meta">${escapeHtml((LANG==='pl')? 'Platforma' : 'Platform')}: ${platform} · ${escapeHtml((LANG==='pl')? 'Dodano' : 'Added')}: <time class="local-time" data-utc="${escapeHtml(p.created_at)}">${escapeHtml(createdLocal)}</time> ${ago?'<span class="ago">· '+escapeHtml(ago)+'</span>':''}</p>
-          ${desc}
-          <div class="actions" role="group" aria-label="Reactions">
-            <button class="react like ${ur===1?'active':''}" data-reaction="1" aria-pressed="${ur===1?'true':'false'}" title="${escapeHtml(JS_T.like_text)}">
-              <span class="label">${escapeHtml(JS_T.like_text)}</span>
-              <span class="count">${likes}</span>
-            </button>
-            <button class="react dislike ${ur===-1?'active':''}" data-reaction="-1" aria-pressed="${ur===-1?'true':'false'}" title="${escapeHtml(JS_T.dislike_text)}">
-              <span class="label">${escapeHtml(JS_T.dislike_text)}</span>
-              <span class="count">${dislikes}</span>
-            </button>
-          </div>
-        </div>
-      `;
-      container.appendChild(article);
-    });
-    attachActionListeners();
-    attachLightbox();
+    // save cache then render
+    _postsCache = posts;
+    renderPosts(_currentSort);
   }catch(e){
     const container = document.getElementById('postsContainer');
     container.innerHTML = `<p class="no-posts">${escapeHtml(JS_T.error_generic)}</p>`;
   }
 }
+
+function renderPosts(sortBy){
+  const container = document.getElementById('postsContainer');
+  container.innerHTML = '';
+  const posts = Array.from(_postsCache || []);
+  if (sortBy === 'likes') {
+    posts.sort((a,b) => {
+      const diff = (Number(b.likes||0) - Number(a.likes||0));
+      if (diff !== 0) return diff;
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
+  } else {
+    posts.sort((a,b)=> new Date(b.created_at) - new Date(a.created_at));
+  }
+
+  posts.forEach(p => {
+    const article = document.createElement('article');
+    article.className = 'post';
+    article.setAttribute('data-id', p.id);
+    const thumbsHTML = (p.screenshots && p.screenshots.length)? `<div class="thumbs">${p.screenshots.map(s=>`<img loading="lazy" src="${escapeHtml(s)}" alt="${escapeHtml(p.title)} screenshot">`).join('') }</div>` : `<div class="thumbs empty"></div>`;
+    const platform = p.platform ? escapeHtml(p.platform) : '-';
+    const createdLocal = formatLocalTime(p.created_at);
+    const ago = timeAgo(p.created_at);
+    const desc = p.description ? `<p class="desc">${escapeHtml(p.description).replace(/\n/g,'<br>')}</p>` : '';
+    const likes = Number(p.likes||0);
+    const dislikes = Number(p.dislikes||0);
+    const ur = Number(p.user_reaction||0);
+
+    // tags (if any)
+    let tagsHTML = '';
+    if (p.tags && Array.isArray(p.tags) && p.tags.length){
+      tagsHTML = `<div class="tags">` + p.tags.map(tag => `<span class="tag-chip">${escapeHtml(tag)}</span>`).join(' ') + `</div>`;
+    }
+
+    article.innerHTML = `
+      ${thumbsHTML}
+      <div class="content">
+        <h3>${escapeHtml(p.title)}</h3>
+        <p class="meta">${escapeHtml((LANG==='pl')? 'Platforma' : 'Platform')}: ${platform} · ${escapeHtml((LANG==='pl')? 'Dodano' : 'Added')}: <time class="local-time" data-utc="${escapeHtml(p.created_at)}">${escapeHtml(createdLocal)}</time> ${ago?'<span class="ago">· '+escapeHtml(ago)+'</span>':''}</p>
+        ${tagsHTML}
+        ${desc}
+        <div class="actions" role="group" aria-label="Reactions">
+          <button class="react like ${ur===1?'active':''}" data-reaction="1" aria-pressed="${ur===1?'true':'false'}" title="${escapeHtml(JS_T.like_text)}">
+            <span class="label">${escapeHtml(JS_T.like_text)}</span>
+            <span class="count">${likes}</span>
+          </button>
+          <button class="react dislike ${ur===-1?'active':''}" data-reaction="-1" aria-pressed="${ur===-1?'true':'false'}" title="${escapeHtml(JS_T.dislike_text)}">
+            <span class="label">${escapeHtml(JS_T.dislike_text)}</span>
+            <span class="count">${dislikes}</span>
+          </button>
+        </div>
+      </div>
+    `;
+    container.appendChild(article);
+  });
+
+  attachActionListeners();
+  attachLightbox();
+  updateTimes();
+}
+
 function attachActionListeners(){
   document.querySelectorAll('.post .actions .react').forEach(btn=>{
+    btn.removeEventListener('click', ()=>{});
     btn.addEventListener('click', async (e)=>{
       const article = btn.closest('.post');
       const postId = article.getAttribute('data-id');
@@ -163,6 +197,13 @@ function attachActionListeners(){
           dislikeBtn.classList.remove('active');
           dislikeBtn.setAttribute('aria-pressed','false');
         }
+        const idx = _postsCache.findIndex(x => String(x.id) === String(data.post_id));
+        if (idx !== -1) {
+          _postsCache[idx].likes = data.likes;
+          _postsCache[idx].dislikes = data.dislikes;
+          _postsCache[idx].user_reaction = data.user_reaction;
+          if (_currentSort === 'likes') renderPosts(_currentSort);
+        }
       } catch(err){
         alert(err.message || JS_T.error_generic);
         fetchPosts();
@@ -170,6 +211,7 @@ function attachActionListeners(){
     });
   });
 }
+
 function attachLightbox(){
   document.querySelectorAll('.thumbs img').forEach(img=>{
     img.style.cursor = 'zoom-in';
@@ -186,6 +228,7 @@ function attachLightbox(){
     });
   });
 }
+
 function updateTimes(){
   document.querySelectorAll('.local-time').forEach(el=>{
     const iso = el.dataset.utc;
@@ -207,6 +250,7 @@ function updateTimes(){
     }
   });
 }
+
 function setupForm(){
   const fileInput = document.getElementById('screenshots');
   const preview = document.getElementById('preview');
@@ -265,7 +309,15 @@ function setupForm(){
     return true;
   });
 }
+
 document.addEventListener('DOMContentLoaded', ()=>{
+  const sortSelect = document.getElementById('sortSelect');
+  if (sortSelect){
+    sortSelect.addEventListener('change', ()=>{
+      _currentSort = sortSelect.value || 'newest';
+      renderPosts(_currentSort);
+    });
+  }
   fetchPosts();
   setupForm();
   updateTimes();

@@ -63,6 +63,13 @@ $catalogs = [
             'icon' => '💬'
         ],
         [
+            'name' => 'Share apps',
+            'url' => '/share-apps',
+            'description' => 'Share your favoutite apps! Select type and enter the name',
+            'category' => 'social',
+            'icon' => '🤳'
+        ],
+        [
             'name' => 'Share and explore sites',
             'url' => '/share-sites',
             'description' => 'Share interesting sites with other people or rate and explore other sites!',
@@ -217,6 +224,13 @@ $catalogs = [
             'description' => 'Prosty czat internetowy w czasie rzeczywistym z udostępnianiem obrazów i wiadomości głosowych. Ma także licznik aktywnych użytkowników na żywo!',
             'category' => 'social',
             'icon' => '💬'
+        ],
+        [
+            'name' => 'Udostępniaj aplikacje',
+            'url' => '/share-apps',
+            'description' => 'Udostępniaj swoje ulubione aplikacje! Wybierz typ i wpisz nazwę.',
+            'category' => 'social',
+            'icon' => '🤳'
         ],
         [
             'name' => 'Udostępniaj i odkrywaj strony',

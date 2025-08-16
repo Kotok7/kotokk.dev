@@ -74,6 +74,9 @@ $translations = [
         'games_title'      => 'Share and discover games',
         'games_desc'       => 'Share your favourite games and discover new ones!',
         'games_link'       => 'See now',
+        'apps_title'       => 'Share apps',
+        'apps_desc'        => 'Share your favoutite apps! Select type and enter the name',
+        'apps_link'        => 'Browse',
         'footer'           => 'All rights reserved.<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
@@ -165,6 +168,9 @@ $translations = [
         'share_title'      => 'Udostępniaj strony internetowe',
         'share_desc'       => 'Udostępniaj ciekawe strony internetowe z innymi ludźmi, oraz oceniaj i odkrywaj nowe strony internetowe!',
         'share_link'       => 'Odkryj',
+        'apps_title'       => 'Udostępniaj aplikacje',
+        'apps_desc'        => 'Udostępniaj swoje ulubione aplikacje! Wybierz typ i wpisz nazwę.',
+        'apps_link'        => 'Wyszukuj',
         'screentime_title' => 'Emulator czasu przed ekranem iOS',
         'screentime_desc'  => 'Ta strona internetowa emuluje stronę czasu przed ekranem z iOS, abyś mógł uzyskać hasło do czasu przed ekranem od swojego rodzica.',
         'screentime_link'  => 'Emuluj',
@@ -512,67 +518,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 </div>
 <script src="github.js"></script>
 
-<div class="project-card" data-sort1="4" data-sort2="2">
-    <img src="photos/games.png" alt="<?= htmlspecialchars($t['games_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>12 August</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['games_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['games_desc'], ENT_QUOTES) ?></p>
-      <a href="share-games/index.php" class="project-link"><?= htmlspecialchars($t['games_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="18" data-sort2="3">
-    <img src="photos/lumiboard.png" alt="<?= htmlspecialchars($t['lumi_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>11 August</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['lumi_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['lumi_desc'], ENT_QUOTES) ?></p>
-      <a href="lumiboard/index.html" class="project-link"><?= htmlspecialchars($t['lumi_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="7" data-sort2="4">
-    <img src="photos/draw.png" alt="<?= htmlspecialchars($t['draw_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 August</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['draw_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['draw_desc'], ENT_QUOTES) ?></p>
-      <a href="drawall/index.php" class="project-link"><?= htmlspecialchars($t['draw_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="8" data-sort2="5">
-    <img src="photos/quotes.png" alt="<?= htmlspecialchars($t['quotes_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['quotes_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['quotes_desc'], ENT_QUOTES) ?></p>
-      <a href="quotes/index.php" class="project-link"><?= htmlspecialchars($t['quotes_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="9" data-sort2="6">
-    <img src="photos/story.png" alt="<?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['story_desc'], ENT_QUOTES) ?></p>
-      <a href="story/index.php" class="project-link"><?= htmlspecialchars($t['story_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="15" data-sort2="7">
-    <img src="photos/time-converter.png" alt="<?= htmlspecialchars($t['convert_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>3 August</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['convert_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['convert_desc'], ENT_QUOTES) ?></p>
-      <a href="time-converter/index.php" class="project-link"><?= htmlspecialchars($t['convert_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="2" data-sort2="8">
+<div class="project-card" data-sort1="2" data-sort2="9">
     <img src="photos/about-me.png" alt="<?= htmlspecialchars($t['about_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>31 July</div>
     <div class="project-content">
@@ -582,47 +528,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="14" data-sort2="9">
-    <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>26 July</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['blog_desc'], ENT_QUOTES) ?></p>
-      <a href="blog/index.php" class="project-link"><?= htmlspecialchars($t['blog_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="6" data-sort2="10">
-    <img src="photos/share-music.png" alt="<?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>21 July</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['music_desc'], ENT_QUOTES) ?></p>
-      <a href="share-music/index.php" class="project-link"><?= htmlspecialchars($t['music_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="17" data-sort2="11">
-    <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 July</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
-      <a href="screentime/index.html" class="project-link"><?= htmlspecialchars($t['screentime_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="5" data-sort2="12">
-    <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>4 July</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['share_desc'], ENT_QUOTES) ?></p>
-      <a href="share-sites/index.php" class="project-link"><?= htmlspecialchars($t['share_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="3" data-sort2="13">
+<div class="project-card" data-sort1="3" data-sort2="14">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>30 June</div>
     <div class="project-content">
@@ -632,27 +538,77 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="12" data-sort2="14">
-    <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>14 June</div>
+<div class="project-card" data-sort1="4" data-sort2="3">
+    <img src="photos/games.png" alt="<?= htmlspecialchars($t['games_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>12 August</div>
     <div class="project-content">
-      <h3><?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['quiz_desc'], ENT_QUOTES) ?></p>
-      <a href="quiz/index.html" class="project-link"><?= htmlspecialchars($t['quiz_link'], ENT_QUOTES) ?></a>
+      <h3><?= htmlspecialchars($t['games_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['games_desc'], ENT_QUOTES) ?></p>
+      <a href="share-games/index.php" class="project-link"><?= htmlspecialchars($t['games_link'], ENT_QUOTES) ?></a>
     </div>
 </div>
 
-<div class="project-card" data-sort1="13" data-sort2="15">
-    <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>13 June</div>
+<div class="project-card" data-sort1="5" data-sort2="2">
+    <img src="photos/apps.png" alt="<?= htmlspecialchars($t['apps_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>16 August</div>
     <div class="project-content">
-      <h3><?= htmlspecialchars($t['quantum_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['quantum_desc'], ENT_QUOTES) ?></p>
-      <a href="quantum-tools/index.html" class="project-link"><?= htmlspecialchars($t['quantum_link'], ENT_QUOTES) ?></a>
+      <h3><?= htmlspecialchars($t['apps_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['apps_desc'], ENT_QUOTES) ?></p>
+      <a href="share-apps/index.php" class="project-link"><?= htmlspecialchars($t['apps_link'], ENT_QUOTES) ?></a>
     </div>
 </div>
 
-<div class="project-card" data-sort1="10" data-sort2="16">
+<div class="project-card" data-sort1="5" data-sort2="13">
+    <img src="photos/share.png" alt="<?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>4 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['share_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['share_desc'], ENT_QUOTES) ?></p>
+      <a href="share-sites/index.php" class="project-link"><?= htmlspecialchars($t['share_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="6" data-sort2="11">
+    <img src="photos/share-music.png" alt="<?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>21 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['music_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['music_desc'], ENT_QUOTES) ?></p>
+      <a href="share-music/index.php" class="project-link"><?= htmlspecialchars($t['music_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="7" data-sort2="5">
+    <img src="photos/draw.png" alt="<?= htmlspecialchars($t['draw_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 August</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['draw_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['draw_desc'], ENT_QUOTES) ?></p>
+      <a href="drawall/index.php" class="project-link"><?= htmlspecialchars($t['draw_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="8" data-sort2="6">
+    <img src="photos/quotes.png" alt="<?= htmlspecialchars($t['quotes_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['quotes_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['quotes_desc'], ENT_QUOTES) ?></p>
+      <a href="quotes/index.php" class="project-link"><?= htmlspecialchars($t['quotes_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="9" data-sort2="7">
+    <img src="photos/story.png" alt="<?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>9 August</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['story_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['story_desc'], ENT_QUOTES) ?></p>
+      <a href="story/index.php" class="project-link"><?= htmlspecialchars($t['story_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="10" data-sort2="17">
     <img src="photos/qjf.png" alt="<?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
@@ -662,7 +618,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="11" data-sort2="17">
+<div class="project-card" data-sort1="11" data-sort2="18">
     <img src="photos/dev.png" alt="<?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
@@ -672,13 +628,73 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="16" data-sort2="18">
+<div class="project-card" data-sort1="12" data-sort2="15">
+    <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>14 June</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['quiz_desc'], ENT_QUOTES) ?></p>
+      <a href="quiz/index.html" class="project-link"><?= htmlspecialchars($t['quiz_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="13" data-sort2="16">
+    <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>13 June</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['quantum_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['quantum_desc'], ENT_QUOTES) ?></p>
+      <a href="quantum-tools/index.html" class="project-link"><?= htmlspecialchars($t['quantum_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="14" data-sort2="10">
+    <img src="photos/blog.png" alt="<?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>26 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['blog_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['blog_desc'], ENT_QUOTES) ?></p>
+      <a href="blog/index.php" class="project-link"><?= htmlspecialchars($t['blog_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="15" data-sort2="8">
+    <img src="photos/time-converter.png" alt="<?= htmlspecialchars($t['convert_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>3 August</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['convert_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['convert_desc'], ENT_QUOTES) ?></p>
+      <a href="time-converter/index.php" class="project-link"><?= htmlspecialchars($t['convert_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="16" data-sort2="19">
     <img src="photos/cybersecurity.png" alt="<?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>April</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['cyber_desc'], ENT_QUOTES) ?></p>
       <a href="cybersecurity/index.php" class="project-link"><?= htmlspecialchars($t['cyber_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="17" data-sort2="12">
+    <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>10 July</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
+      <a href="screentime/index.html" class="project-link"><?= htmlspecialchars($t['screentime_link'], ENT_QUOTES) ?></a>
+    </div>
+</div>
+
+<div class="project-card" data-sort1="18" data-sort2="4">
+    <img src="photos/lumiboard.png" alt="<?= htmlspecialchars($t['lumi_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
+    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>11 August</div>
+    <div class="project-content">
+      <h3><?= htmlspecialchars($t['lumi_title'], ENT_QUOTES) ?></h3>
+      <p><?= htmlspecialchars($t['lumi_desc'], ENT_QUOTES) ?></p>
+      <a href="lumiboard/index.html" class="project-link"><?= htmlspecialchars($t['lumi_link'], ENT_QUOTES) ?></a>
     </div>
 </div>
 </div>
@@ -817,4 +833,3 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 <script src="script.js"></script>
 </body>
 </html>
-

@@ -21,6 +21,11 @@ $translations = [
         'post_desc2'       => 'How AI tools are transforming software development, from smart code completion to automated testing, and what it means for developers.',
         'date2'            => '9 August',
         'read_time2'       => '3 min read',
+        'tag3'             => 'JavaScript',
+        'post_title3'      => 'Why do people fear JavaScript?',
+        'post_desc3'       => 'A short, human take on why some people avoid or disable JavaScript on websites.',
+        'date3'            => '28 August',
+        'read_time3'       => '3 min read',
     ],
     'pl' => [
         'html_lang'        => 'pl',
@@ -41,6 +46,11 @@ $translations = [
         'post_desc2'       => 'Jak narzędzia AI transformują tworzenie oprogramowania, od inteligentnego uzupełniania kodu po automatyczne testowanie, i co to oznacza dla programistów.',
         'date2'            => '9 Sierpnia',
         'read_time2'       => '3 minuty czytania',
+        'tag3'             => 'JavaScript',
+        'post_title3'      => 'Dlaczego ludzie boją się JavaScriptu',
+        'post_desc3'       => 'Krótki, ludzki tekst o tym, dlaczego niektórzy unikają albo wyłączają JavaScript na stronach.',
+        'date3'            => '23 Sierpnia',
+        'read_time3'       => '3 minuty czytania',
     ],
 ];
 
@@ -143,6 +153,33 @@ $storedNick = $_COOKIE['blog_nick'] ?? null;
         </svg>
     </a>
 </article>
+
+<article class="post-card" onclick="selectPost('javascript')">
+    <span class="post-category"><?= htmlspecialchars($t['tag3'], ENT_QUOTES) ?></span>
+    <h2 class="post-title"><?= htmlspecialchars($t['post_title3'], ENT_QUOTES) ?></h2>
+    <p class="post-excerpt"><?= htmlspecialchars($t['post_desc3'], ENT_QUOTES) ?></p>
+    <div class="post-meta">
+        <span class="post-date">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+            <?= htmlspecialchars($t['date3'], ENT_QUOTES) ?>
+        </span>
+        <span class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <?= htmlspecialchars($t['read_time3'], ENT_QUOTES) ?>
+        </span>
+    </div>
+    <a href="javascript/index.php" class="read-button" onclick="event.stopPropagation(); selectPost('javascript')">
+        <?= htmlspecialchars($t['read'], ENT_QUOTES) ?>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+        </svg>
+    </a>
+</article>
+
             </div>
         </main>
     </div>

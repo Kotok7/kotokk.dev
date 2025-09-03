@@ -4,6 +4,42 @@
   box-sizing: border-box;
 }
 
+.sort-controls{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.sort-controls label{
+  font-weight: 600;
+  user-select: none;
+}
+
+.sort-controls select#sortSelect{
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.sort-controls select#sortSelect:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.12);
+}
+
+@media (prefers-color-scheme: dark){
+  .sort-controls label{ color: #ddd; }
+  .sort-controls select#sortSelect{
+    background:#ffffff;
+    color:#000000;
+  }
+}
+
 .song-genres {
   margin: 6px 0;
 }

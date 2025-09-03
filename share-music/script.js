@@ -6,6 +6,8 @@ class SongApp {
     this.messageContainer=document.getElementById('message-container');
     this.coverPreview=document.getElementById('cover-preview');
     this.linkInput=document.getElementById('link');
+    this.sortSelect=document.getElementById('sortSelect');
+    this.originalSubmitText=this.submitBtn.textContent;
     Object.assign(this.linkInput.style,{
       pointerEvents:'none',
       userSelect:'none',
@@ -16,7 +18,21 @@ class SongApp {
     this.form.addEventListener('submit',this.handleSubmit.bind(this));
     this.form.title.addEventListener('change',this.fetchSpotifyData.bind(this));
     this.form.author.addEventListener('change',this.fetchSpotifyData.bind(this));
+    this.sort=this.loadSortPreference();
+    this.sortSelect.value=this.sort;
+    this.sortSelect.addEventListener('change',()=>{
+      this.sort=this.sortSelect.value;
+      this.saveSortPreference();
+      this.loadSongs();
+    });
     this.loadSongs();
+  }
+  loadSortPreference(){
+    const s=localStorage.getItem('song_sort');
+    return s? s : 'date';
+  }
+  saveSortPreference(){
+    localStorage.setItem('song_sort',this.sort);
   }
   async fetchSpotifyData(){
     const t=this.form.title.value.trim(),a=this.form.author.value.trim();
@@ -34,7 +50,8 @@ class SongApp {
   }
   async loadSongs(){
     try{
-      const res=await fetch('songs.php');
+      const res=await fetch(`songs.php?sort=${encodeURIComponent(this.sort)}`);
+      if(!res.ok)throw'';
       const s=await res.json();
       this.renderSongs(s);
       this.attachRatingHandlers();
@@ -86,9 +103,9 @@ class SongApp {
         star.addEventListener('click',async()=>{
           const r=+star.dataset.value;
           try{
-            const res=await fetch('songs.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,rating:r})});
-            const j=await res.json();
+            const res=await fetch(`songs.php?sort=${encodeURIComponent(this.sort)}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,rating:r})});
             if(!res.ok)throw'';
+            const j=await res.json();
             localStorage.setItem(key,'true');
             localStorage.setItem(`${key}_value`,r);
             this.showMessage('Thanks for your vote! ⭐','success');
@@ -119,16 +136,16 @@ class SongApp {
     }
     this.submitBtn.disabled=true;this.submitBtn.textContent='Adding...';
     try{
-      const res=await fetch('songs.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
-      const j=await res.json();
+      const res=await fetch(`songs.php?sort=${encodeURIComponent(this.sort)}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
       if(!res.ok)throw'';
+      const j=await res.json();
       this.form.reset();this.coverPreview.innerHTML='';
       this.showMessage('Song added successfully! 🎉','success');
       this.renderSongs(j);this.attachRatingHandlers();
     }catch{
       this.showMessage('Error adding song.','error');
     }finally{
-      this.submitBtn.disabled=false;this.submitBtn.textContent='Add song';
+      this.submitBtn.disabled=false;this.submitBtn.textContent=this.originalSubmitText;
     }
   }
   showMessage(t,type){

@@ -414,12 +414,14 @@ Back to main page
         <div class="sort-controls">
             <form method="get" class="sort-form">
                 <input type="hidden" name="lang" value="<?= htmlspecialchars($lang, ENT_QUOTES) ?>">
-                <button type="submit" name="sort" value="newest" class="sort-btn <?= $sort === 'newest' ? 'active' : '' ?>">
-                    <?= $lang === 'pl' ? 'Najnowsze' : 'Newest' ?>
-                </button>
-                <button type="submit" name="sort" value="top" class="sort-btn <?= $sort === 'top' ? 'active' : '' ?>">
-                    <?= $lang === 'pl' ? 'Najwyższa ocena' : 'Top rated' ?>
-                </button>
+                <select name="sort" id="sort-select" onchange="this.form.submit()">
+                    <option value="newest" <?= $sort === 'newest' ? 'selected' : '' ?>>
+                        <?= $lang === 'pl' ? 'Najnowsze' : 'Newest' ?>
+                    </option>
+                    <option value="top" <?= ($sort === 'top' || $sort === '') ? 'selected' : '' ?>>
+                        <?= $lang === 'pl' ? 'Najwyższa ocena' : 'Top rated' ?>
+                    </option>
+                </select>
             </form>
         </div>
 

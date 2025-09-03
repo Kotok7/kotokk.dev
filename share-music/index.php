@@ -22,6 +22,9 @@ $translations = [
         'add'          => 'Add',
         'song_list'    => 'List of shared songs',
         'listen'       => '🎧 Listen',
+        'sort_by'      => 'Sort by',
+        'sort_date'    => 'Date added (newest)',
+        'sort_rating'  => 'Highest rating'
     ],
     'pl' => [
         'html_lang'    => 'pl',
@@ -44,6 +47,9 @@ $translations = [
         'add'          => 'Dodaj',
         'song_list'    => 'Lista dodanych piosenek',
         'listen'       => '🎧 Posłuchaj',
+        'sort_by'      => 'Sortuj według',
+        'sort_date'    => 'Data dodania (najnowsze)',
+        'sort_rating'  => 'Najwyższa ocena'
     ]
 ];
 if (!isset($translations[$lang_code])) $lang_code = 'en';
@@ -100,6 +106,13 @@ $t = $translations[$lang_code];
       <div id="cover-preview" style="margin-top:10px;"></div>
       <div id="message-container"></div>
       <h2>📋 <?=htmlspecialchars($t['song_list'],ENT_QUOTES)?></h2>
+      <div class="sort-controls">
+        <label for="sortSelect"><?=htmlspecialchars($t['sort_by'],ENT_QUOTES)?>:</label>
+        <select id="sortSelect" aria-label="Sort">
+          <option value="date"><?=htmlspecialchars($t['sort_date'],ENT_QUOTES)?></option>
+          <option value="rating"><?=htmlspecialchars($t['sort_rating'],ENT_QUOTES)?></option>
+        </select>
+      </div>
       <ul id="songsList" class="songs-list"></ul>
     </div>
   </div>

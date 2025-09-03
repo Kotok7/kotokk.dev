@@ -69,11 +69,35 @@ function handleError(Exception $ex,int $sc=500): void {
     echo json_encode(['error'=>$ex->getMessage(),'timestamp'=>date('c')]);
     exit;
 }
+function sortSongs(array $songs): array {
+    $sort = $_GET['sort'] ?? 'date';
+    if($sort === 'rating'){
+        usort($songs,function($a,$b){
+            $avgA = isset($a['ratings']) && is_array($a['ratings']) && count($a['ratings']) ? array_sum($a['ratings'])/count($a['ratings']) : 0;
+            $avgB = isset($b['ratings']) && is_array($b['ratings']) && count($b['ratings']) ? array_sum($b['ratings'])/count($b['ratings']) : 0;
+            if($avgA === $avgB){
+                $ta = $a['added_timestamp'] ?? 0;
+                $tb = $b['added_timestamp'] ?? 0;
+                return $tb <=> $ta;
+            }
+            return $avgB <=> $avgA;
+        });
+    } else {
+        usort($songs,function($a,$b){
+            $ta = $a['added_timestamp'] ?? 0;
+            $tb = $b['added_timestamp'] ?? 0;
+            return $tb <=> $ta;
+        });
+    }
+    return $songs;
+}
 try {
     initializeDataStructure();
     switch($_SERVER['REQUEST_METHOD']) {
         case 'GET':
-            echo json_encode(loadSongs());
+            $s = loadSongs();
+            $s = sortSongs($s);
+            echo json_encode($s);
             break;
         case 'POST':
             $in=file_get_contents('php://input');
@@ -90,6 +114,7 @@ try {
                     }
                 }
                 saveSongs($s);
+                $s = sortSongs($s);
                 echo json_encode($s);
                 break;
             }
@@ -111,6 +136,7 @@ try {
             ];
             array_unshift($s,$new);
             saveSongs($s);
+            $s = sortSongs($s);
             http_response_code(201);
             echo json_encode($s);
             break;

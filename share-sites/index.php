@@ -316,6 +316,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $_SESSION['csrf_token'] = bin2hex(random_bytes(16));
 $projects = loadAndPrepareProjects();
+
+$sort = $_GET['sort'] ?? '';
+if ($sort === 'newest') {
+    usort($projects, function($a, $b) {
+        $ad = $a['added'] ?? '';
+        $bd = $b['added'] ?? '';
+        return strcmp($bd, $ad);
+    });
+} elseif ($sort === 'top') {
+    usort($projects, function($a, $b) {
+        $scoreA = intval($a['upvotes'] ?? 0) - intval($a['downvotes'] ?? 0);
+        $scoreB = intval($b['upvotes'] ?? 0) - intval($b['downvotes'] ?? 0);
+        if ($scoreB === $scoreA) {
+            return intval($b['upvotes'] ?? 0) <=> intval($a['upvotes'] ?? 0);
+        }
+        return $scoreB <=> $scoreA;
+    });
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?= htmlspecialchars($lang, ENT_QUOTES) ?>">
@@ -392,6 +410,18 @@ Back to main page
             
             <button type="submit" class="submit-btn"><?= htmlspecialchars(t('add_project', $lang), ENT_QUOTES) ?></button>
         </form>
+
+        <div class="sort-controls">
+            <form method="get" class="sort-form">
+                <input type="hidden" name="lang" value="<?= htmlspecialchars($lang, ENT_QUOTES) ?>">
+                <button type="submit" name="sort" value="newest" class="sort-btn <?= $sort === 'newest' ? 'active' : '' ?>">
+                    <?= $lang === 'pl' ? 'Najnowsze' : 'Newest' ?>
+                </button>
+                <button type="submit" name="sort" value="top" class="sort-btn <?= $sort === 'top' ? 'active' : '' ?>">
+                    <?= $lang === 'pl' ? 'Najwyższa ocena' : 'Top rated' ?>
+                </button>
+            </form>
+        </div>
 
         <div class="projects">
             <?php foreach ($projects as $p): ?>

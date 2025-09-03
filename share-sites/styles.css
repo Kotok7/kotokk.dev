@@ -4,6 +4,33 @@
     box-sizing: border-box;
 }
 
+.sort-form {
+  margin: 14px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sort-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.sort-btn:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.sort-btn.active {
+  background: #222222;
+  color: #ffffff;
+  border-color: #222222;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;

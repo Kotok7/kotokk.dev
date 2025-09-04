@@ -1,5 +1,5 @@
 <?php
-$lang = isset($_GET['lang']) && $_GET['lang'] === 'en' ? 'en' : 'pl';
+$lang = (isset($_GET['lang']) && $_GET['lang'] === 'pl') ? 'pl' : 'en';
 $trans = [
   'pl' => [
     'title' => 'Drawall',
@@ -49,7 +49,7 @@ $t = $trans[$lang];
 <?php echo htmlspecialchars($t['back'], ENT_QUOTES) ?>
 </button>
     <label>Zoom: 
-  <input id="zoom" type="range" min="0.2" max="3" step="0.05" value="0.5">
+  <input id="zoom" type="range" min="0.2" max="3" step="0.05" value="0.2">
   <span id="zoomVal">50%</span>
 </label>
     <label><?php echo htmlspecialchars($t['size'], ENT_QUOTES) ?>: <input id="size" type="range" min="1" max="60" value="6"></label>

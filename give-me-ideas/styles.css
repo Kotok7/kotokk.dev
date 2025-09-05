@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 200px;
+    padding-left: 200px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #1e40af;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+body > p:first-of-type {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+form {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    animation: slideInUp 0.6s ease-out 0.4s both;
+}
+
+form:hover {
+    box-shadow: 0 8px 25px -5px rgba(30, 64, 175, 0.15);
+    transform: translateY(-2px);
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background: white;
+    transform: scale(1.01);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background: #1e40af;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: width 0.6s, height 0.6s;
+    transform: translate(-50%, -50%);
+}
+
+button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+form[method="get"] button {
+    background: #64748b;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+}
+
+form[method="get"] button:hover {
+    background: #475569;
+}
+
+div[style*="border:1px solid"] {
+    background: white;
+    border: none !important;
+    border-radius: 12px;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.1);
+    border-left: 4px solid #3b82f6 !important;
+    transition: all 0.3s ease;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+div[style*="border:1px solid"]:hover {
+    box-shadow: 0 8px 25px -5px rgba(30, 64, 175, 0.15);
+    transform: translateX(5px);
+}
+
+h2 {
+    color: #1e40af;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 0.8rem;
+    color: #475569;
+}
+
+span[style*="margin-right"] {
+    background: #e0f2fe !important;
+    color: #0369a1 !important;
+    padding: 0.3rem 0.8rem !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    border: 1px solid #0ea5e9 !important;
+    transition: all 0.3s ease;
+}
+
+span[style*="margin-right"]:hover {
+    background: #0ea5e9 !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+form[style*="display:inline"] button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+form[style*="display:inline"] button[name="type"][value="up"] {
+    background: #059669;
+}
+
+form[style*="display:inline"] button[name="type"][value="up"]:hover {
+    background: #047857;
+}
+
+form[style*="display:inline"] button[name="type"][value="down"] {
+    background: #dc2626;
+}
+
+form[style*="display:inline"] button[name="type"][value="down"]:hover {
+    background: #b91c1c;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    form {
+        padding: 1rem;
+    }
+    
+    input[type="text"], textarea {
+        font-size: 16px;
+    }
+    
+    div[style*="border:1px solid"] {
+        padding: 1rem !important;
+    }
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+body > p:last-of-type {
+    text-align: center;
+    color: #94a3b8;
+    font-style: italic;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}

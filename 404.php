@@ -84,17 +84,24 @@ $catalogs = [
             'icon' => '🖌️'
         ],
         [
+            'name' => 'What website should i build?',
+            'url' => '/give-me-ideas',
+            'description' => "I didn't have an idea for a website so I created this one - add your idea!",
+            'category' => 'creative',
+            'icon' => '🤔'
+        ],
+        [
             'name' => 'Share and discover songs',
             'url' => '/share-music',
             'description' => 'Share your favourite songs and discover new music!',
-            'category' => 'creative',
+            'category' => 'social',
             'icon' => '🎵'
         ],
         [
             'name' => 'Discover and add quotes',
             'url' => '/quotes',
             'description' => 'Add, discover, view and save quotes!',
-            'category' => 'creative',
+            'category' => 'social',
             'icon' => '🗣️'
         ],
         [
@@ -240,13 +247,6 @@ $catalogs = [
             'icon' => '🌐'
         ],
         [
-            'name' => 'Udostępniaj i odkrywaj muzykę',
-            'url' => '/share-music',
-            'description' => 'Udostępnij swoje ulubione piosenki i odkrywaj nową muzykę!',
-            'category' => 'creative',
-            'icon' => '🎵'
-        ],
-        [
             'name' => 'Drawall',
             'url' => '/drawall',
             'description' => 'Ściana gdzie każdy może rysować co tylko chce!',
@@ -254,10 +254,24 @@ $catalogs = [
             'icon' => '🖌️'
         ],
         [
+            'name' => 'Jaką stronę powinienem stworzyć?',
+            'url' => '/give-me-ideas',
+            'description' => "Nie miałem pomysłu na stronę internetową dlatego stworzyłem tę - dodaj swój pomysł!",
+            'category' => 'creative',
+            'icon' => '🤔'
+        ],
+        [
+            'name' => 'Udostępniaj i odkrywaj muzykę',
+            'url' => '/share-music',
+            'description' => 'Udostępnij swoje ulubione piosenki i odkrywaj nową muzykę!',
+            'category' => 'social',
+            'icon' => '🎵'
+        ],
+        [
             'name' => 'Odkrywaj i dodawaj cytaty',
             'url' => '/quotes',
             'description' => 'Dodawaj, odkrywaj, oglądaj i zapisuj cytaty!',
-            'category' => 'creative',
+            'category' => 'social',
             'icon' => '🗣️'
         ],
         [

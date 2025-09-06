@@ -4,6 +4,42 @@
     box-sizing: border-box;
 }
 
+br {
+  display: block;
+  margin: 2px 0;
+  content: "";
+}
+
+#sort-select{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  padding:6px 34px 6px 10px;
+  min-width:160px;
+  border:1px solid #bdbdbd;
+  border-radius:6px;
+  background:#ffffff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7"><polygon points="0,0 12,0 6,7" fill="%23333"/></svg>') no-repeat right 10px center;
+  background-size:12px 7px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04);
+  font-size:14px;
+  line-height:1;
+  cursor:pointer;
+  transition:border-color .15s, box-shadow .15s, transform .05s;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+#sort-select:focus{
+  outline:none;
+  border-color:#4d90fe;
+  box-shadow:0 0 0 4px rgba(77,144,254,0.12);
+}
+
+#sort-select[data-disabled="1"]{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
 body {
     font-family: 'Fira Code', monospace;
     background-color: #f8fafc;

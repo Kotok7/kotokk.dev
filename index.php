@@ -15,7 +15,9 @@ $translations = [
         'meta_description' => 'My portfolio',
         'translate'        => 'Przetłumacz na Polski',
         'unique_visitors'  => 'Unique visitors:',
-        'main_title'       => 'My Portfolio',
+        'main_title'       => 'Welcome to my site',
+        'portfolio'        => 'My Portfolio',
+        'leave_msg_title'  => 'Leave a message!',
         'subtitle'         => 'Content Creator | Fullstack web developer',
         'facts_title'      => 'Programming Quotes, Jokes & Facts',
         'facts_title2'     => 'Random quote or joke',
@@ -83,7 +85,7 @@ $translations = [
         'footer'           => 'All rights reserved.<br>Thanks to <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> for help and ideas.<br> Icons from <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Time in my country:',
         'temp'             => 'Temperature in my city:',
-        'my_desc'          => 'I am a teenager from Kraśnik, Poland, who loves programming!<br>Pronouns: he/him<br>Programming languages: HTML, CSS, Javascript, PHP and Python<br>kotokk.dev is my main project<br>More about me below',
+        'my_desc'          => 'I am a teenager from Poland, who loves programming!<br>Pronouns: he/him<br>Programming languages: HTML, CSS, Javascript, PHP and Python<br>This is my main project<br>More about me below!',
         'add_button'       => 'Add',
         'sort_select1'     => 'Most interesting (default)',
         'sort_select2'     => 'Last updated',
@@ -136,7 +138,9 @@ $translations = [
         'meta_description' => 'Moje portfolio',
         'translate'        => 'Przetłumacz na angielski',
         'unique_visitors'  => 'Unikalni odwiedzający:',
-        'main_title'       => 'Moje Portfolio',
+        'main_title'       => 'Witaj na mojej stronie',
+        'portfolio'        => 'Moje Portfolio',
+        'leave_msg_title'  => 'Zostaw swoją wiadomość!',
         'subtitle'         => 'Twórca treści | Fullstack web developer',
         'facts_title'      => 'Cytaty, żarty i ciekawostki programistyczne (brak tłumaczenia)',
         'facts_title2'     => 'Losowy cytat lub żart (tylko po angielsku)',
@@ -204,7 +208,7 @@ $translations = [
         'footer'           => 'Wszelkie prawa zastrzeżone.<br>Podziękowania dla <a href="https://about-tymianekk.netlify.app" target="_blank">@tymianekk_</a> za pomysły i pomoc.<br> Ikony z <a href="https://flaticon.com" target="_blank">Flaticon</a>.',
         'time'             => 'Czas w moim kraju:',
         'temp'             => 'Temperatura w moim mieście:',
-        'my_desc'          => 'Jestem nastolatkiem z Kraśnika w Polsce, który uwielbia programować!<br>Zaimki: on/jego<br>Języki programowania: HTML, CSS, Javascript, PHP i Python<br>kotokk.dev to mój główny projekt<br>Więcej o mnie poniżej',
+        'my_desc'          => 'Jestem nastolatkiem z Polski, który uwielbia programować!<br>Zaimki: on/jego<br>Języki programowania: HTML, CSS, Javascript, PHP i Python<br>To mój główny projekt<br>Więcej o mnie poniżej!',
         'add_button'       => 'Dodaj',
         'sort_select1'     => 'Najciekawsze (domyślne)',
         'sort_select2'     => 'Ostatnio uaktualnione',
@@ -403,8 +407,6 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     <?= htmlspecialchars($t['temp'], ENT_QUOTES) ?> <strong>—</strong>
   </p>
 <?php endif; ?>
-
-<br>
 <div id="sleepIndicator"></div>
 
 <script>
@@ -459,6 +461,11 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
 <div id="codeParticles" class="header-animation"></div>
 </header>
 <main>
+<br>
+<div style="display: flex; justify-content: center;">
+    <h1><?= htmlspecialchars($t['portfolio'], ENT_QUOTES) ?><span class="cursor"></span></h1>
+</div>
+
 
 <div id="sortCustom" class="custom-select">
   <div class="select-trigger"><?= htmlspecialchars($t['sort_select1'], ENT_QUOTES) ?></div>
@@ -713,6 +720,11 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
       <a href="lumiboard/index.html" class="project-link"><?= htmlspecialchars($t['lumi_link'], ENT_QUOTES) ?></a>
     </div>
 </div>
+</div>
+<br><br>
+
+<div style="display: flex; justify-content: center;">
+    <h1><?= htmlspecialchars($t['leave_msg_title'], ENT_QUOTES) ?><span class="cursor"></span></h1>
 </div>
 
 <div class="two-columns">

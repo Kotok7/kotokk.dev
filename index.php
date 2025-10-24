@@ -92,21 +92,11 @@ $translations = [
         'donate'           => 'Donate me',
         'donate2'          => 'Crypto adresses (click to copy)',
         'btc_message'      => 'Bitcoin adress: ',
-        'btc_adress'       => 'bc1qf250fv8zhhhrg092n9jrgt5dfahpztjrxup78t',
+        'btc_adress'       => 'bc1q34k4amjhdqxnaj35ysyanp2s6afxn72l0njvxv',
         'eth_message'      => 'Etherium adress: ',
-        'eth_adress'       => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
-        'xrp_message'      => 'XRP adress: ',
-        'xrp_adress'       => 'rfnx4UoHkUWRsycfSGJMT9cfJapZ31Poqy',
+        'eth_adress'       => '0xA7AeBcbF057abAC5E893b2Fcb87501a2a3Cf7302',
         'sol_message'      => 'Solana adress: ',
-        'sol_adress'       => '91gvsiPKbAGa4khrqK663gjSoPQRMNaNKVXFFHe9Tz2Y',
-        'doge_message'     => 'Doge adress: ',
-        'doge_adress'      => 'DMoJwdVT4KkaLAvArfZ5M2zfmFtzXADL4N',
-        'pepe_message'     => 'Pepe adress: ',
-        'pepe_adress'      => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
-        'ltc_message'      => 'Litecoin adress: ',
-        'ltc_adress'       => 'LeXnrUNr2syu8gAPKLQowvhVv6Dzf7bPRZ',
-        'bnc_message'      => 'Binance adress: ',
-        'bnc_adress'       => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
+        'sol_adress'       => '2wdvNtKGmRBT1mD7NA9efGPHH9CKQ48t3ptPewRb34J2',
         'copied_crypto'    => 'Copied',
         'polish_room'      => 'Polish room',
         'english_room'     => 'English room',
@@ -215,21 +205,11 @@ $translations = [
         'donate'           => 'Wesprzyj mnie',
         'donate2'          => 'Adresy krypto (kliknij aby skopiować)',
         'btc_message'      => 'Adres Bitcoin: ',
-        'btc_adress'       => 'bc1qf250fv8zhhhrg092n9jrgt5dfahpztjrxup78t',
+        'btc_adress'       => 'bc1q34k4amjhdqxnaj35ysyanp2s6afxn72l0njvxv',
         'eth_message'      => 'Adres Etherium: ',
-        'eth_adress'       => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
-        'xrp_message'      => 'Adres XRP: ',
-        'xrp_adress'       => 'rfnx4UoHkUWRsycfSGJMT9cfJapZ31Poqy',
+        'eth_adress'       => '0xA7AeBcbF057abAC5E893b2Fcb87501a2a3Cf7302',
         'sol_message'      => 'Adres Solana: ',
-        'sol_adress'       => '91gvsiPKbAGa4khrqK663gjSoPQRMNaNKVXFFHe9Tz2Y',
-        'doge_message'     => 'Adres Doge: ',
-        'doge_adress'      => 'DMoJwdVT4KkaLAvArfZ5M2zfmFtzXADL4N',
-        'pepe_message'     => 'Adres Doge: ',
-        'pepe_adress'      => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
-        'ltc_message'      => 'Adres Litecoin: ',
-        'ltc_adress'       => 'LeXnrUNr2syu8gAPKLQowvhVv6Dzf7bPRZ',
-        'bnc_message'      => 'Adres Binance: ',
-        'bnc_adress'       => '0x0F3aeA458DA2186fbeEDcDAe529f73ae2D11A1d7',
+        'sol_adress'       => '2wdvNtKGmRBT1mD7NA9efGPHH9CKQ48t3ptPewRb34J2',
         'copied_crypto'    => 'Skopiowano',
         'polish_room'      => 'Polski czat',
         'english_room'     => 'Angielski czat',
@@ -796,17 +776,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
   <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
 <?= htmlspecialchars($t['eth_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['eth_adress'], ENT_QUOTES) ?></span>
   <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
-<?= htmlspecialchars($t['xrp_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['xrp_adress'], ENT_QUOTES) ?></span>
-  <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
 <?= htmlspecialchars($t['sol_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['sol_adress'], ENT_QUOTES) ?></span>
-  <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
-<?= htmlspecialchars($t['doge_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['doge_adress'], ENT_QUOTES) ?></span>
-  <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
-<?= htmlspecialchars($t['pepe_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['pepe_adress'], ENT_QUOTES) ?></span>
-  <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
-<?= htmlspecialchars($t['ltc_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['ltc_adress'], ENT_QUOTES) ?></span>
-  <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
-<?= htmlspecialchars($t['bnc_message'], ENT_QUOTES) ?><span id="btcAddress"><?= htmlspecialchars($t['bnc_adress'], ENT_QUOTES) ?></span>
   <span id="copyMsg"><?= htmlspecialchars($t['copied_crypto'], ENT_QUOTES) ?></span><br>
 </div><br>
   <p>&copy; 2025 <a href="https://kotokk.dev">kotokk.dev</a><br><?= $t['footer'] ?></p>

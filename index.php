@@ -34,9 +34,6 @@ $translations = [
         'cyber_title'      => 'Pentesting devices',
         'cyber_desc'       => 'All of my devices I use and share on TikTok',
         'cyber_link'       => 'Learn More',
-        'dev_title'        => 'How to be like me',
-        'dev_desc'         => 'How to become the best developer in the world',
-        'dev_link'         => 'Start Learning',
         'blog_title'       => 'My blog',
         'blog_desc'        => 'Blog where I share topics and insights that interest me.',
         'blog_link'        => 'Read now',
@@ -55,9 +52,6 @@ $translations = [
         'share_title'      => 'Share sites',
         'share_desc'       => 'Share interesting sites with other people or rate and explore other sites!',
         'share_link'       => 'Discover',
-        'screentime_title' => 'iOS screentime emulator',
-        'screentime_desc'  => 'This website emulates the iOS screen time page on a website so you can get your screen time password from your parent.',
-        'screentime_link'  => 'Emulate',
         'music_title'      => 'Share and discover songs',
         'music_desc'       => 'Share your favourite songs and discover new music!',
         'music_link'       => 'Discover',
@@ -147,9 +141,6 @@ $translations = [
         'cyber_title'      => 'Narzędzia pentestingu',
         'cyber_desc'       => 'Wszystkie narzędzia, których używam i którymi dzielę się na TikToku',
         'cyber_link'       => 'Dowiedz się więcej',
-        'dev_title'        => 'Jak być jak ja',
-        'dev_desc'         => 'Jak zostać najlepszym programistą na świecie',
-        'dev_link'         => 'Zacznij naukę',
         'blog_title'       => 'Mój blog',
         'blog_desc'        => 'Blog, gdzie dzielę się tematami i przemyśleniami, które mnie interesują.',
         'blog_link'        => 'Czytaj',
@@ -168,9 +159,6 @@ $translations = [
         'apps_title'       => 'Udostępniaj aplikacje',
         'apps_desc'        => 'Udostępniaj swoje ulubione aplikacje! Wybierz typ i wpisz nazwę.',
         'apps_link'        => 'Wyszukuj',
-        'screentime_title' => 'Emulator czasu przed ekranem iOS',
-        'screentime_desc'  => 'Ta strona internetowa emuluje stronę czasu przed ekranem z iOS, abyś mógł uzyskać hasło do czasu przed ekranem od swojego rodzica.',
-        'screentime_link'  => 'Emuluj',
         'music_title'      => 'Udostępniaj i odkrywaj piosenki',
         'music_desc'       => 'Udostępniaj swoje ulubione piosenki i odkrywaj nową muzykę!',
         'music_link'       => 'Posłuchaj',
@@ -521,7 +509,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="3" data-sort2="15">
+<div class="project-card" data-sort1="3" data-sort2="14">
     <img src="photos/chat.png" alt="<?= htmlspecialchars($t['chat_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>30 June</div>
     <div class="project-content">
@@ -611,7 +599,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="12" data-sort2="18">
+<div class="project-card" data-sort1="12" data-sort2="17">
     <img src="photos/qjf.png" alt="<?= htmlspecialchars($t['facts_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
     <div class="project-content">
@@ -621,17 +609,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="13" data-sort2="19">
-    <img src="photos/dev.png" alt="<?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>May</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['dev_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['dev_desc'], ENT_QUOTES) ?></p>
-      <a href="tutorial/index.php" class="project-link"><?= htmlspecialchars($t['dev_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="14" data-sort2="16">
+<div class="project-card" data-sort1="14" data-sort2="15">
     <img src="photos/quiz.png" alt="<?= htmlspecialchars($t['quiz_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>14 June</div>
     <div class="project-content">
@@ -641,7 +619,7 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="15" data-sort2="17">
+<div class="project-card" data-sort1="15" data-sort2="16">
     <img src="photos/quantum.png" alt="<?= htmlspecialchars($t['quantium_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>13 June</div>
     <div class="project-content">
@@ -671,23 +649,13 @@ $storedNick = $_COOKIE['blog_nick'] ?? '';
     </div>
 </div>
 
-<div class="project-card" data-sort1="18" data-sort2="20">
+<div class="project-card" data-sort1="18" data-sort2="18">
     <img src="photos/cybersecurity.png" alt="<?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
     <div class="last-updated badge"><?= htmlspecialchars($t['last_updated'], ENT_QUOTES) ?>April</div>
     <div class="project-content">
       <h3><?= htmlspecialchars($t['cyber_title'], ENT_QUOTES) ?></h3>
       <p><?= htmlspecialchars($t['cyber_desc'], ENT_QUOTES) ?></p>
       <a href="cybersecurity/index.php" class="project-link"><?= htmlspecialchars($t['cyber_link'], ENT_QUOTES) ?></a>
-    </div>
-</div>
-
-<div class="project-card" data-sort1="19" data-sort2="14">
-    <img src="photos/screentime.png" alt="<?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>" class="project-image" loading="lazy">
-    <div class="last-updated badge"><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?>10 July</div>
-    <div class="project-content">
-      <h3><?= htmlspecialchars($t['screentime_title'], ENT_QUOTES) ?></h3>
-      <p><?= htmlspecialchars($t['screentime_desc'], ENT_QUOTES) ?></p>
-      <a href="screentime/index.html" class="project-link"><?= htmlspecialchars($t['screentime_link'], ENT_QUOTES) ?></a>
     </div>
 </div>
 

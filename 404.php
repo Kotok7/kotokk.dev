@@ -119,13 +119,6 @@ $catalogs = [
             'icon' => '💡'
         ],
         [
-            'name' => 'How to be like me',
-            'url' => '/tutorial',
-            'description' => 'A slightly exaggerated but definitely accurate guide to being a developer like Kotokk.',
-            'category' => 'personal',
-            'icon' => '📚'
-        ],
-        [
             'name' => 'Quiz about me',
             'url' => '/quiz',
             'description' => 'A web quiz that tests how well you know my programming preferences, favorite languages, development tools, and more!',
@@ -182,13 +175,6 @@ $catalogs = [
             'icon' => '🕰️'
         ],
         [
-            'name' => 'Agartha or hyperborea quiz',
-            'url' => '/agartha-or-hyperborea',
-            'description' => 'Mysterious quiz exploring ancient mythological realms.',
-            'category' => 'hidden',
-            'icon' => '🏔️'
-        ],
-        [
             'name' => 'My TikTok',
             'url' => '/tiktok',
             'description' => 'My TikTok account',
@@ -208,13 +194,6 @@ $catalogs = [
             'description' => 'kotokk.dev repository on GitHub',
             'category' => 'tech',
             'icon' => '💻'
-        ],
-        [
-            'name' => 'Secret site for my friends',
-            'url' => '',
-            'description' => 'Only for my friends',
-            'category' => 'hidden',
-            'icon' => '🔒'
         ]
     ],
     'pl' => [
@@ -289,13 +268,6 @@ $catalogs = [
             'icon' => '💡'
         ],
         [
-            'name' => 'Jak być jak ja',
-            'url' => '/tutorial',
-            'description' => 'Trochę przesadzony, ale w 100% trafny przewodnik po byciu deweloperem jak Kotokk',
-            'category' => 'personal',
-            'icon' => '📚'
-        ],
-        [
             'name' => 'Quiz o mnie',
             'url' => '/quiz',
             'description' => 'Quiz internetowy, który sprawdzi, jak dobrze znasz moje preferencje programistyczne, ulubione języki, narzędzia developerskie i więcej!',
@@ -352,13 +324,6 @@ $catalogs = [
             'icon' => '🕰️'
         ],
         [
-            'name' => 'Agartha or hyperborea quiz',
-            'url' => '/agartha-or-hyperborea',
-            'description' => 'Tajemniczy quiz odkrywający starożytne mitologiczne krainy.',
-            'category' => 'hidden',
-            'icon' => '🏔️'
-        ],
-        [
             'name' => 'Mój TikTok',
             'url' => '/tiktok',
             'description' => 'Moje konto TikTok',
@@ -378,14 +343,7 @@ $catalogs = [
             'description' => 'Repozytorium kotokk.dev na GitHubue',
             'category' => 'tech',
             'icon' => '💻'
-        ],
-        [
-            'name' => 'Site only for my friends',
-            'url' => '',
-            'description' => 'Hidden site only for my friends',
-            'category' => 'hidden',
-            'icon' => '🔒'
-        ],
+        ]
     ]
 ];
 
